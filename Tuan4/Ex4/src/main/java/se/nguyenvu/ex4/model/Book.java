@@ -19,4 +19,9 @@ public class Book implements Serializable {
     private String url;
     private BigDecimal price;
     private Integer quantity;
+    
+    // Getter for JSP compatibility
+    public Integer getId() {
+        return bookId;
+    }
 }

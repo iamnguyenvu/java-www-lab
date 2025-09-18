@@ -12,7 +12,6 @@ import se.nguyenvu.ex4.model.CartBean;
 
 import javax.sql.DataSource;
 import java.io.IOException;
-import java.math.BigDecimal;
 
 @WebServlet({"/payment"})
 public class PaymentServlet extends HttpServlet {
@@ -30,12 +29,18 @@ public class PaymentServlet extends HttpServlet {
         HttpSession session = req.getSession();
         CartBean cartBean = (CartBean) session.getAttribute("cart");
 
-        cartBean.getCartBooks().forEach(book -> {
-            book.getBook().setPrice(bookDAO.findById(book.getBook().getBookId()).getPrice());
-        });
+        if(cartBean == null || cartBean.getCartBooks().isEmpty()) {
+            resp.sendRedirect(req.getContextPath() + "/books");
+            return;
+        }
 
-        req.setAttribute("cart", cartBean);
-        req.getRequestDispatcher("/payment.jsp").forward(req, resp);
+//        cartBean.getCartBooks().forEach(book -> {
+//            book.getBook().setPrice(bookDAO.findById(book.getBook().getBookId()).getPrice());
+//        });
+
+        req.setAttribute("pageTitle", "Checkout");
+        req.setAttribute("contentPage", "payment.jsp");
+        req.getRequestDispatcher("/layout.jsp").forward(req, resp);
     }
 
     @Override
@@ -43,13 +48,34 @@ public class PaymentServlet extends HttpServlet {
         HttpSession session = req.getSession();
         CartBean cartBean = (CartBean) session.getAttribute("cart");
 
-        String bookId = req.getParameter("bookId");
-        String title = req.getParameter("title");
-        Integer quantity = Integer.valueOf(req.getParameter("quantity"));
-        BigDecimal price = new BigDecimal(req.getParameter("price"));
-        BigDecimal total = price.multiply(new BigDecimal(quantity));
+        if(cartBean == null || cartBean.getCartBooks().isEmpty()) {
+            resp.sendRedirect(req.getContextPath() + "/books");
+            return;
+        }
+        String action = req.getParameter("action");
 
+        if("pay".equals(action)) {
+            String fullname = req.getParameter("fullname");
+            String address = req.getParameter("address");
+            String paymentMethod = req.getParameter("paymentMethod");
+            String totalPrice = req.getParameter("totalPrice");
+
+        }
         session.removeAttribute("cart");
         resp.sendRedirect(req.getContextPath() + "/payment-success.jsp");
+    }
+
+    private boolean processPayment(CartBean cartBean) {
+        try {
+            cartBean.getCartBooks().stream()
+                    .allMatch(book -> bookDAO.updateQuantity(
+                            book.getBook().getBookId(),
+                            book.getQuantity()
+                    ));
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 }

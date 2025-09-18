@@ -12,6 +12,10 @@ public class DBUtil {
     }
 
     public Connection getConnection() throws SQLException {
-        return dataSource.getConnection();
+        if (dataSource == null) {
+        }
+        
+        Connection connection = dataSource.getConnection();
+        return connection;
     }
 }

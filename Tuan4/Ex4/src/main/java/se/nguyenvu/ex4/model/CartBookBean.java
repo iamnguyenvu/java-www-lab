@@ -18,4 +18,8 @@ public class CartBookBean {
     public BigDecimal getTotalPrice() {
         return book.getPrice().multiply(BigDecimal.valueOf(quantity));
     }
+    
+    public BigDecimal getTotal() {
+        return getTotalPrice();
+    }
 }
