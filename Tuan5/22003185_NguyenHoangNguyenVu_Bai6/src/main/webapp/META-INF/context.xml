@@ -1,6 +1,6 @@
 <Context>
     <Resource
-        name="jdbc/employee_management"
+        name="jdbc/news_management"
         auth="Container"
         type="javax.sql.DataSource"
         maxTotal="100"

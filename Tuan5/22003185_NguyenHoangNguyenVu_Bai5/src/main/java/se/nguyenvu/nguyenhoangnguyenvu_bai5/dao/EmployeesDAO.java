@@ -81,4 +81,30 @@ public class EmployeesDAO {
 
         return employees;
     }
+
+    public void save(Employees employees) throws SQLException {
+        String sql = "insert into employees(id, name, department_id, salary) values(?,?,?,?)";
+        try (Connection connection = dbUtil.getConnection();
+        PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setInt(1, employees.getId());
+            preparedStatement.setString(2, employees.getName());
+            preparedStatement.setInt(3, employees.getDepartmentId());
+            preparedStatement.setDouble(4, employees.getSalary());
+            preparedStatement.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void update(Employees employees) throws SQLException {
+        String sql = "from employees set(name, salary, department_id) = (?,?,?) where id = ?";
+        try(Connection connection = dbUtil.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setString(1, employees.getName());
+            preparedStatement.setDouble(2, employees.getSalary());
+            preparedStatement.setInt(3, employees.getDepartmentId());
+            preparedStatement.setInt(4, employees.getId());
+            preparedStatement.executeUpdate();
+        }
+    }
 }
