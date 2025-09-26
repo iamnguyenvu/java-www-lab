@@ -14,17 +14,38 @@
 <body>
 <div class="container">
     <form action="${pageContext.request.contextPath}/employees" method="post">
-        <input type="hidden" name="id"/>
-        Name <input name="name"/>
-        Salary <input name="salary" />
-        Department:
-        <select name="deparmentId">
-            <c:forEach var="dep" items="${deparments}">
-                <option value="${dep.department_id}">${dep.name}</option>
-            </c:forEach>
-        </select>
+        <c:choose>
+            <c:when test="${not empty employee}">
+                <h2>Edit Employee</h2>
+                Name <input name="name" value="${employee.name}"/>
+                Salary <input name="salary" value="${employee.salary}"/>
+                <input type="hidden" name="id" value="${employee.id}"/>
+                Department:
+                <c:if test="${not empty departments}">
+                    <select name="departmentId">
+                        <c:forEach var="dep" items="${departments}">
+                            <option value="${dep.id}"
+                                    <c:if test="${dep.id == employee.departmentId}">selected</c:if>>${dep.name}</option>
+                        </c:forEach>
+                    </select>
+                </c:if>
+                <input type="submit" value="Update"/>
+            </c:when>
+            <c:otherwise>
+                <input type="hidden" name="id"/>
+                Name <input name="name"/>
+                Salary <input name="salary"/>
+                Department:
+                <select name="departmentId">
+                    <c:forEach var="dep" items="${departments}">
+                        <option value="${dep.id}">${dep.name}</option>
+                    </c:forEach>
+                </select>
 
-        <input type="submit" value="Save" />
+                <input type="submit" value="Save"/>
+            </c:otherwise>
+        </c:choose>
+
     </form>
 </div>
 </body>

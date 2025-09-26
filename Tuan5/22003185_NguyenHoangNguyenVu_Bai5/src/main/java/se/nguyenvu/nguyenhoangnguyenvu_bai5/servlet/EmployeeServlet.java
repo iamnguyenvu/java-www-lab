@@ -17,7 +17,7 @@ import java.util.List;
 
 @WebServlet({"/employees"})
 public class EmployeeServlet extends HttpServlet {
-    @Resource(name = "employee_management")
+    @Resource(name = "jdbc/employee_management")
     private DataSource dataSource;
 
     private EmployeesDAO employeesDAO;
@@ -25,6 +25,9 @@ public class EmployeeServlet extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
+        if(dataSource == null){
+            throw new ServletException("dataSource is null");
+        }
         employeesDAO = new EmployeesDAO(dataSource);
         departmentDAO = new DepartmentDAO(dataSource);
     }
@@ -38,6 +41,7 @@ public class EmployeeServlet extends HttpServlet {
                 try {
                     List<Employees> employees = employeesDAO.findAll();
                     req.setAttribute("employees", employees);
+                    req.setAttribute("departments", departmentDAO.findAll());
                     req.getRequestDispatcher("employee-list.jsp").forward(req, resp);
                 } catch (SQLException e) {
                     throw new RuntimeException(e);
@@ -49,14 +53,35 @@ public class EmployeeServlet extends HttpServlet {
                 req.getRequestDispatcher("employee-form.jsp").forward(req, resp);
             }
 
-            case "delete" -> {}
+            case "delete" -> {
+                String id = req.getParameter("id");
+                try {
+                    employeesDAO.delete(Integer.parseInt(id));
+                    resp.sendRedirect("employees");
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+
+            case "edit" -> {
+                String id = req.getParameter("id");
+                try {
+                    Employees employees = employeesDAO.findById(Integer.parseInt(id));
+                    req.setAttribute("employee", employees);
+                    req.setAttribute("departments", departmentDAO.findAll());
+                    req.getRequestDispatcher("employee-form.jsp").forward(req, resp);
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+            }
 
             case "view" -> {
                 String departmentId = req.getParameter("departmentId");
                 try {
                     List<Employees> employees = employeesDAO.findByDepartmentId(Integer.parseInt(departmentId));
                     req.setAttribute("employees", employees);
-                    req.setAttribute("departments", departmentDAO.findAll());
+                    req.setAttribute("department", departmentDAO.findById(Integer.parseInt(departmentId)));
+                    req.setAttribute("departmentId", departmentId);
                     req.getRequestDispatcher("employee-list.jsp").forward(req, resp);
                 } catch (SQLException e) {
                     throw new RuntimeException(e);
@@ -81,21 +106,14 @@ public class EmployeeServlet extends HttpServlet {
                 .name(name)
                 .build();
 
-        if(id != 0) {
-            try {
+        try {
+            if(id == 0) {
                 employeesDAO.save(employees);
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
-        }
-        else {
-            try {
-                employeesDAO.update(employees);
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
-        }
+            } else employeesDAO.update(employees);
 
-        resp.sendRedirect("employees?departmentId="+departmentId);
+            resp.sendRedirect("employees");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

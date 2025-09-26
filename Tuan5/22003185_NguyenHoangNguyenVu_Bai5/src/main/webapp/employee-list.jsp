@@ -15,32 +15,62 @@
 <body>
 
 <div class="container">
-    <h2>Employees List</h2>
-    <a href="${pageContext.request.contextPath}/employees/action=new">Add Employee</a>
-    <table class="table table-primary">
-        <tr>
-            <th>ID</th>
-            <th>Employee Name</th>
-            <th>Salary</th>
-            <th>Department</th>
-            <th>Action</th>
-        </tr>
+    <c:choose>
+        <c:when test="${not empty department}">
+            <h2>Employees List of Department ${department.name}</h2>
+            <table class="table table-primary">
+                <tr>
+                    <th>ID</th>
+                    <th>Employee Name</th>
+                    <th>Salary</th>
+                    <th>Department</th>
+                    <th>Action</th>
+                </tr>
 
-        <c:forEach var="emp" items="${employees}">
-            <tr>
-                <td>${emp.id}</td>
-                <td>${emp.name}</td>
-                <td>${emp.salary}</td>
-                <td>${emp.departmentId}</td>e
-                <td>
-                    <a href="${pageContext.request.contextPath}/employees?action=edit&id=${emp.id}">Edit</a>
-                    <a href="${pageContext.request.contextPath}/employees?action=delete&id=${emp.id}">Delete</a>
-                </td>
-            </tr>
-        </c:forEach>
-    </table>
-    <a href="${pageContext.request.contextPath}/departments">Department</a>
+                <c:forEach var="emp" items="${employees}">
+                    <tr>
+                        <td>${emp.id}</td>
+                        <td>${emp.name}</td>
+                        <td>${emp.salary}</td>
+                        <td>${emp.departmentId}</td>
+                        <td>
+                            <a href="${pageContext.request.contextPath}/employees?action=edit&id=${emp.id}">Edit</a>
+                            <a href="${pageContext.request.contextPath}/employees?action=delete&id=${emp.id}">Delete</a>
+                        </td>
+                    </tr>
+                </c:forEach>
+            </table>
+            <a href="${pageContext.request.contextPath}/departments">Department List</a>
+            <a href="${pageContext.request.contextPath}/employees">Employees List</a>
+        </c:when>
+        <c:otherwise>
+            <h2>Employees List</h2>
+            <a href="${pageContext.request.contextPath}/employees?action=new">Add Employee</a>
+            <table class="table table-primary">
+                <tr>
+                    <th>ID</th>
+                    <th>Employee Name</th>
+                    <th>Salary</th>
+                    <th>Department</th>
+                    <th>Action</th>
+                </tr>
 
+                <c:forEach var="emp" items="${employees}">
+                    <tr>
+                        <td>${emp.id}</td>
+                        <td>${emp.name}</td>
+                        <td>${emp.salary}</td>
+                        <td>${emp.departmentId}</td>
+                        <td>
+                            <a href="${pageContext.request.contextPath}/employees?action=edit&id=${emp.id}">Edit</a>
+                            <a href="${pageContext.request.contextPath}/employees?action=delete&id=${emp.id}">Delete</a>
+                        </td>
+                    </tr>
+                </c:forEach>
+            </table>
+            <a href="${pageContext.request.contextPath}/departments">Department</a>
+        </c:otherwise>
+    </c:choose>
 </div>
 
 </body>

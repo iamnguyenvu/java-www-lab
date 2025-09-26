@@ -31,6 +31,8 @@ public class EmployeesDAO {
                         .build());
             }
 
+            System.out.println(employees.size());
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -97,13 +99,22 @@ public class EmployeesDAO {
     }
 
     public void update(Employees employees) throws SQLException {
-        String sql = "from employees set(name, salary, department_id) = (?,?,?) where id = ?";
+        String sql = "update employees set name = ?, salary = ?, department_id = ? where id = ?";
         try(Connection connection = dbUtil.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
             preparedStatement.setString(1, employees.getName());
             preparedStatement.setDouble(2, employees.getSalary());
             preparedStatement.setInt(3, employees.getDepartmentId());
             preparedStatement.setInt(4, employees.getId());
+            preparedStatement.executeUpdate();
+        }
+    }
+
+    public void delete(int id) throws SQLException {
+        String sql = "delete from employees where id = ?";
+        try(Connection connection = dbUtil.getConnection();
+        PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setInt(1, id);
             preparedStatement.executeUpdate();
         }
     }

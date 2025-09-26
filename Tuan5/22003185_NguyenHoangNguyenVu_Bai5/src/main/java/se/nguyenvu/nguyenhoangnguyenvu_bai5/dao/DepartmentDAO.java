@@ -71,4 +71,37 @@ public class DepartmentDAO {
 
         return null;
     }
+
+    public void save(Department department) throws SQLException {
+        String sql = "insert into departments (name) values (?)";
+        try (Connection connection = dbUtil.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+            preparedStatement.setString(1, department.getName());
+            preparedStatement.executeUpdate();
+            try (ResultSet generatedKeys = preparedStatement.getGeneratedKeys()) {
+                if (generatedKeys.next()) {
+                    department.setId(generatedKeys.getInt(1));
+                }
+            }
+        }
+    }
+
+    public void update(Department department) throws SQLException {
+        String sql = "update departments set name = ? where id = ?";
+        try (Connection connection = dbUtil.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setString(1, department.getName());
+            preparedStatement.setInt(2, department.getId());
+            preparedStatement.executeUpdate();
+        }
+    }
+
+    public void delete(int id) throws SQLException {
+        String sql = "delete from departments where id = ?";
+        try (Connection connection = dbUtil.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setInt(1, id);
+            preparedStatement.executeUpdate();
+        }
+    }
 }
