@@ -85,7 +85,7 @@ public class DanhSachTinTucServlet extends HttpServlet {
                     int maTT = Integer.parseInt(req.getParameter("maTT"));
                     tinTucDAO.delete(maTT);
                     req.setAttribute("danhMucs", danhMucDAO.findAll());
-                    req.getRequestDispatcher("/QuanLyForm.jsp").forward(req, resp);
+                    resp.sendRedirect(req.getContextPath() + "/danh-sach-tin-tuc");
                 } catch (SQLException e) {
                     throw new RuntimeException(e);
                 }

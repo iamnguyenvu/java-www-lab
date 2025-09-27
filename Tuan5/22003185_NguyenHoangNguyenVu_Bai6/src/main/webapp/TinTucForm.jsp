@@ -56,6 +56,7 @@
     </c:choose>
 
     </form>
+    <a href="${pageContext.request.contextPath}/danh-sach-tin-tuc">Danh sach Tin Tuc</a>
 </div>
 </body>
 </html>
