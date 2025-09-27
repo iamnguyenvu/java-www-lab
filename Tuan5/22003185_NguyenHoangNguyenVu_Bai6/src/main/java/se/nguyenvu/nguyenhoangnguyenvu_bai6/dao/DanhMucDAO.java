@@ -72,4 +72,19 @@ public class DanhMucDAO {
             throw new RuntimeException(e);
         }
     }
+
+    public void update(DanhMuc danhMuc) {
+        String sql = "update DanhMuc set tenDanhMuc = ?, nguoiQuanLy = ?, ghiChu = ? where maDM = ?";
+        try(Connection connection = dbUtil.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(sql)
+        ) {
+            preparedStatement.setString(1, danhMuc.getTenDanhMuc());
+            preparedStatement.setString(2, danhMuc.getNguoiQuanLy());
+            preparedStatement.setString(3, danhMuc.getGhiChu());
+            preparedStatement.setInt(4, danhMuc.getMaDM());
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

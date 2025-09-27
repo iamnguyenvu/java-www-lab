@@ -28,7 +28,7 @@ public class TinTucDAO {
             while(resultSet.next()) {
                 tinTucs.add(TinTuc.builder()
                                 .maTT(resultSet.getInt("maTT"))
-                                .tieuDe(resultSet.getString("maTieuDe"))
+                                .tieuDe(resultSet.getString("tieuDe"))
                                 .noiDungTT(resultSet.getString("noiDungTT"))
                                 .lienKet(resultSet.getString("lienKet"))
                                 .maDM(resultSet.getInt("maDM"))
@@ -49,7 +49,7 @@ public class TinTucDAO {
                 if(resultSet.next()) {
                     return TinTuc.builder()
                             .maTT(resultSet.getInt("maTT"))
-                            .tieuDe(resultSet.getString("maTieuDe"))
+                            .tieuDe(resultSet.getString("tieuDe"))
                             .noiDungTT(resultSet.getString("noiDungTT"))
                             .lienKet(resultSet.getString("lienKet"))
                             .maDM(resultSet.getInt("maDM"))
@@ -60,5 +60,66 @@ public class TinTucDAO {
             throw new RuntimeException(e);
         }
         return null;
+    }
+
+    public List<TinTuc> findByMaDM(int maDM) throws SQLException {
+        String sql = "select * from TinTuc where maDM = ?";
+        List<TinTuc> tinTucs = new ArrayList<>();
+
+        try(Connection connection = dbUtil.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(sql)
+        ) {
+            preparedStatement.setInt(1, maDM);
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                while(resultSet.next()) {
+                    tinTucs.add(TinTuc.builder()
+                            .maTT(resultSet.getInt("maTT"))
+                            .tieuDe(resultSet.getString("tieuDe"))
+                            .noiDungTT(resultSet.getString("noiDungTT"))
+                            .lienKet(resultSet.getString("lienKet"))
+                            .maDM(resultSet.getInt("maDM"))
+                            .build());
+                }
+            }
+        }
+
+        return tinTucs;
+    }
+
+    public void save(TinTuc tinTuc) throws SQLException {
+        String sql = "insert into TinTuc(tieuDe, noiDungTT, lienKet, maDM) values(?, ?, ?, ?)";
+        try(Connection connection = dbUtil.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(sql)
+        ) {
+            preparedStatement.setString(1, tinTuc.getTieuDe());
+            preparedStatement.setString(2, tinTuc.getNoiDungTT());
+            preparedStatement.setString(3, tinTuc.getLienKet());
+            preparedStatement.setInt(4, tinTuc.getMaDM());
+            preparedStatement.executeUpdate();
+        }
+    }
+
+    public void update(TinTuc tinTuc) throws SQLException {
+        String sql = "update TinTuc set tieuDe = ?, noiDungTT = ?, lienKet = ?, maDM = ? where maTT = ?";
+        try(Connection connection = dbUtil.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(sql)
+        ) {
+            preparedStatement.setString(1, tinTuc.getTieuDe());
+            preparedStatement.setString(2, tinTuc.getNoiDungTT());
+            preparedStatement.setString(3, tinTuc.getLienKet());
+            preparedStatement.setInt(4, tinTuc.getMaDM());
+            preparedStatement.setInt(5, tinTuc.getMaTT());
+            preparedStatement.executeUpdate();
+        }
+    }
+
+    public void delete(int maTT) throws SQLException {
+        String sql = "delete from TinTuc where maTT = ?";
+        try(Connection connection = dbUtil.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(sql)
+        ) {
+            preparedStatement.setInt(1, maTT);
+            preparedStatement.executeUpdate();
+        }
     }
 }
