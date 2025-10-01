@@ -54,13 +54,18 @@ public class DepartmentServlet extends HttpServlet {
 
                 case "delete" -> {
                     String id = req.getParameter("id");
-                    if (id != null) {
+
+                    if(id != null) {
                         em.getTransaction().begin();
-                        departmentDAO.delete(Long.parseLong(id));
-                        em.getTransaction().commit();
+                        try {
+                            departmentDAO.delete(Long.parseLong(id));
+                            em.getTransaction().commit();
+                        } catch (Exception e) {
+                            em.getTransaction().rollback();
+                            throw e;
+                        }
                     }
-                    req.setAttribute("departments", departmentDAO.findAll());
-                    req.getRequestDispatcher("/departments.jsp").forward(req, resp);
+                    resp.sendRedirect(req.getContextPath() + "/departments");
                 }
 
                 case "view" -> {

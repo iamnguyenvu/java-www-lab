@@ -18,4 +18,12 @@ public class EmployeeJpaDAO extends AbstractJpaDAO<Employee, Long> implements Em
                 .setParameter("departmentId", departmentId)
                 .getResultList();
     }
+
+    @Override
+    public Long countByDepartmentId(Long departmentId) {
+        String jpql = "select count(e) from Employee e where e.department.id = :departmentId";
+        return em.createQuery(jpql, Long.class)
+                .setParameter("departmentId", departmentId)
+                .getSingleResult();
+    }
 }
