@@ -42,5 +42,6 @@ public class Department {
         private String email;
         private Integer age;
         private Integer status;
+        private Integer salary;
     }
 }

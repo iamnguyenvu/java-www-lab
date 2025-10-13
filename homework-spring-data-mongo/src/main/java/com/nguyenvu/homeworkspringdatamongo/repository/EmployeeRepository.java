@@ -19,4 +19,5 @@ public interface EmployeeRepository extends MongoRepository<Employee, String> {
     List<Employee> findBySalaryLessThanEqual(Integer salary);
     List<Employee> findBySalaryBetween(Integer minSalary, Integer maxSalary);
     List<Employee> findByAge(Integer age);
+    List<Employee> findByAgeGreaterThanEqual(Integer age);
 }

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Chi tiet Nhan vien</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .detail-container { max-width: 600px; margin: 20px auto; padding: 20px; border: 1px solid #ddd; border-radius: 5px; }
+        .info-section { margin-bottom: 20px; }
+        .info-row { padding: 10px; border-bottom: 1px solid #eee; }
+        .info-label { font-weight: bold; display: inline-block; width: 150px; }
+        .btn { padding: 10px 20px; margin: 5px; text-decoration: none; color: white; border-radius: 3px; display: inline-block; }
+        .btn-primary { background-color: #4CAF50; }
+    </style>
+</head>
+<body>
+    <div class="detail-container">
+        <h2>Chi tiet Nhan vien</h2>
+        
+        <div class="info-section">
+            <div class="info-row">
+                <span class="info-label">ID:</span> 
+                <span th:text="${employee.empId}"></span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Ten:</span> 
+                <span th:text="${employee.empName}"></span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Ngay sinh:</span> 
+                <span th:text="${#dates.format(employee.dob, 'dd/MM/yyyy')}"></span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Tuoi:</span> 
+                <span th:text="${employee.age}"></span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Luong:</span> 
+                <span th:text="${#numbers.formatDecimal(employee.salary, 0, 'COMMA', 0, 'POINT')} + ' VND'"></span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Department:</span> 
+                <span th:text="${employee.deptName}"></span>
+            </div>
+        </div>
+        
+        <div>
+            <a th:href="@{/employees}" class="btn btn-primary">Quay lai</a>
+        </div>
+    </div>
+</body>
+</html>

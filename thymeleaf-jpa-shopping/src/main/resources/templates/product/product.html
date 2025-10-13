@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Chi tiet San pham</title>
+    <style>
+        body { 
+            font-family: Arial; 
+            margin: 20px; 
+        }
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+        }
+        th, td { 
+            border: 1px solid #ccc; 
+            padding: 8px; 
+            text-align: left; 
+        }
+        th { 
+            background: #f0f0f0; 
+        }
+        nav { 
+            margin-bottom: 20px; 
+        }
+        nav a { 
+            margin-right: 15px; 
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a th:href="@{/}">Home</a> | 
+    <a th:href="@{/products}">Products</a> | 
+    <a th:href="@{/orders}">Orders</a>
+</nav>
+
+<div th:if="${product != null}">
+    <h2>Chi tiet San pham</h2>
+    
+    <table>
+        <tr>
+            <td><b>ID:</b></td>
+            <td th:text="${product.id}"></td>
+        </tr>
+        <tr>
+            <td><b>Ten:</b></td>
+            <td th:text="${product.name}"></td>
+        </tr>
+        <tr>
+            <td><b>Gia:</b></td>
+            <td th:text="${product.price}"></td>
+        </tr>
+        <tr>
+            <td><b>Trang thai:</b></td>
+            <td th:text="${product.inStock ? 'Con hang' : 'Het hang'}"></td>
+        </tr>
+        <tr>
+            <td><b>So comment:</b></td>
+            <td th:text="${product.commentCount}"></td>
+        </tr>
+        <tr>
+            <td><b>So don hang:</b></td>
+            <td th:text="${product.orderLineCount}"></td>
+        </tr>
+    </table>
+
+    <div style="margin: 20px 0;">
+        <a th:href="@{/products/edit/{id}(id=${product.id})}">Sua</a>
+        <form th:action="@{/products/delete}" method="post" style="display:inline">
+            <input type="hidden" name="id" th:value="${product.id}">
+            <button onclick="return confirm('Xoa?')">Xoa</button>
+        </form>
+        <a th:href="@{/products}">Quay lai</a>
+    </div>
+
+    <div th:if="${product.comments != null && !#lists.isEmpty(product.comments)}">
+        <h3>Comments</h3>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Noi dung</th>
+            </tr>
+            <tr th:each="c : ${product.comments}">
+                <td th:text="${c.commentId}"></td>
+                <td th:text="${c.text}"></td>
+            </tr>
+        </table>
+    </div>
+
+    <div th:if="${product.orderLines != null && !#lists.isEmpty(product.orderLines)}">
+        <h3>Lich su Don hang</h3>
+        <table>
+            <tr>
+                <th>Ma don</th>
+                <th>So luong</th>
+                <th>Gia</th>
+                <th>Ngay</th>
+            </tr>
+            <tr th:each="line : ${product.orderLines}">
+                <td th:text="${line.orderId}"></td>
+                <td th:text="${line.amount}"></td>
+                <td th:text="${line.purchasePrice}"></td>
+                <td th:text="${#calendars.format(line.orderDate, 'dd/MM/yyyy')}"></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div th:if="${product == null}">
+    <p>Khong tim thay san pham.</p>
+    <a th:href="@{/products}">Quay lai</a>
+</div>
+
+</body>
+</html>

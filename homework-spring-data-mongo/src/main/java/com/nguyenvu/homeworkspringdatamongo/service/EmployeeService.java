@@ -69,6 +69,12 @@ public class EmployeeService {
                 .map(this::convertToDTO)
                 .collect(Collectors.toList());
     }
+
+    public List<EmployeeDTO> searchEmployeesByAgeGreaterThanEqual(Integer age) {
+        return employeeRepository.findByAgeGreaterThanEqual(age).stream()
+                .map(this::convertToDTO)
+                .toList();
+    }
     
     public List<EmployeeDTO> searchEmployeesBySalaryGreaterThan(Integer salary) {
         return employeeRepository.findBySalaryGreaterThanEqual(salary).stream()

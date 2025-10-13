@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Chi tiet Department</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .detail-container { max-width: 800px; margin: 20px auto; padding: 20px; border: 1px solid #ddd; border-radius: 5px; }
+        .info-section { margin-bottom: 20px; }
+        .info-label { font-weight: bold; display: inline-block; width: 150px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background-color: #4CAF50; color: white; }
+        .btn { padding: 10px 20px; margin: 5px; text-decoration: none; color: white; border-radius: 3px; display: inline-block; }
+        .btn-primary { background-color: #4CAF50; }
+    </style>
+</head>
+<body>
+    <div class="detail-container">
+        <h2>Chi tiet Department</h2>
+        
+        <div class="info-section">
+            <div><span class="info-label">ID:</span> <span th:text="${department.deptId}"></span></div>
+            <div><span class="info-label">Ten Department:</span> <span th:text="${department.deptName}"></span></div>
+            <div><span class="info-label">So luong Nhan vien:</span> <span th:text="${department.empCount}"></span></div>
+        </div>
+        
+        <h3>Danh sach Nhan vien</h3>
+        <table th:if="${department.employees != null and !department.employees.isEmpty()}">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Ten</th>
+                    <th>Luong</th>
+                    <th>Tuoi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="emp : ${department.employees}">
+                    <td th:text="${emp.empId}"></td>
+                    <td th:text="${emp.empName}"></td>
+                    <td th:text="${#numbers.formatDecimal(emp.salary, 0, 'COMMA', 0, 'POINT')}"></td>
+                    <td th:text="${emp.age}"></td>
+                </tr>
+            </tbody>
+        </table>
+        <p th:if="${department.employees == null or department.employees.isEmpty()}">Khong co nhan vien nao.</p>
+        
+        <div style="margin-top: 20px;">
+            <a th:href="@{/departments}" class="btn btn-primary">Quay lai</a>
+        </div>
+    </div>
+</body>
+</html>

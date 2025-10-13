@@ -58,6 +58,11 @@ public class EmployeeController {
             @RequestParam Integer age) {
         return ResponseEntity.ok(employeeService.searchEmployeesByAge(age));
     }
+
+    @GetMapping("/search/age/greater")
+    public ResponseEntity<List<EmployeeDTO>> searchEmployeesByAgeGreaterThan(@RequestParam Integer age) {
+        return ResponseEntity.ok(employeeService.searchEmployeesByAge(age));
+    }
     
     @GetMapping("/search/salary/greater")
     public ResponseEntity<List<EmployeeDTO>> searchEmployeesBySalaryGreaterThan(

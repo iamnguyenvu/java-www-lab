@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>He thong Quan ly</title>
+    <style>
+        body { 
+            font-family: Arial; 
+            margin: 20px; 
+            text-align: center; 
+        }
+    </style>
+</head>
+<body>
+
+<h1>He thong Quan ly Ban hang</h1>
+<p>Quan ly san pham va don hang</p>
+
+<div style="margin-top: 30px;">
+    <p><a th:href="@{/products}">Quan ly San pham</a></p>
+    <p><a th:href="@{/orders}">Quan ly Don hang</a></p>
+</div>
+
+</body>
+</html>

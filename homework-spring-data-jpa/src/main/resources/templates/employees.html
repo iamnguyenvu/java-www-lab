@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Quan ly Nhan vien</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        nav { background: #333; padding: 10px; margin-bottom: 20px; }
+        nav a { color: white; text-decoration: none; padding: 10px; }
+        nav a:hover { background: #555; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background-color: #2196F3; color: white; }
+        tr:hover { background-color: #f5f5f5; }
+        .btn { padding: 5px 15px; margin: 2px; text-decoration: none; color: white; border-radius: 3px; display: inline-block; }
+        .btn-primary { background-color: #4CAF50; }
+        .btn-warning { background-color: #ff9800; }
+        .btn-danger { background-color: #f44336; }
+        .btn-info { background-color: #2196F3; }
+        .search-box { margin: 20px 0; padding: 15px; background: #f5f5f5; border-radius: 5px; }
+        .search-box input, .search-box select { padding: 8px; margin-right: 10px; }
+        .search-section { display: inline-block; margin-right: 20px; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a th:href="@{/departments}">Departments</a>
+        <a th:href="@{/employees}">Employees</a>
+    </nav>
+
+    <h1>Danh sach Nhan vien</h1>
+
+    <div>
+        <a th:href="@{/employees/new}" class="btn btn-primary">Them Nhan vien Moi</a>
+    </div>
+
+    <div class="search-box">
+        <div class="search-section">
+            <strong>Tim theo ten:</strong>
+            <form th:action="@{/employees/search/name}" method="get" style="display:inline;">
+                <input type="text" name="name" placeholder="Nhap ten..." required>
+                <button type="submit" class="btn btn-info">Tim</button>
+            </form>
+        </div>
+
+        <div class="search-section">
+            <strong>Tim theo luong:</strong>
+            <form th:action="@{/employees/search/salary}" method="get" style="display:inline;">
+                <input type="number" name="min" placeholder="Tu" step="100000">
+                <input type="number" name="max" placeholder="Den" step="100000">
+                <button type="submit" class="btn btn-info">Tim</button>
+            </form>
+        </div>
+
+        <div class="search-section">
+            <strong>Tim theo tuoi:</strong>
+            <form th:action="@{/employees/search/age}" method="get" style="display:inline;">
+                <input type="number" name="minAge" placeholder="Tu tuoi" required>
+                <input type="number" name="maxAge" placeholder="Den tuoi" required>
+                <button type="submit" class="btn btn-info">Tim</button>
+            </form>
+        </div>
+
+        <div>
+            <a th:href="@{/employees}" class="btn btn-primary">Hien thi tat ca</a>
+        </div>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Ten</th>
+                <th>Ngay sinh</th>
+                <th>Tuoi</th>
+                <th>Luong</th>
+                <th>Department</th>
+                <th>Hanh dong</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="emp : ${employees}">
+                <td th:text="${emp.empId}"></td>
+                <td th:text="${emp.empName}"></td>
+                <td th:text="${#dates.format(emp.dob, 'dd/MM/yyyy')}"></td>
+                <td th:text="${emp.age}"></td>
+                <td th:text="${#numbers.formatDecimal(emp.salary, 0, 'COMMA', 0, 'POINT')}"></td>
+                <td th:text="${emp.deptName}"></td>
+                <td>
+                    <a th:href="@{/employees/{id}(id=${emp.empId})}" class="btn btn-info">Chi tiet</a>
+                    <a th:href="@{/employees/edit/{id}(id=${emp.empId})}" class="btn btn-warning">Sua</a>
+                    <a th:href="@{/employees/delete/{id}(id=${emp.empId})}" 
+                       class="btn btn-danger" 
+                       onclick="return confirm('Ban co chac muon xoa?')">Xoa</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

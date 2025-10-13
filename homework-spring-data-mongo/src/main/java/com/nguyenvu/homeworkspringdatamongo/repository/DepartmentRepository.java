@@ -11,5 +11,4 @@ import java.util.Optional;
 public interface DepartmentRepository extends MongoRepository<Department, String> {
     Optional<Department> findByDeptId(String deptId);
     List<Department> findByDeptNameContainingIgnoreCase(String deptName);
-    List<Department> findByNameContainingIgnoreCase(String name);
 }

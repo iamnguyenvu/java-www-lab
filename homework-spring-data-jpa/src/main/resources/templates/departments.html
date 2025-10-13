@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Quan ly Department</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        nav { background: #333; padding: 10px; margin-bottom: 20px; }
+        nav a { color: white; text-decoration: none; padding: 10px; }
+        nav a:hover { background: #555; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background-color: #4CAF50; color: white; }
+        tr:hover { background-color: #f5f5f5; }
+        .btn { padding: 5px 15px; margin: 2px; text-decoration: none; color: white; border-radius: 3px; display: inline-block; }
+        .btn-primary { background-color: #4CAF50; }
+        .btn-warning { background-color: #ff9800; }
+        .btn-danger { background-color: #f44336; }
+        .btn-info { background-color: #2196F3; }
+        .search-box { margin: 20px 0; padding: 15px; background: #f5f5f5; border-radius: 5px; }
+        .search-box input { padding: 8px; margin-right: 10px; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a th:href="@{/departments}">Departments</a>
+        <a th:href="@{/employees}">Employees</a>
+    </nav>
+
+    <h1>Danh sach Department</h1>
+
+    <div>
+        <a th:href="@{/departments/new}" class="btn btn-primary">Them Department Moi</a>
+    </div>
+
+    <div class="search-box">
+        <form th:action="@{/departments/search}" method="get">
+            <input type="text" name="name" placeholder="Tim theo ten..." required>
+            <button type="submit" class="btn btn-info">Tim kiem</button>
+            <a th:href="@{/departments}" class="btn btn-primary">Hien thi tat ca</a>
+        </form>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Ten Department</th>
+                <th>So luong Nhan vien</th>
+                <th>Hanh dong</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="dept : ${departments}">
+                <td th:text="${dept.deptId}"></td>
+                <td th:text="${dept.deptName}"></td>
+                <td th:text="${dept.empCount}"></td>
+                <td>
+                    <a th:href="@{/departments/{id}(id=${dept.deptId})}" class="btn btn-info">Chi tiet</a>
+                    <a th:href="@{/departments/edit/{id}(id=${dept.deptId})}" class="btn btn-warning">Sua</a>
+                    <a th:href="@{/departments/delete/{id}(id=${dept.deptId})}" 
+                       class="btn btn-danger" 
+                       onclick="return confirm('Ban co chac muon xoa?')">Xoa</a>
+                    <a th:href="@{/employees/department/{id}(id=${dept.deptId})}" class="btn btn-info">Xem NV</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Form</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .form-container { max-width: 500px; margin: 20px auto; padding: 20px; border: 1px solid #ddd; border-radius: 5px; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input, select { width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 3px; }
+        .btn { padding: 10px 20px; margin: 5px; text-decoration: none; color: white; border: none; border-radius: 3px; cursor: pointer; }
+        .btn-primary { background-color: #4CAF50; }
+        .btn-secondary { background-color: #666; }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2 th:text="${employee.empId != null ? 'Sua Nhan vien' : 'Them Nhan vien Moi'}"></h2>
+        
+        <form th:action="${employee.empId != null ? '/employees/update/' + employee.empId : '/employees'}" 
+              th:object="${employee}" method="post">
+            
+            <div class="form-group">
+                <label for="empName">Ten Nhan vien:</label>
+                <input type="text" id="empName" th:field="*{empName}" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="dob">Ngay sinh:</label>
+                <input type="date" id="dob" th:field="*{dob}" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="salary">Luong:</label>
+                <input type="number" id="salary" th:field="*{salary}" step="100000" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="deptId">Department:</label>
+                <select id="deptId" th:field="*{deptId}" required>
+                    <option value="">-- Chon Department --</option>
+                    <option th:each="dept : ${departments}" 
+                            th:value="${dept.deptId}" 
+                            th:text="${dept.deptName}"></option>
+                </select>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Luu</button>
+            <a th:href="@{/employees}" class="btn btn-secondary">Huy</a>
+        </form>
+    </div>
+</body>
+</html>

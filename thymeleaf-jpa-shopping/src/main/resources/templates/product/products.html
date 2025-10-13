@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sach San pham</title>
+    <style>
+        body { 
+            font-family: Arial; 
+            margin: 20px; 
+        }
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+        }
+        th, td { 
+            border: 1px solid #ccc; 
+            padding: 8px; 
+            text-align: left; 
+        }
+        th { 
+            background: #f0f0f0; 
+        }
+        nav { 
+            margin-bottom: 20px; 
+        }
+        nav a { 
+            margin-right: 15px; 
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a th:href="@{/}">Home</a> | 
+    <a th:href="@{/products}">Products</a> | 
+    <a th:href="@{/orders}">Orders</a>
+</nav>
+
+<h2>Danh sach San pham</h2>
+
+<div>
+    <a th:href="@{/products/new}">Them moi</a>
+</div>
+
+<form th:action="@{/products/search}" method="get" style="margin: 15px 0;">
+    <input name="name" type="text" placeholder="Tim kiem...">
+    <button type="submit">Tim</button>
+    <a th:href="@{/products}">Hien thi tat ca</a>
+</form>
+
+<div th:if="${#lists.isEmpty(products)}">
+    <p>Khong co san pham.</p>
+</div>
+
+<table th:if="${!#lists.isEmpty(products)}">
+    <tr>
+        <th>ID</th>
+        <th>Ten</th>
+        <th>Gia</th>
+        <th>Trang thai</th>
+        <th>Hanh dong</th>
+    </tr>
+    <tr th:each="p : ${products}">
+        <td th:text="${p.id}"></td>
+        <td th:text="${p.name}"></td>
+        <td th:text="${p.price}"></td>
+        <td th:text="${p.inStock ? 'Con hang' : 'Het hang'}"></td>
+        <td>
+            <a th:href="@{/products/{id}(id=${p.id})}">Xem</a>
+            <a th:href="@{/products/edit/{id}(id=${p.id})}">Sua</a>
+            <form th:action="@{/products/delete}" method="post" style="display:inline">
+                <input type="hidden" name="id" th:value="${p.id}">
+                <button onclick="return confirm('Xoa?')">Xoa</button>
+            </form>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>

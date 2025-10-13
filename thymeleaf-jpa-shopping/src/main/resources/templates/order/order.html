@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Chi tiet Don hang</title>
+    <style>
+        body { 
+            font-family: Arial; 
+            margin: 20px; 
+        }
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+        }
+        th, td { 
+            border: 1px solid #ccc; 
+            padding: 8px; 
+            text-align: left; 
+        }
+        th { 
+            background: #f0f0f0; 
+        }
+        nav { 
+            margin-bottom: 20px; 
+        }
+        nav a { 
+            margin-right: 15px; 
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a th:href="@{/}">Home</a> | 
+    <a th:href="@{/products}">Products</a> | 
+    <a th:href="@{/orders}">Orders</a>
+</nav>
+
+<div th:if="${order != null}">
+    <h2>Chi tiet Don hang</h2>
+    
+    <h3>Thong tin Don hang</h3>
+    <table>
+        <tr>
+            <td><b>Ma Don:</b></td>
+            <td th:text="${order.orderId}"></td>
+        </tr>
+        <tr>
+            <td><b>Ngay dat:</b></td>
+            <td th:text="${#calendars.format(order.orderDate, 'dd/MM/yyyy HH:mm')}"></td>
+        </tr>
+        <tr>
+            <td><b>Khach hang:</b></td>
+            <td th:text="${order.customerName}"></td>
+        </tr>
+        <tr>
+            <td><b>Khach tu:</b></td>
+            <td th:text="${#calendars.format(order.customerSince, 'dd/MM/yyyy')}"></td>
+        </tr>
+        <tr>
+            <td><b>So san pham:</b></td>
+            <td th:text="${order.orderLineCount}"></td>
+        </tr>
+        <tr>
+            <td><b>Tong tien:</b></td>
+            <td th:text="${order.totalAmount}"></td>
+        </tr>
+    </table>
+
+    <div style="margin: 20px 0;">
+        <a th:href="@{/orders}">Quay lai</a>
+    </div>
+
+    <div th:if="${order.orderLines != null && !#lists.isEmpty(order.orderLines)}">
+        <h3>Chi tiet San pham</h3>
+        <table>
+            <tr>
+                <th>STT</th>
+                <th>Ten san pham</th>
+                <th>Don gia</th>
+                <th>So luong</th>
+                <th>Thanh tien</th>
+            </tr>
+            <tr th:each="line, stat : ${order.orderLines}">
+                <td th:text="${stat.count}"></td>
+                <td>
+                    <a th:href="@{/products/{id}(id=${line.productId})}" th:text="${line.productName}"></a>
+                </td>
+                <td th:text="${line.purchasePrice}"></td>
+                <td th:text="${line.amount}"></td>
+                <td th:text="${line.purchasePrice * line.amount}"></td>
+            </tr>
+            <tr>
+                <td colspan="4" style="text-align: right;"><b>Tong:</b></td>
+                <td><b th:text="${order.totalAmount}"></b></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div th:if="${order == null}">
+    <p>Khong tim thay don hang.</p>
+    <a th:href="@{/orders}">Quay lai</a>
+</div>
+
+</body>
+</html>

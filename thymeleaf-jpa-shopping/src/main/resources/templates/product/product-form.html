@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Form San pham</title>
+    <style>
+        body { 
+            font-family: Arial; 
+            margin: 20px; 
+        }
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+        }
+        th, td { 
+            border: 1px solid #ccc; 
+            padding: 8px; 
+            text-align: left; 
+        }
+        th { 
+            background: #f0f0f0; 
+        }
+        nav { 
+            margin-bottom: 20px; 
+        }
+        nav a { 
+            margin-right: 15px; 
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a th:href="@{/}">Home</a> | 
+    <a th:href="@{/products}">Products</a> | 
+    <a th:href="@{/orders}">Orders</a>
+</nav>
+
+<h2 th:text="${product.id != null ? 'Sua San pham' : 'Them San pham'}">Form</h2>
+
+<form th:action="${product.id != null ? '/products/edit/' + product.id : '/products/new'}" 
+      th:object="${product}" 
+      method="post">
+    
+    <div>
+        <label>Ten:</label><br>
+        <input type="text" name="name" th:field="*{name}" required>
+    </div>
+
+    <div>
+        <label>Gia:</label><br>
+        <input type="number" name="price" th:field="*{price}" required>
+    </div>
+
+    <div>
+        <label>
+            <input type="checkbox" name="inStock" th:field="*{inStock}">
+            Con hang
+        </label>
+    </div>
+
+    <div>
+        <button type="submit" th:text="${product.id != null ? 'Cap nhat' : 'Them'}">Luu</button>
+        <a th:href="@{/products}">Huy</a>
+    </div>
+</form>
+
+</body>
+</html>
