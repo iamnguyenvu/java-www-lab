@@ -6,25 +6,138 @@
     <style>
         body { 
             font-family: Arial; 
-            margin: 20px; 
-        }
-        table { 
-            width: 100%; 
-            border-collapse: collapse; 
-        }
-        th, td { 
-            border: 1px solid #ccc; 
-            padding: 8px; 
-            text-align: left; 
-        }
-        th { 
-            background: #f0f0f0; 
+            margin: 20px;
+            background: #f5f5f5;
         }
         nav { 
-            margin-bottom: 20px; 
+            margin-bottom: 20px;
+            padding: 10px;
+            background: white;
+            border-bottom: 2px solid #ddd;
         }
         nav a { 
-            margin-right: 15px; 
+            margin-right: 15px;
+            text-decoration: none;
+            color: #333;
+        }
+        nav a:hover {
+            color: #666;
+        }
+        .header {
+            background: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        .search-bar {
+            margin: 15px 0;
+        }
+        .search-bar input {
+            padding: 8px;
+            width: 300px;
+            border: 1px solid #ddd;
+        }
+        .search-bar button {
+            padding: 8px 15px;
+            background: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .search-bar button:hover {
+            background: #555;
+        }
+        .search-bar a {
+            margin-left: 10px;
+        }
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 15px;
+        }
+        .card-header {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+        .card-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 0;
+            color: #333;
+        }
+        .card-price {
+            font-size: 16px;
+            color: #e74c3c;
+            margin: 5px 0;
+        }
+        .card-status {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+        .status-in-stock {
+            background: #d4edda;
+            color: #155724;
+        }
+        .status-out-stock {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        .card-comments {
+            margin: 10px 0;
+            min-height: 60px;
+        }
+        .comment-title {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 8px;
+        }
+        .comment-item {
+            background: #f9f9f9;
+            padding: 8px;
+            margin: 5px 0;
+            border-left: 3px solid #ddd;
+            font-size: 13px;
+            color: #555;
+        }
+        .no-comments {
+            color: #999;
+            font-size: 13px;
+            font-style: italic;
+        }
+        .card-actions {
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid #eee;
+        }
+        .card-actions a, .card-actions button {
+            padding: 6px 12px;
+            margin-right: 8px;
+            text-decoration: none;
+            border: 1px solid #ddd;
+            background: white;
+            color: #333;
+            font-size: 13px;
+            cursor: pointer;
+        }
+        .card-actions a:hover, .card-actions button:hover {
+            background: #f5f5f5;
+        }
+        .empty-message {
+            text-align: center;
+            padding: 40px;
+            background: white;
+            border-radius: 4px;
         }
     </style>
 </head>
@@ -33,48 +146,66 @@
 <nav>
     <a th:href="@{/}">Home</a> | 
     <a th:href="@{/products}">Products</a> | 
-    <a th:href="@{/orders}">Orders</a>
+    <a th:href="@{/orders}">Orders</a> | 
+    <a th:href="@{/customers}">Customers</a>
 </nav>
 
-<h2>Danh sach San pham</h2>
-
-<div>
-    <a th:href="@{/products/new}">Them moi</a>
+<div class="header">
+    <h2 style="margin: 0 0 10px 0;">Danh sach San pham</h2>
+    <div>
+        <a th:href="@{/products/new}" style="padding: 8px 15px; background: #333; color: white; text-decoration: none; border-radius: 3px;">+ Them moi</a>
+    </div>
+    
+    <form th:action="@{/products/search}" method="get" class="search-bar">
+        <input name="name" type="text" placeholder="Tim kiem san pham...">
+        <button type="submit">Tim kiem</button>
+        <a th:href="@{/products}">Hien thi tat ca</a>
+    </form>
 </div>
 
-<form th:action="@{/products/search}" method="get" style="margin: 15px 0;">
-    <input name="name" type="text" placeholder="Tim kiem...">
-    <button type="submit">Tim</button>
-    <a th:href="@{/products}">Hien thi tat ca</a>
-</form>
-
-<div th:if="${#lists.isEmpty(products)}">
-    <p>Khong co san pham.</p>
+<div th:if="${#lists.isEmpty(products)}" class="empty-message">
+    <p>Khong co san pham nao.</p>
 </div>
 
-<table th:if="${!#lists.isEmpty(products)}">
-    <tr>
-        <th>ID</th>
-        <th>Ten</th>
-        <th>Gia</th>
-        <th>Trang thai</th>
-        <th>Hanh dong</th>
-    </tr>
-    <tr th:each="p : ${products}">
-        <td th:text="${p.id}"></td>
-        <td th:text="${p.name}"></td>
-        <td th:text="${p.price}"></td>
-        <td th:text="${p.inStock ? 'Con hang' : 'Het hang'}"></td>
-        <td>
-            <a th:href="@{/products/{id}(id=${p.id})}">Xem</a>
+<div class="card-container" th:if="${!#lists.isEmpty(products)}">
+    <div class="card" th:each="p : ${products}">
+        <div class="card-header">
+            <h3 class="card-title" th:text="${p.name}">Product Name</h3>
+            <div class="card-price" th:text="${#numbers.formatDecimal(p.price, 0, 'COMMA', 0, 'POINT')} + ' VND'">Price</div>
+            <span class="card-status" 
+                  th:classappend="${p.inStock ? 'status-in-stock' : 'status-out-stock'}"
+                  th:text="${p.inStock ? 'Con hang' : 'Het hang'}">
+                Status
+            </span>
+        </div>
+        
+        <div class="card-comments">
+            <div class="comment-title">
+                <strong>Comments</strong> 
+                (<span th:text="${p.commentCount}">0</span>)
+            </div>
+            
+            <div th:if="${p.comments != null && !#lists.isEmpty(p.comments)}">
+                <div class="comment-item" th:each="c : ${p.comments}" th:text="${c.text}">
+                    Comment text
+                </div>
+            </div>
+            
+            <div th:if="${p.comments == null || #lists.isEmpty(p.comments)}" class="no-comments">
+                Chua co binh luan
+            </div>
+        </div>
+        
+        <div class="card-actions">
+            <a th:href="@{/products/{id}(id=${p.id})}">Xem chi tiet</a>
             <a th:href="@{/products/edit/{id}(id=${p.id})}">Sua</a>
             <form th:action="@{/products/delete}" method="post" style="display:inline">
                 <input type="hidden" name="id" th:value="${p.id}">
-                <button onclick="return confirm('Xoa?')">Xoa</button>
+                <button onclick="return confirm('Ban co chac muon xoa san pham nay?')">Xoa</button>
             </form>
-        </td>
-    </tr>
-</table>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>

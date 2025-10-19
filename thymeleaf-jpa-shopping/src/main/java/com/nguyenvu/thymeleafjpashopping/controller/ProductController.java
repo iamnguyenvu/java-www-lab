@@ -3,7 +3,6 @@ package com.nguyenvu.thymeleafjpashopping.controller;
 import com.nguyenvu.thymeleafjpashopping.dto.ProductDTO;
 import com.nguyenvu.thymeleafjpashopping.model.Product;
 import com.nguyenvu.thymeleafjpashopping.service.ProductService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -12,9 +11,12 @@ import java.math.BigDecimal;
 
 @Controller
 @RequestMapping({"/products"})
-@RequiredArgsConstructor
 public class ProductController {
     private final ProductService productService;
+
+    public ProductController(ProductService productService) {
+        this.productService = productService;
+    }
 
     @GetMapping
     public String listProducts(Model model) {

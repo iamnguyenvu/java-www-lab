@@ -1,69 +1,53 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Form San pham</title>
-    <style>
-        body { 
-            font-family: Arial; 
-            margin: 20px; 
-        }
-        table { 
-            width: 100%; 
-            border-collapse: collapse; 
-        }
-        th, td { 
-            border: 1px solid #ccc; 
-            padding: 8px; 
-            text-align: left; 
-        }
-        th { 
-            background: #f0f0f0; 
-        }
-        nav { 
-            margin-bottom: 20px; 
-        }
-        nav a { 
-            margin-right: 15px; 
-        }
-    </style>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
 
 <nav>
     <a th:href="@{/}">Home</a> | 
     <a th:href="@{/products}">Products</a> | 
-    <a th:href="@{/orders}">Orders</a>
+    <a th:href="@{/orders}">Orders</a> | 
+    <a th:href="@{/customers}">Customers</a>
 </nav>
 
-<h2 th:text="${product.id != null ? 'Sua San pham' : 'Them San pham'}">Form</h2>
+<div class="page-container">
+    <h2 class="page-header" th:text="${product.id != null ? 'Sua San pham' : 'Them San pham'}">Form</h2>
 
-<form th:action="${product.id != null ? '/products/edit/' + product.id : '/products/new'}" 
-      th:object="${product}" 
-      method="post">
-    
-    <div>
-        <label>Ten:</label><br>
-        <input type="text" name="name" th:field="*{name}" required>
-    </div>
+    <div class="card" style="max-width: 600px;">
+        <form th:action="${product.id != null ? '/products/edit/' + product.id : '/products/new'}" 
+              th:object="${product}" 
+              method="post">
+            
+            <div class="form-group">
+                <label>Ten:</label>
+                <input type="text" name="name" th:field="*{name}" required class="form-control">
+            </div>
 
-    <div>
-        <label>Gia:</label><br>
-        <input type="number" name="price" th:field="*{price}" required>
-    </div>
+            <div class="form-group">
+                <label>Gia:</label>
+                <input type="number" name="price" th:field="*{price}" required class="form-control">
+            </div>
 
-    <div>
-        <label>
-            <input type="checkbox" name="inStock" th:field="*{inStock}">
-            Con hang
-        </label>
-    </div>
+            <div class="form-group">
+                <label style="display: flex; align-items: center; cursor: pointer;">
+                    <input type="checkbox" name="inStock" th:field="*{inStock}" style="margin-right: 8px; width: auto;">
+                    Con hang
+                </label>
+            </div>
 
-    <div>
-        <button type="submit" th:text="${product.id != null ? 'Cap nhat' : 'Them'}">Luu</button>
-        <a th:href="@{/products}">Huy</a>
+            <div class="form-group" style="margin-top: 20px;">
+                <button type="submit" class="btn btn-primary" th:text="${product.id != null ? 'Cap nhat' : 'Them'}">Luu</button>
+                <a th:href="@{/products}" class="btn btn-secondary">Huy</a>
+            </div>
+        </form>
     </div>
-</form>
+</div>
 
 </body>
 </html>

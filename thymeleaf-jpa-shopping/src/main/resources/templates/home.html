@@ -2,23 +2,57 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>He thong Quan ly</title>
+    <title>He thong Quan ly Ban hang</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
     <style>
-        body { 
-            font-family: Arial; 
-            margin: 20px; 
-            text-align: center; 
+        .home-container {
+            max-width: 600px;
+            margin: 100px auto;
+            text-align: center;
+        }
+        .home-title {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .home-subtitle {
+            color: #666;
+            margin-bottom: 40px;
+        }
+        .menu-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .menu-item {
+            display: block;
+            padding: 15px 20px;
+            margin: 10px 0;
+            background: #f8f9fa;
+            border-radius: 4px;
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            transition: all 0.2s;
+        }
+        .menu-item:hover {
+            background: #333;
+            color: white;
         }
     </style>
 </head>
 <body>
 
-<h1>He thong Quan ly Ban hang</h1>
-<p>Quan ly san pham va don hang</p>
-
-<div style="margin-top: 30px;">
-    <p><a th:href="@{/products}">Quan ly San pham</a></p>
-    <p><a th:href="@{/orders}">Quan ly Don hang</a></p>
+<div class="home-container">
+    <h1 class="home-title">He thong Quan ly Ban hang</h1>
+    <p class="home-subtitle">Quan ly san pham, don hang va khach hang</p>
+    
+    <div class="menu-card">
+        <a th:href="@{/products}" class="menu-item">📦 Quan ly San pham</a>
+        <a th:href="@{/orders}" class="menu-item">🛒 Quan ly Don hang</a>
+        <a th:href="@{/customers}" class="menu-item">👥 Quan ly Khach hang</a>
+    </div>
 </div>
 
 </body>

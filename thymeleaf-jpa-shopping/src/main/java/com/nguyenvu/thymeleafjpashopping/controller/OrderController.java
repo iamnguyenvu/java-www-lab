@@ -4,7 +4,6 @@ import com.nguyenvu.thymeleafjpashopping.dto.OrderDTO;
 import com.nguyenvu.thymeleafjpashopping.service.CustomerService;
 import com.nguyenvu.thymeleafjpashopping.service.OrderService;
 import com.nguyenvu.thymeleafjpashopping.service.ProductService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,11 +13,14 @@ import java.util.Calendar;
 
 @Controller
 @RequestMapping({"/orders"})
-@RequiredArgsConstructor
 public class OrderController {
     private final OrderService orderService;
     // private final CustomerService customerService;
     // private final ProductService productService;
+
+    public OrderController(OrderService orderService) {
+        this.orderService = orderService;
+    }
 
     @GetMapping
     public String listOrders(Model model) {

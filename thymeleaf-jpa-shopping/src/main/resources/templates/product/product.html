@@ -3,114 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <title>Chi tiet San pham</title>
-    <style>
-        body { 
-            font-family: Arial; 
-            margin: 20px; 
-        }
-        table { 
-            width: 100%; 
-            border-collapse: collapse; 
-        }
-        th, td { 
-            border: 1px solid #ccc; 
-            padding: 8px; 
-            text-align: left; 
-        }
-        th { 
-            background: #f0f0f0; 
-        }
-        nav { 
-            margin-bottom: 20px; 
-        }
-        nav a { 
-            margin-right: 15px; 
-        }
-    </style>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
 
 <nav>
     <a th:href="@{/}">Home</a> | 
     <a th:href="@{/products}">Products</a> | 
-    <a th:href="@{/orders}">Orders</a>
+    <a th:href="@{/orders}">Orders</a> | 
+    <a th:href="@{/customers}">Customers</a>
 </nav>
 
+<div class="page-container">
+
 <div th:if="${product != null}">
-    <h2>Chi tiet San pham</h2>
+    <h2 class="page-header">Chi tiet San pham</h2>
     
-    <table>
-        <tr>
-            <td><b>ID:</b></td>
-            <td th:text="${product.id}"></td>
-        </tr>
-        <tr>
-            <td><b>Ten:</b></td>
-            <td th:text="${product.name}"></td>
-        </tr>
-        <tr>
-            <td><b>Gia:</b></td>
-            <td th:text="${product.price}"></td>
-        </tr>
-        <tr>
-            <td><b>Trang thai:</b></td>
-            <td th:text="${product.inStock ? 'Con hang' : 'Het hang'}"></td>
-        </tr>
-        <tr>
-            <td><b>So comment:</b></td>
-            <td th:text="${product.commentCount}"></td>
-        </tr>
-        <tr>
-            <td><b>So don hang:</b></td>
-            <td th:text="${product.orderLineCount}"></td>
-        </tr>
-    </table>
-
-    <div style="margin: 20px 0;">
-        <a th:href="@{/products/edit/{id}(id=${product.id})}">Sua</a>
-        <form th:action="@{/products/delete}" method="post" style="display:inline">
-            <input type="hidden" name="id" th:value="${product.id}">
-            <button onclick="return confirm('Xoa?')">Xoa</button>
-        </form>
-        <a th:href="@{/products}">Quay lai</a>
-    </div>
-
-    <div th:if="${product.comments != null && !#lists.isEmpty(product.comments)}">
-        <h3>Comments</h3>
+    <div class="card" style="margin-bottom: 20px;">
         <table>
             <tr>
-                <th>ID</th>
-                <th>Noi dung</th>
+                <td style="width: 200px;"><b>ID:</b></td>
+                <td th:text="${product.id}"></td>
             </tr>
-            <tr th:each="c : ${product.comments}">
-                <td th:text="${c.commentId}"></td>
-                <td th:text="${c.text}"></td>
+            <tr>
+                <td><b>Ten:</b></td>
+                <td th:text="${product.name}"></td>
+            </tr>
+            <tr>
+                <td><b>Gia:</b></td>
+                <td style="color: #e74c3c; font-weight: bold; font-size: 18px;" th:text="${#numbers.formatDecimal(product.price, 0, 'COMMA', 0, 'POINT')} + ' VND'"></td>
+            </tr>
+            <tr>
+                <td><b>Trang thai:</b></td>
+                <td>
+                    <span th:class="${product.inStock ? 'badge badge-success' : 'badge badge-danger'}" 
+                          th:text="${product.inStock ? 'Con hang' : 'Het hang'}"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><b>So comment:</b></td>
+                <td><span class="badge badge-info" th:text="${product.commentCount} + ' comments'"></span></td>
+            </tr>
+            <tr>
+                <td><b>So don hang:</b></td>
+                <td><span class="badge badge-info" th:text="${product.orderLineCount} + ' orders'"></span></td>
             </tr>
         </table>
     </div>
 
-    <div th:if="${product.orderLines != null && !#lists.isEmpty(product.orderLines)}">
+    <div style="margin: 20px 0;">
+        <a th:href="@{/products/edit/{id}(id=${product.id})}" class="btn btn-primary">Sua</a>
+        <form th:action="@{/products/delete}" method="post" style="display:inline">
+            <input type="hidden" name="id" th:value="${product.id}">
+            <button class="btn btn-danger" onclick="return confirm('Xoa?')">Xoa</button>
+        </form>
+        <a th:href="@{/products}" class="btn btn-secondary">← Quay lai</a>
+    </div>
+
+    <div th:if="${product.comments != null && !#lists.isEmpty(product.comments)}" class="card" style="margin-bottom: 20px;">
+        <h3>Comments</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 80px;">ID</th>
+                    <th>Noi dung</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="c : ${product.comments}">
+                    <td th:text="${c.commentId}"></td>
+                    <td th:text="${c.text}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div th:if="${product.orderLines != null && !#lists.isEmpty(product.orderLines)}" class="card">
         <h3>Lich su Don hang</h3>
         <table>
-            <tr>
-                <th>Ma don</th>
-                <th>So luong</th>
-                <th>Gia</th>
-                <th>Ngay</th>
-            </tr>
-            <tr th:each="line : ${product.orderLines}">
-                <td th:text="${line.orderId}"></td>
-                <td th:text="${line.amount}"></td>
-                <td th:text="${line.purchasePrice}"></td>
-                <td th:text="${#calendars.format(line.orderDate, 'dd/MM/yyyy')}"></td>
-            </tr>
+            <thead>
+                <tr>
+                    <th>Ma don</th>
+                    <th>So luong</th>
+                    <th>Gia</th>
+                    <th>Ngay</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="line : ${product.orderLines}">
+                    <td>
+                        <a th:href="@{/orders/{id}(id=${line.orderId})}" th:text="${line.orderId}"></a>
+                    </td>
+                    <td th:text="${line.amount}"></td>
+                    <td th:text="${#numbers.formatDecimal(line.purchasePrice, 0, 'COMMA', 0, 'POINT')} + ' VND'"></td>
+                    <td th:text="${#calendars.format(line.orderDate, 'dd/MM/yyyy')}"></td>
+                </tr>
+            </tbody>
         </table>
     </div>
 </div>
 
-<div th:if="${product == null}">
+<div th:if="${product == null}" class="empty-state">
     <p>Khong tim thay san pham.</p>
-    <a th:href="@{/products}">Quay lai</a>
+    <a th:href="@{/products}" class="btn btn-secondary">Quay lai</a>
+</div>
+
 </div>
 
 </body>

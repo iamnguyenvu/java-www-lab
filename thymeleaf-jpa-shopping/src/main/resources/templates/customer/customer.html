@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Chi tiet Khach hang</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<nav>
+    <a th:href="@{/}">Home</a> | 
+    <a th:href="@{/products}">Products</a> | 
+    <a th:href="@{/orders}">Orders</a> | 
+    <a th:href="@{/customers}">Customers</a>
+</nav>
+
+<div class="page-container">
+
+<div th:if="${customer != null}">
+    <h2 class="page-header">Chi tiet Khach hang</h2>
+    
+    <div class="card">
+        <table>
+            <tr>
+                <td style="width: 200px;"><b>ID:</b></td>
+                <td th:text="${customer.id}"></td>
+            </tr>
+            <tr>
+                <td><b>Ten:</b></td>
+                <td th:text="${customer.name}"></td>
+            </tr>
+            <tr>
+                <td><b>Ngay dang ky:</b></td>
+                <td th:text="${#calendars.format(customer.customerSince, 'dd/MM/yyyy HH:mm')}"></td>
+            </tr>
+            <tr>
+                <td><b>So don hang:</b></td>
+                <td><span class="badge badge-info" th:text="${customer.orderCount} + ' orders'"></span></td>
+            </tr>
+        </table>
+    </div>
+
+    <div style="margin: 20px 0;">
+        <a th:href="@{/customers/edit/{id}(id=${customer.id})}" class="btn btn-primary">Sua</a>
+        <form th:action="@{/customers/delete}" method="post" style="display:inline">
+            <input type="hidden" name="id" th:value="${customer.id}">
+            <button class="btn btn-danger" onclick="return confirm('Xoa?')">Xoa</button>
+        </form>
+        <a th:href="@{/customers}" class="btn btn-secondary">← Quay lai</a>
+    </div>
+</div>
+
+<div th:if="${customer == null}" class="empty-state">
+    <p>Khong tim thay khach hang.</p>
+    <a th:href="@{/customers}" class="btn btn-secondary">Quay lai</a>
+</div>
+
+</div>
+
+</body>
+</html>

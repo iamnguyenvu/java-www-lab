@@ -8,7 +8,6 @@ import com.nguyenvu.thymeleafjpashopping.model.OrderLine;
 import com.nguyenvu.thymeleafjpashopping.model.Product;
 import com.nguyenvu.thymeleafjpashopping.repository.OrderLineRepository;
 import com.nguyenvu.thymeleafjpashopping.repository.ProductRepository;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,11 +17,15 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 @Service
-@RequiredArgsConstructor
 @Transactional
 public class ProductService {
     private final ProductRepository productRepository;
     private final OrderLineRepository orderLineRepository;
+
+    public ProductService(ProductRepository productRepository, OrderLineRepository orderLineRepository) {
+        this.productRepository = productRepository;
+        this.orderLineRepository = orderLineRepository;
+    }
 
     @Transactional(readOnly = true)
     public List<ProductDTO> getAllProducts() {

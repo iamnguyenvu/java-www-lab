@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Khach hang</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<nav>
+    <a th:href="@{/}">Home</a> | 
+    <a th:href="@{/products}">Products</a> | 
+    <a th:href="@{/orders}">Orders</a> | 
+    <a th:href="@{/customers}">Customers</a>
+</nav>
+
+<div class="page-container">
+    <h2 class="page-header" th:text="${customer.id != null ? 'Sua Khach hang' : 'Them Khach hang'}">Form</h2>
+
+    <div class="card" style="max-width: 600px;">
+        <form th:action="${customer.id != null ? '/customers/edit/' + customer.id : '/customers/new'}" 
+              th:object="${customer}" 
+              method="post">
+            
+            <div class="form-group">
+                <label>Ten khach hang:</label>
+                <input type="text" name="name" th:field="*{name}" required class="form-control">
+            </div>
+
+            <div class="form-group" style="margin-top: 20px;">
+                <button type="submit" class="btn btn-primary" th:text="${customer.id != null ? 'Cap nhat' : 'Them'}">Luu</button>
+                <a th:href="@{/customers}" class="btn btn-secondary">Huy</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

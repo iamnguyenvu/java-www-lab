@@ -3,65 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <title>Danh sach Don hang</title>
-    <style>
-        body { 
-            font-family: Arial; 
-            margin: 20px; 
-        }
-        table { 
-            width: 100%; 
-            border-collapse: collapse; 
-        }
-        th, td { 
-            border: 1px solid #ccc; 
-            padding: 8px; 
-            text-align: left; 
-        }
-        th { 
-            background: #f0f0f0; 
-        }
-        nav { 
-            margin-bottom: 20px; 
-        }
-        nav a { 
-            margin-right: 15px; 
-        }
-    </style>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
 
 <nav>
     <a th:href="@{/}">Home</a> | 
     <a th:href="@{/products}">Products</a> | 
-    <a th:href="@{/orders}">Orders</a>
+    <a th:href="@{/orders}">Orders</a> | 
+    <a th:href="@{/customers}">Customers</a>
 </nav>
 
-<h2>Danh sach Don hang</h2>
+<div class="page-container">
+    <div class="page-header">
+        <h2>Danh sach Don hang</h2>
+    </div>
 
-<div th:if="${#lists.isEmpty(orders)}">
-    <p>Chua co don hang nao.</p>
+    <div th:if="${#lists.isEmpty(orders)}" class="empty-state">
+        <p>Chua co don hang nao.</p>
+    </div>
+
+    <table th:if="${!#lists.isEmpty(orders)}">
+        <thead>
+            <tr>
+                <th>Ma Don</th>
+                <th>Ngay dat</th>
+                <th>Khach hang</th>
+                <th>So san pham</th>
+                <th>Tong tien</th>
+                <th>Hanh dong</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="order : ${orders}">
+                <td><strong th:text="${order.orderId}"></strong></td>
+                <td th:text="${#calendars.format(order.orderDate, 'dd/MM/yyyy HH:mm')}"></td>
+                <td th:text="${order.customerName}"></td>
+                <td><span class="badge badge-info" th:text="${order.orderLineCount} + ' item'"></span></td>
+                <td><strong th:text="${#numbers.formatDecimal(order.totalAmount, 0, 'COMMA', 0, 'POINT')} + ' VND'" style="color: #e74c3c;"></strong></td>
+                <td>
+                    <a th:href="@{/orders/{id}(id=${order.orderId})}" class="btn btn-secondary btn-sm">Chi tiet</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>
-
-<table th:if="${!#lists.isEmpty(orders)}">
-    <tr>
-        <th>Ma Don</th>
-        <th>Ngay dat</th>
-        <th>Khach hang</th>
-        <th>So san pham</th>
-        <th>Tong tien</th>
-        <th>Hanh dong</th>
-    </tr>
-    <tr th:each="order : ${orders}">
-        <td th:text="${order.orderId}"></td>
-        <td th:text="${#calendars.format(order.orderDate, 'dd/MM/yyyy')}"></td>
-        <td th:text="${order.customerName}"></td>
-        <td th:text="${order.orderLineCount}"></td>
-        <td th:text="${order.totalAmount}"></td>
-        <td>
-            <a th:href="@{/orders/{id}(id=${order.orderId})}">Chi tiet</a>
-        </td>
-    </tr>
-</table>
 
 </body>
 </html>
