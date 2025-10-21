@@ -1,8 +1,9 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <title>Danh sach San pham</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
     <style>
         body { 
             font-family: Arial; 
@@ -143,16 +144,11 @@
 </head>
 <body>
 
-<nav>
-    <a th:href="@{/}">Home</a> | 
-    <a th:href="@{/products}">Products</a> | 
-    <a th:href="@{/orders}">Orders</a> | 
-    <a th:href="@{/customers}">Customers</a>
-</nav>
+<div th:replace="~{fragments/navbar :: navbar}"></div>
 
 <div class="header">
     <h2 style="margin: 0 0 10px 0;">Danh sach San pham</h2>
-    <div>
+    <div sec:authorize="hasRole('ADMIN')">
         <a th:href="@{/products/new}" style="padding: 8px 15px; background: #333; color: white; text-decoration: none; border-radius: 3px;">+ Them moi</a>
     </div>
     
@@ -198,11 +194,13 @@
         
         <div class="card-actions">
             <a th:href="@{/products/{id}(id=${p.id})}">Xem chi tiet</a>
-            <a th:href="@{/products/edit/{id}(id=${p.id})}">Sua</a>
-            <form th:action="@{/products/delete}" method="post" style="display:inline">
-                <input type="hidden" name="id" th:value="${p.id}">
-                <button onclick="return confirm('Ban co chac muon xoa san pham nay?')">Xoa</button>
-            </form>
+            <span sec:authorize="hasRole('ADMIN')">
+                <a th:href="@{/products/edit/{id}(id=${p.id})}">Sua</a>
+                <form th:action="@{/products/delete}" method="post" style="display:inline">
+                    <input type="hidden" name="id" th:value="${p.id}">
+                    <button onclick="return confirm('Ban co chac muon xoa san pham nay?')">Xoa</button>
+                </form>
+            </span>
         </div>
     </div>
 </div>

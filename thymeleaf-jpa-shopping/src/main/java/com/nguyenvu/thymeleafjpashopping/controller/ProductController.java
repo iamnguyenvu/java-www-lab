@@ -3,6 +3,7 @@ package com.nguyenvu.thymeleafjpashopping.controller;
 import com.nguyenvu.thymeleafjpashopping.dto.ProductDTO;
 import com.nguyenvu.thymeleafjpashopping.model.Product;
 import com.nguyenvu.thymeleafjpashopping.service.ProductService;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -30,6 +31,7 @@ public class ProductController {
         return "product/product";
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/new")
     public String showProductForm(Model model) {
         model.addAttribute("product", new Product());
@@ -42,6 +44,7 @@ public class ProductController {
         return "redirect:/products";
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/edit/{id}")
     public String showProductForm(@PathVariable Integer id, Model model) {
         model.addAttribute("product", productService.getProductById(id));
@@ -54,6 +57,7 @@ public class ProductController {
         return "redirect:/products";
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/delete")
     public String deleteProduct(@RequestParam Integer id) {
         productService.deleteProduct(id);

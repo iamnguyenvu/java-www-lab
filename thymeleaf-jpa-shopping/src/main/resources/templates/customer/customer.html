@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <title>Chi tiet Khach hang</title>
@@ -7,12 +7,7 @@
 </head>
 <body>
 
-<nav>
-    <a th:href="@{/}">Home</a> | 
-    <a th:href="@{/products}">Products</a> | 
-    <a th:href="@{/orders}">Orders</a> | 
-    <a th:href="@{/customers}">Customers</a>
-</nav>
+<div th:replace="~{fragments/navbar :: navbar}"></div>
 
 <div class="page-container">
 
@@ -41,11 +36,13 @@
     </div>
 
     <div style="margin: 20px 0;">
-        <a th:href="@{/customers/edit/{id}(id=${customer.id})}" class="btn btn-primary">Sua</a>
-        <form th:action="@{/customers/delete}" method="post" style="display:inline">
-            <input type="hidden" name="id" th:value="${customer.id}">
-            <button class="btn btn-danger" onclick="return confirm('Xoa?')">Xoa</button>
-        </form>
+        <span sec:authorize="hasRole('ADMIN')">
+            <a th:href="@{/customers/edit/{id}(id=${customer.id})}" class="btn btn-primary">Sua</a>
+            <form th:action="@{/customers/delete}" method="post" style="display:inline">
+                <input type="hidden" name="id" th:value="${customer.id}">
+                <button class="btn btn-danger" onclick="return confirm('Xoa?')">Xoa</button>
+            </form>
+        </span>
         <a th:href="@{/customers}" class="btn btn-secondary">← Quay lai</a>
     </div>
 </div>

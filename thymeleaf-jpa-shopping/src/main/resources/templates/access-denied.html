@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Access Denied</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <style>
+        .error-container {
+            max-width: 600px;
+            margin: 100px auto;
+            text-align: center;
+            padding: 40px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .error-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+        }
+        .error-title {
+            font-size: 28px;
+            color: #e74c3c;
+            margin-bottom: 10px;
+        }
+        .error-message {
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body style="background: #f5f5f5;">
+
+<div th:replace="~{fragments/navbar :: navbar}"></div>
+
+<div class="error-container">
+    <div class="error-icon">🚫</div>
+    <h1 class="error-title">Access Denied</h1>
+    <p class="error-message">
+        Xin lỗi, bạn không có quyền truy cập chức năng này.<br>
+        Tài khoản của bạn: <strong sec:authentication="name"></strong><br>
+        Quyền hiện tại: <span sec:authentication="principal.authorities"></span>
+    </p>
+    <div>
+        <a th:href="@{/}" class="btn btn-primary">← Về trang chủ</a>
+        <form th:action="@{/logout}" method="post" style="display: inline;">
+            <button type="submit" class="btn btn-secondary">Đăng xuất</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
