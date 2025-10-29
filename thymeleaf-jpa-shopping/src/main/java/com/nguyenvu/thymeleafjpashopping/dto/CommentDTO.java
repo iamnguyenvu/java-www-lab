@@ -5,13 +5,24 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 public class CommentDTO {
-    private Integer commentId;
+    private Long commentId;
     private String text;
-    private Integer productId;
+    private Date commentDate;
+    private Integer rating;
+    
+    // Product info
+    private Long productId;
     private String productName;
+    
+    // Customer info
+    private Long customerId;
+    private String customerName;
+    private String customerUsername;
 }

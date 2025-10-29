@@ -7,20 +7,30 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.util.List;
-import java.util.Set;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 public class ProductDTO {
-    private Integer id;
+    private Long productId;
     private String name;
+    private String description;
     private BigDecimal price;
-    private boolean inStock;
+    private Boolean inStock;
+    private Integer stock;
+    private String imageUrl;
+    
+    // Category info
+    private Long categoryId;
+    private String categoryName;
+    
+    // Comment info
     private Integer commentCount;
     private List<CommentDTO> comments;
+    private Double averageRating;
+    
+    // OrderLine info
     private Integer orderLineCount;
-    private Set<OrderLineDTO> orderLines;
-
+    private List<OrderLineDTO> orderLines;
 }

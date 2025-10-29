@@ -2,33 +2,33 @@ package com.nguyenvu.thymeleafjpashopping.service;
 
 import com.nguyenvu.thymeleafjpashopping.dto.OrderDTO;
 import com.nguyenvu.thymeleafjpashopping.dto.OrderLineDTO;
+import com.nguyenvu.thymeleafjpashopping.model.Customer;
 import com.nguyenvu.thymeleafjpashopping.model.Order;
 import com.nguyenvu.thymeleafjpashopping.model.OrderLine;
+import com.nguyenvu.thymeleafjpashopping.model.Product;
 import com.nguyenvu.thymeleafjpashopping.repository.CustomerRepository;
+import com.nguyenvu.thymeleafjpashopping.repository.OrderLineRepository;
 import com.nguyenvu.thymeleafjpashopping.repository.OrderRepository;
 import com.nguyenvu.thymeleafjpashopping.repository.ProductRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
-import java.util.Objects;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
+@RequiredArgsConstructor
 @Transactional
 public class OrderService {
+    
     private final OrderRepository orderRepository;
+    private final OrderLineRepository orderLineRepository;
     private final CustomerRepository customerRepository;
     private final ProductRepository productRepository;
-
-    public OrderService(OrderRepository orderRepository, CustomerRepository customerRepository, ProductRepository productRepository) {
-        this.orderRepository = orderRepository;
-        this.customerRepository = customerRepository;
-        this.productRepository = productRepository;
-    }
+    private final ProductService productService;
 
     @Transactional(readOnly = true)
     public List<OrderDTO> getAllOrders() {
@@ -38,106 +38,180 @@ public class OrderService {
     }
 
     @Transactional(readOnly = true)
-    public OrderDTO getOrderById(Integer id) {
-        return orderRepository.findById(id)
+    public OrderDTO getOrderById(Long orderId) {
+        Order order = orderRepository.findById(orderId)
+                .orElseThrow(() -> new RuntimeException("Order not found with id: " + orderId));
+        return convertToDTO(order);
+    }
+
+    @Transactional(readOnly = true)
+    public List<OrderDTO> getOrdersByCustomerId(Long customerId) {
+        return orderRepository.findByCustomerCustomerIdOrderByOrderDateDesc(customerId).stream()
                 .map(this::convertToDTO)
-                .orElse(null);
+                .collect(Collectors.toList());
+    }
+
+    @Transactional(readOnly = true)
+    public List<OrderDTO> getOrdersByStatus(String status) {
+        return orderRepository.findByStatus(status).stream()
+                .map(this::convertToDTO)
+                .collect(Collectors.toList());
+    }
+
+    @Transactional(readOnly = true)
+    public List<OrderDTO> getOrdersByCustomerIdAndStatus(Long customerId, String status) {
+        return orderRepository.findByCustomerCustomerIdAndStatus(customerId, status).stream()
+                .map(this::convertToDTO)
+                .collect(Collectors.toList());
+    }
+
+    @Transactional(readOnly = true)
+    public List<OrderDTO> getOrdersByDateRange(Date startDate, Date endDate) {
+        return orderRepository.findByOrderDateBetween(startDate, endDate).stream()
+                .map(this::convertToDTO)
+                .collect(Collectors.toList());
     }
 
     public OrderDTO createOrder(OrderDTO orderDTO) {
-        Order order = Order.builder()
-                .date(orderDTO.getOrderDate() != null ? orderDTO.getOrderDate() : Calendar.getInstance())
-                .customer(customerRepository.getReferenceById(orderDTO.getCustomerId()))
-                .build();
-
-        if(orderDTO.getOrderLines() != null) {
-            orderDTO.getOrderLines().stream()
-                    .filter(Objects::nonNull)
-                    .filter(ol -> ol.getProductId() != null && ol.getAmount() != null && ol.getPurchasePrice() != null)
-                    .map(olDto -> convertToEntity(olDto, order))
-                    .forEach(order::addOrderLine);
+        Customer customer = customerRepository.findById(orderDTO.getCustomerId())
+                .orElseThrow(() -> new RuntimeException("Customer not found with id: " + orderDTO.getCustomerId()));
+        
+        Order order = new Order();
+        order.setOrderDate(new Date());
+        order.setStatus("PENDING");
+        order.setShippingAddress(orderDTO.getShippingAddress());
+        order.setPhone(orderDTO.getPhone());
+        order.setCustomer(customer);
+        order.setTotalAmount(BigDecimal.ZERO);
+        
+        Order savedOrder = orderRepository.save(order);
+        
+        // Add order lines and calculate total
+        BigDecimal total = BigDecimal.ZERO;
+        if (orderDTO.getOrderLines() != null && !orderDTO.getOrderLines().isEmpty()) {
+            for (OrderLineDTO lineDTO : orderDTO.getOrderLines()) {
+                Product product = productRepository.findById(lineDTO.getProductId())
+                        .orElseThrow(() -> new RuntimeException("Product not found with id: " + lineDTO.getProductId()));
+                
+                // Check stock availability
+                if (product.getStock() < lineDTO.getQuantity()) {
+                    throw new RuntimeException("Insufficient stock for product: " + product.getName());
+                }
+                
+                OrderLine orderLine = new OrderLine();
+                orderLine.setQuantity(lineDTO.getQuantity());
+                orderLine.setUnitPrice(product.getPrice());
+                orderLine.setSubtotal(product.getPrice().multiply(BigDecimal.valueOf(lineDTO.getQuantity())));
+                orderLine.setProduct(product);
+                orderLine.setOrder(savedOrder);
+                
+                orderLineRepository.save(orderLine);
+                
+                // Update product stock
+                productService.updateStock(product.getProductId(), lineDTO.getQuantity());
+                
+                total = total.add(orderLine.getSubtotal());
+            }
         }
-
-        return convertToDTO(orderRepository.save(order));
+        
+        savedOrder.setTotalAmount(total);
+        Order updatedOrder = orderRepository.save(savedOrder);
+        
+        return convertToDTO(updatedOrder);
     }
 
-    public List<OrderDTO> getOrdersByCustomerId(Integer customerId) {
-        return orderRepository.findByCustomerId(customerId).stream()
-                .map(this::convertToDTO)
-                .toList();
+    public OrderDTO updateOrderStatus(Long orderId, String newStatus) {
+        Order order = orderRepository.findById(orderId)
+                .orElseThrow(() -> new RuntimeException("Order not found with id: " + orderId));
+        
+        // Validate status transition
+        validateStatusTransition(order.getStatus(), newStatus);
+        
+        order.setStatus(newStatus);
+        Order updatedOrder = orderRepository.save(order);
+        
+        return convertToDTO(updatedOrder);
     }
 
-    public List<OrderDTO> getOrdersByDateRange(Calendar start, Calendar end) {
-        return orderRepository.findByDateBetween(start, end).stream()
-                .map(this::convertToDTO)
-                .toList();
+    public void cancelOrder(Long orderId) {
+        Order order = orderRepository.findById(orderId)
+                .orElseThrow(() -> new RuntimeException("Order not found with id: " + orderId));
+        
+        if (!order.getStatus().equals("PENDING") && !order.getStatus().equals("CONFIRMED")) {
+            throw new RuntimeException("Cannot cancel order in status: " + order.getStatus());
+        }
+        
+        // Restore product stock
+        for (OrderLine orderLine : order.getOrderLines()) {
+            Product product = orderLine.getProduct();
+            product.setStock(product.getStock() + orderLine.getQuantity());
+            product.setInStock(true);
+            productRepository.save(product);
+        }
+        
+        order.setStatus("CANCELLED");
+        orderRepository.save(order);
     }
 
-    public List<OrderDTO> getOrdersByDateGreaterThan(Calendar date) {
-        return orderRepository.findByDateGreaterThan(date).stream()
-                .map(this::convertToDTO)
-                .toList();
+    public void deleteOrder(Long orderId) {
+        Order order = orderRepository.findById(orderId)
+                .orElseThrow(() -> new RuntimeException("Order not found with id: " + orderId));
+        orderRepository.delete(order);
     }
 
-    public List<OrderDTO> getOrdersByDateLessThan(Calendar date) {
-        return orderRepository.findByDateLessThan(date).stream()
-                .map(this::convertToDTO)
-                .toList();
+    private void validateStatusTransition(String currentStatus, String newStatus) {
+        // Define valid transitions
+        if (currentStatus.equals("PENDING") && !List.of("CONFIRMED", "CANCELLED").contains(newStatus)) {
+            throw new RuntimeException("Invalid status transition from PENDING to " + newStatus);
+        }
+        if (currentStatus.equals("CONFIRMED") && !List.of("SHIPPING", "CANCELLED").contains(newStatus)) {
+            throw new RuntimeException("Invalid status transition from CONFIRMED to " + newStatus);
+        }
+        if (currentStatus.equals("SHIPPING") && !newStatus.equals("DELIVERED")) {
+            throw new RuntimeException("Invalid status transition from SHIPPING to " + newStatus);
+        }
+        if (currentStatus.equals("DELIVERED") || currentStatus.equals("CANCELLED")) {
+            throw new RuntimeException("Cannot change status from " + currentStatus);
+        }
     }
 
-    public List<OrderDTO> getOrdersByCustomerIdAndDateBetween(Integer customerId, Calendar start, Calendar end) {
-        return orderRepository.findByCustomerIdAndDateBetween(customerId, start, end).stream()
-                .map(this::convertToDTO)
-                .toList();
-    }
-
-//    Convert DTO helper
     private OrderDTO convertToDTO(Order order) {
-        Set<OrderLineDTO> orderLineDTOs = order.getOrderLines() != null ? 
-                order.getOrderLines().stream()
-                        .map(this::convertToDTO).collect(Collectors.toSet()) : null;
-        
-        BigDecimal totalAmount = orderLineDTOs != null ? 
-                orderLineDTOs.stream()
-                        .map(ol -> ol.getPurchasePrice().multiply(BigDecimal.valueOf(ol.getAmount())))
-                        .reduce(BigDecimal.ZERO, BigDecimal::add) : BigDecimal.ZERO;
-        
-        return OrderDTO.builder()
-                .orderId(order.getId())
-                .orderDate(order.getDate())
-                .customerId(order.getCustomer().getId())
+        OrderDTO dto = OrderDTO.builder()
+                .orderId(order.getOrderId())
+                .orderDate(order.getOrderDate())
+                .totalAmount(order.getTotalAmount())
+                .status(order.getStatus())
+                .shippingAddress(order.getShippingAddress())
+                .phone(order.getPhone())
+                .customerId(order.getCustomer().getCustomerId())
                 .customerName(order.getCustomer().getName())
+                .customerUsername(order.getCustomer().getUsername())
                 .customerSince(order.getCustomer().getCustomerSince())
                 .orderLineCount(order.getOrderLines() != null ? order.getOrderLines().size() : 0)
-                .totalAmount(totalAmount)
-                .orderLines(orderLineDTOs)
                 .build();
-    }
-
-    private OrderLine convertToEntity(OrderLineDTO orderLineDTO, Order order) {
-        OrderLine orderLine = OrderLine.builder()
-                .amount(orderLineDTO.getAmount())
-                .purchasePrice(orderLineDTO.getPurchasePrice())
-                .build();
-
-        if(orderLineDTO.getProductId() != null) {
-            orderLine.setProduct(productRepository.getReferenceById(orderLineDTO.getProductId()));
-        } else orderLine.setProduct(null);
-
-        orderLine.setOrder(order);
-        return orderLine;
+        
+        if (order.getOrderLines() != null) {
+            List<OrderLineDTO> orderLineDTOs = order.getOrderLines().stream()
+                    .map(this::convertToDTO)
+                    .collect(Collectors.toList());
+            dto.setOrderLines(orderLineDTOs);
+        }
+        
+        return dto;
     }
 
     private OrderLineDTO convertToDTO(OrderLine orderLine) {
         return OrderLineDTO.builder()
-                .orderLineId(orderLine.getId())
-                .orderId(orderLine.getOrder().getId())
-                .orderDate(orderLine.getOrder().getDate())
-                .productId(orderLine.getProduct().getId())
+                .orderLineId(orderLine.getOrderLineId())
+                .quantity(orderLine.getQuantity())
+                .unitPrice(orderLine.getUnitPrice())
+                .subtotal(orderLine.getSubtotal())
+                .orderId(orderLine.getOrder().getOrderId())
+                .orderDate(orderLine.getOrder().getOrderDate())
+                .orderStatus(orderLine.getOrder().getStatus())
+                .productId(orderLine.getProduct().getProductId())
                 .productName(orderLine.getProduct().getName())
-                .amount(orderLine.getAmount())
-                .purchasePrice(orderLine.getPurchasePrice())
+                .productImageUrl(orderLine.getProduct().getImageUrl())
                 .build();
     }
-
 }

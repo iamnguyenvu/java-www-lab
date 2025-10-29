@@ -6,17 +6,33 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
-import java.util.Set;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 public class CustomerDTO {
-    private Integer id;
+    private Long customerId;
     private String name;
+    private String username;
+    private String email;
+    private String phone;
+    private String address;
     private Calendar customerSince;
+    private String role;
+    private Boolean enabled;
+    
+    // Order info
     private Integer orderCount;
-    private Set<OrderDTO> orders;
+    private List<OrderDTO> orders;
+    
+    // Comment info
+    private Integer commentCount;
+    private List<CommentDTO> comments;
+    
+    // For registration form (password not included in DTO for security)
+    private String newPassword;
+    private String confirmPassword;
 }

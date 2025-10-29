@@ -44,11 +44,6 @@ public class Product {
     @Column(length = 500)
     private String imageUrl;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "category_id", nullable = false)
-    @ToString.Exclude
-    private Category category;
-
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL,
             fetch = FetchType.LAZY, orphanRemoval = true)
     @Builder.Default

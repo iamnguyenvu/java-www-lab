@@ -6,20 +6,28 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
-import java.util.Set;
+import java.util.Date;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 public class OrderDTO {
-    private Integer orderId;
-    private Calendar orderDate;
-    private Integer customerId;
-    private String customerName;
-    private Calendar customerSince;
-    private Integer orderLineCount;
+    private Long orderId;
+    private Date orderDate;
     private BigDecimal totalAmount;
-    private Set<OrderLineDTO> orderLines;
+    private String status;
+    private String shippingAddress;
+    private String phone;
+    
+    // Customer info
+    private Long customerId;
+    private String customerName;
+    private String customerUsername;
+    private Date customerSince;
+    
+    // OrderLine info
+    private Integer orderLineCount;
+    private List<OrderLineDTO> orderLines;
 }

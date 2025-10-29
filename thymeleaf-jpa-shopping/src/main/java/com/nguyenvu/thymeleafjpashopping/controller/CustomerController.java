@@ -23,7 +23,7 @@ public class CustomerController {
     }
 
     @GetMapping("/{id}")
-    public String viewCustomer(@PathVariable Integer id, Model model) {
+    public String viewCustomer(@PathVariable Long id, Model model) {
         model.addAttribute("customer", customerService.getCustomerById(id));
         return "customer/customer";
     }
@@ -41,20 +41,20 @@ public class CustomerController {
     }
 
     @GetMapping("/edit/{id}")
-    public String showEditForm(@PathVariable Integer id, Model model) {
+    public String showEditForm(@PathVariable Long id, Model model) {
         model.addAttribute("customer", customerService.getCustomerById(id));
         return "customer/customer-form";
     }
 
     @PostMapping("/edit/{id}")
-    public String updateCustomer(@PathVariable Integer id, @ModelAttribute CustomerDTO customerDTO) {
-        customerDTO.setId(id);
-        customerService.updateCustomer(customerDTO);
+    public String updateCustomer(@PathVariable Long id, @ModelAttribute CustomerDTO customerDTO) {
+        customerDTO.setCustomerId(id);
+        customerService.updateCustomer(id);
         return "redirect:/customers";
     }
 
     @PostMapping("/delete")
-    public String deleteCustomer(@RequestParam Integer id) {
+    public String deleteCustomer(@RequestParam Long id) {
         customerService.deleteCustomer(id);
         return "redirect:/customers";
     }
