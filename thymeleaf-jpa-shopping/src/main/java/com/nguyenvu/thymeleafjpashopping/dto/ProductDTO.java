@@ -33,4 +33,13 @@ public class ProductDTO {
     // OrderLine info
     private Integer orderLineCount;
     private List<OrderLineDTO> orderLines;
+    
+    // Alias for compatibility
+    public String getProductName() {
+        return name;
+    }
+    
+    public void setProductName(String productName) {
+        this.name = productName;
+    }
 }

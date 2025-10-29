@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thanh toán</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div th:replace="~{fragments/navbar::navbar(cartItemCount=${cartItems?.size() ?: 0})}"></div>
+    
+    <div class="container">
+        <h1>Thanh toán đơn hàng</h1>
+        
+        <div th:if="${error}" class="alert alert-error" th:text="${error}"></div>
+        
+        <div class="checkout-container">
+            <div class="order-summary">
+                <h2>Chi tiết đơn hàng</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Sản phẩm</th>
+                            <th>Số lượng</th>
+                            <th>Giá</th>
+                            <th>Tổng</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="item : ${cartItems}">
+                            <td th:text="${item.productName}"></td>
+                            <td th:text="${item.quantity}"></td>
+                            <td th:text="${#numbers.formatDecimal(item.price, 0, 'COMMA', 0, 'POINT')} + ' VNĐ'"></td>
+                            <td th:text="${#numbers.formatDecimal(item.subtotal, 0, 'COMMA', 0, 'POINT')} + ' VNĐ'"></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3" style="text-align: right;"><strong>Tổng cộng:</strong></td>
+                            <td><strong th:text="${#numbers.formatDecimal(total, 0, 'COMMA', 0, 'POINT')} + ' VNĐ'"></strong></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            
+            <div class="shipping-info">
+                <h2>Thông tin giao hàng</h2>
+                <form th:action="@{/cart/checkout}" method="post">
+                    <div class="form-group">
+                        <label for="shippingAddress">Địa chỉ giao hàng: *</label>
+                        <textarea id="shippingAddress" name="shippingAddress" 
+                                  rows="3" required 
+                                  placeholder="Nhập địa chỉ giao hàng đầy đủ"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Số điện thoại: *</label>
+                        <input type="tel" id="phone" name="phone" 
+                               required 
+                               pattern="[0-9]{10,11}"
+                               placeholder="Nhập số điện thoại (10-11 số)">
+                    </div>
+                    
+                    <div class="form-actions">
+                        <a th:href="@{/cart}" class="btn">Quay lại giỏ hàng</a>
+                        <button type="submit" class="btn btn-primary">Xác nhận đặt hàng</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
-    <title>Chi tiet San pham</title>
+    <title th:text="${product != null ? product.name : 'San pham'}"></title>
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
@@ -12,91 +12,101 @@
 <div class="page-container">
 
 <div th:if="${product != null}">
-    <h2 class="page-header">Chi tiet San pham</h2>
+    <div th:if="${success}" class="alert alert-success" th:text="${success}"></div>
+    <div th:if="${error}" class="alert alert-error" th:text="${error}"></div>
     
-    <div class="card" style="margin-bottom: 20px;">
-        <table>
-            <tr>
-                <td style="width: 200px;"><b>ID:</b></td>
-                <td th:text="${product.id}"></td>
-            </tr>
-            <tr>
-                <td><b>Ten:</b></td>
-                <td th:text="${product.name}"></td>
-            </tr>
-            <tr>
-                <td><b>Gia:</b></td>
-                <td style="color: #e74c3c; font-weight: bold; font-size: 18px;" th:text="${#numbers.formatDecimal(product.price, 0, 'COMMA', 0, 'POINT')} + ' VND'"></td>
-            </tr>
-            <tr>
-                <td><b>Trang thai:</b></td>
-                <td>
-                    <span th:class="${product.inStock ? 'badge badge-success' : 'badge badge-danger'}" 
-                          th:text="${product.inStock ? 'Con hang' : 'Het hang'}"></span>
-                </td>
-            </tr>
-            <tr>
-                <td><b>So comment:</b></td>
-                <td><span class="badge badge-info" th:text="${product.commentCount} + ' comments'"></span></td>
-            </tr>
-            <tr>
-                <td><b>So don hang:</b></td>
-                <td><span class="badge badge-info" th:text="${product.orderLineCount} + ' orders'"></span></td>
-            </tr>
-        </table>
+    <h2 class="page-header" th:text="${product.name}"></h2>
+    
+    <div class="product-detail-container">
+        <div class="product-image">
+            <img th:if="${product.imageUrl}" th:src="@{${product.imageUrl}}" 
+                 th:alt="${product.name}" style="max-width: 400px; border-radius: 8px;">
+            <img th:unless="${product.imageUrl}" th:src="@{/images/no-image.png}" 
+                 alt="No image" style="max-width: 400px; border-radius: 8px;">
+        </div>
+        
+        <div class="product-info">
+            <div class="card" style="margin-bottom: 20px;">
+                <table>
+                    <tr>
+                        <td style="width: 150px;"><b>Mã sản phẩm:</b></td>
+                        <td th:text="${product.productId}"></td>
+                    </tr>
+                    <tr th:if="${product.categoryName}">
+                        <td><b>Danh mục:</b></td>
+                        <td th:text="${product.categoryName}"></td>
+                    </tr>
+                    <tr th:if="${product.description}">
+                        <td><b>Mô tả:</b></td>
+                        <td th:text="${product.description}"></td>
+                    </tr>
+                    <tr>
+                        <td><b>Giá:</b></td>
+                        <td style="color: #e74c3c; font-weight: bold; font-size: 24px;" 
+                            th:text="${#numbers.formatDecimal(product.price, 0, 'COMMA', 0, 'POINT')} + ' VNĐ'"></td>
+                    </tr>
+                    <tr>
+                        <td><b>Tồn kho:</b></td>
+                        <td th:text="${product.stock} + ' sản phẩm'"></td>
+                    </tr>
+                    <tr>
+                        <td><b>Trạng thái:</b></td>
+                        <td>
+                            <span th:class="${product.inStock ? 'badge badge-success' : 'badge badge-danger'}" 
+                                  th:text="${product.inStock ? 'Còn hàng' : 'Hết hàng'}"></span>
+                        </td>
+                    </tr>
+                    <tr th:if="${product.averageRating != null}">
+                        <td><b>Đánh giá:</b></td>
+                        <td>
+                            <span th:text="${#numbers.formatDecimal(product.averageRating, 1, 'POINT', 1, 'POINT')} + '/5'"></span>
+                            <span class="badge badge-info" th:text="'(' + ${product.commentCount} + ' đánh giá)'"></span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div style="margin: 20px 0;">
+                <!-- Customer: Thêm vào giỏ -->
+                <span sec:authorize="isAuthenticated()">
+                    <form th:if="${product.inStock}" th:action="@{/cart/add/{id}(id=${product.productId})}" method="post" style="display: inline;">
+                        <label for="quantity">Số lượng:</label>
+                        <input type="number" id="quantity" name="quantity" value="1" min="1" 
+                               th:max="${product.stock}" style="width: 80px; margin: 0 10px;">
+                        <button type="submit" class="btn btn-success">🛒 Thêm vào giỏ</button>
+                    </form>
+                </span>
+                
+                <!-- Guest: Yêu cầu đăng nhập -->
+                <span sec:authorize="!isAuthenticated()">
+                    <p style="color: #f39c12;">Vui lòng <a th:href="@{/login}">đăng nhập</a> để mua hàng</p>
+                </span>
+                
+                <!-- Admin: Sửa/Xóa -->
+                <span sec:authorize="hasRole('ADMIN')">
+                    <a th:href="@{/products/edit/{id}(id=${product.productId})}" class="btn btn-primary">Sửa</a>
+                    <form th:action="@{/products/delete}" method="post" style="display:inline">
+                        <input type="hidden" name="id" th:value="${product.productId}">
+                        <button class="btn btn-danger" onclick="return confirm('Xóa sản phẩm này?')">Xóa</button>
+                    </form>
+                </span>
+                
+                <a th:href="@{/products}" class="btn btn-secondary">← Quay lại</a>
+            </div>
+        </div>
     </div>
 
-    <div style="margin: 20px 0;">
-        <span sec:authorize="hasRole('ADMIN')">
-            <a th:href="@{/products/edit/{id}(id=${product.id})}" class="btn btn-primary">Sua</a>
-            <form th:action="@{/products/delete}" method="post" style="display:inline">
-                <input type="hidden" name="id" th:value="${product.id}">
-                <button class="btn btn-danger" onclick="return confirm('Xoa?')">Xoa</button>
-            </form>
-        </span>
-        <a th:href="@{/products}" class="btn btn-secondary">← Quay lai</a>
-    </div>
-
-    <div th:if="${product.comments != null && !#lists.isEmpty(product.comments)}" class="card" style="margin-bottom: 20px;">
-        <h3>Comments</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th style="width: 80px;">ID</th>
-                    <th>Noi dung</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr th:each="c : ${product.comments}">
-                    <td th:text="${c.commentId}"></td>
-                    <td th:text="${c.text}"></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div th:if="${product.orderLines != null && !#lists.isEmpty(product.orderLines)}" class="card">
-        <h3>Lich su Don hang</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>Ma don</th>
-                    <th>So luong</th>
-                    <th>Gia</th>
-                    <th>Ngay</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr th:each="line : ${product.orderLines}">
-                    <td>
-                        <a th:href="@{/orders/{id}(id=${line.orderId})}" th:text="${line.orderId}"></a>
-                    </td>
-                    <td th:text="${line.amount}"></td>
-                    <td th:text="${#numbers.formatDecimal(line.purchasePrice, 0, 'COMMA', 0, 'POINT')} + ' VND'"></td>
-                    <td th:text="${#calendars.format(line.orderDate, 'dd/MM/yyyy')}"></td>
-                </tr>
-            </tbody>
-        </table>
+    <!-- Comments section -->
+    <div th:if="${product.comments != null && !#lists.isEmpty(product.comments)}" class="card" style="margin: 20px 0;">
+        <h3>Đánh giá từ khách hàng</h3>
+        <div th:each="c : ${product.comments}" style="border-bottom: 1px solid #eee; padding: 15px 0;">
+            <div style="display: flex; justify-content: space-between;">
+                <strong th:text="${c.customerName ?: 'Khách hàng'}"></strong>
+                <span th:if="${c.rating}" th:text="${c.rating} + '/5⭐'"></span>
+            </div>
+            <p th:text="${c.text}" style="margin: 10px 0;"></p>
+            <small style="color: #7f8c8d;" th:text="${#dates.format(c.commentDate, 'dd/MM/yyyy HH:mm')}"></small>
+        </div>
     </div>
 </div>
 

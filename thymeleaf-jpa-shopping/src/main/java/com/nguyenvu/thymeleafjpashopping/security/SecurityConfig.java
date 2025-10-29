@@ -51,19 +51,18 @@ public class SecurityConfig {
                         .requestMatchers("/", "/login", "/register", "/access-denied").permitAll()
                         
                         // Guest: Xem danh sách và chi tiết sản phẩm, tìm kiếm
-                        .requestMatchers("/products", "/products/*/view", "/products/search/**").permitAll()
+                        .requestMatchers("/products", "/products/*", "/products/search/**").permitAll()
 
-                        // ADMIN: Toàn quyền CRUD products
-                        .requestMatchers("/products/new", "/products/*/edit", "/products/delete").hasRole("ADMIN")
+                        // ADMIN only: CRUD products
+                        .requestMatchers("/products/new", "/products/edit/**", "/products/delete/**").hasRole("ADMIN")
 
-                        // ADMIN: Toàn quyền quản lý customers
+                        // ADMIN only: Quản lý customers
                         .requestMatchers("/customers/**").hasRole("ADMIN")
 
-                        // ADMIN: Xem tất cả orders
-                        // CUSTOMER: Chỉ xem orders của chính mình (kiểm tra trong controller)
+                        // Orders: ADMIN xem tất cả, CUSTOMER xem của mình
                         .requestMatchers("/orders/**").hasAnyRole("ADMIN", "CUSTOMER")
                         
-                        // Cart: Chỉ authenticated users
+                        // Cart: Authenticated users only
                         .requestMatchers("/cart/**").authenticated()
 
                         // Mọi request khác cần authenticated
