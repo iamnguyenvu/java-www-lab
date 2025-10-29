@@ -11,7 +11,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -58,7 +57,7 @@ public class CommentService {
         
         Comment comment = new Comment();
         comment.setText(commentDTO.getText());
-        comment.setCommentDate(Calendar.getInstance());
+        comment.setCommentDate(new Date());
         comment.setRating(commentDTO.getRating() != null ? commentDTO.getRating() : 5);
         comment.setProduct(product);
         comment.setCustomer(customer);
@@ -103,7 +102,7 @@ public class CommentService {
         return CommentDTO.builder()
                 .commentId(comment.getCommentId())
                 .text(comment.getText())
-                .commentDate(comment.getCommentDate().getTime())
+                .commentDate(comment.getCommentDate())
                 .rating(comment.getRating())
                 .productId(comment.getProduct().getProductId())
                 .productName(comment.getProduct().getName())

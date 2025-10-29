@@ -48,8 +48,7 @@ public class CustomerController {
 
     @PostMapping("/edit/{id}")
     public String updateCustomer(@PathVariable Long id, @ModelAttribute CustomerDTO customerDTO) {
-        customerDTO.setCustomerId(id);
-        customerService.updateCustomer(id);
+        customerService.updateCustomer(id, customerDTO);
         return "redirect:/customers";
     }
 

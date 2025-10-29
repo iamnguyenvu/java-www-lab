@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.util.Date;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -24,7 +24,7 @@ public class Order {
 
     @Column(nullable = false, name = "order_date")
     @Temporal(TemporalType.TIMESTAMP)
-    private Calendar orderDate;
+    private Date orderDate;
     
     @Column(nullable = false, precision = 12, scale = 2)
     @Builder.Default

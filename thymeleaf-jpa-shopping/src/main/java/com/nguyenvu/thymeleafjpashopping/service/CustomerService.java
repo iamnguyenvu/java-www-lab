@@ -8,7 +8,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -58,7 +57,7 @@ public class CustomerService {
         customer.setEmail(customerDTO.getEmail());
         customer.setPhone(customerDTO.getPhone());
         customer.setAddress(customerDTO.getAddress());
-        customer.setCustomerSince(Calendar.getInstance()));
+        customer.setCustomerSince(new Date());
         customer.setRole("CUSTOMER");
         customer.setEnabled(true);
         
@@ -73,14 +72,14 @@ public class CustomerService {
         customer.setEmail(customerDTO.getEmail());
         customer.setPhone(customerDTO.getPhone());
         customer.setAddress(customerDTO.getAddress());
-        customer.setCustomerSince(customerDTO.getCustomerSince() != null ? customerDTO.getCustomerSince() : Calendar.getInstance());
+        customer.setCustomerSince(customerDTO.getCustomerSince() != null ? customerDTO.getCustomerSince() : new Date());
         customer.setRole(customerDTO.getRole() != null ? customerDTO.getRole() : "CUSTOMER");
         customer.setEnabled(customerDTO.getEnabled() != null ? customerDTO.getEnabled() : true);
         
         return convertToDTO(customerRepository.save(customer));
     }
 
-    public CustomerDTO updateCustomer(Long customerId) {
+    public CustomerDTO updateCustomer(Long customerId, CustomerDTO customerDTO) {
         Customer customer = customerRepository.findById(customerId)
                 .orElseThrow(() -> new RuntimeException("Customer not found with id: " + customerId));
         

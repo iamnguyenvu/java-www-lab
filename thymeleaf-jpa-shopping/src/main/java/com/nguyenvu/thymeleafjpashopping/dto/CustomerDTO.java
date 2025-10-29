@@ -5,7 +5,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -20,7 +19,7 @@ public class CustomerDTO {
     private String email;
     private String phone;
     private String address;
-    private Calendar customerSince;
+    private Date customerSince;
     private String role;
     private Boolean enabled;
     

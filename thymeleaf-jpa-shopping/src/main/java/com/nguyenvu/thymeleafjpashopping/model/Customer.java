@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.ArrayList;
-import java.util.Calendar;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -42,7 +42,7 @@ public class Customer {
 
     @Column(nullable = false, name = "customer_since")
     @Temporal(TemporalType.TIMESTAMP)
-    private Calendar customerSince;
+    private Date customerSince;
     
     @Column(nullable = false, length = 20)
     @Builder.Default

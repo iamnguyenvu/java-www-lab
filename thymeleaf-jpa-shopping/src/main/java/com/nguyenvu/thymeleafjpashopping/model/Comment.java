@@ -3,7 +3,7 @@ package com.nguyenvu.thymeleafjpashopping.model;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.Calendar;
+import java.util.Date;
 
 @Table(name = "comment")
 @Entity
@@ -23,8 +23,7 @@ public class Comment {
     
     @Column(nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
-    @Builder.Default
-    private Calendar commentDate = Calendar.getInstance();
+    private Date commentDate;
     
     @Column(nullable = false)
     @Builder.Default

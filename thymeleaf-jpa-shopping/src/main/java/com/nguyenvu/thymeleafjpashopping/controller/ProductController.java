@@ -25,7 +25,7 @@ public class ProductController {
     }
 
     @GetMapping("/{id}")
-    public String viewProduct(@PathVariable Integer id, Model model) {
+    public String viewProduct(@PathVariable Long id, Model model) {
         model.addAttribute("product", productService.getProductById(id));
         return "product/product";
     }
@@ -43,19 +43,19 @@ public class ProductController {
     }
 
     @GetMapping("/edit/{id}")
-    public String showProductForm(@PathVariable Integer id, Model model) {
+    public String showEditProductForm(@PathVariable Long id, Model model) {
         model.addAttribute("product", productService.getProductById(id));
         return "product/product-form";
     }
 
     @PostMapping("/edit/{id}")
-    public String updateProduct(@PathVariable Integer id, @ModelAttribute ProductDTO productDTO) {
-        productService.updateProduct(productDTO);
+    public String updateProduct(@PathVariable Long id, @ModelAttribute ProductDTO productDTO) {
+        productService.updateProduct(id, productDTO);
         return "redirect:/products";
     }
 
     @PostMapping("/delete")
-    public String deleteProduct(@RequestParam Integer id) {
+    public String deleteProduct(@RequestParam Long id) {
         productService.deleteProduct(id);
         return "redirect:/products";
     }
