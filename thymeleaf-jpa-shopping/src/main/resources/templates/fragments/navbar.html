@@ -11,8 +11,8 @@
             <span sec:authorize="hasRole('ADMIN')"> <a th:href="@{/customers}">Customers</a></span>
         </div>
         <div style="display: flex; align-items: center; gap: 15px;">
-            <a href="@{/cart}">
-                <img th:src="@{../../images/cart.png}" alt="Cart" style="width: 24px; height: 24px;">
+            <a th:href="@{/cart}">
+                <img th:src="@{/images/cart.png}" alt="Cart" style="width: 24px; height: 24px;">
                 <span th:text="${cartItemCount}"
                       th:if="${cartItemCount != null && cartItemCount > 0}"
                       style="min-width:18px; height:18px; padding:0 6px; line-height:18px; text-align:center;

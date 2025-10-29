@@ -125,15 +125,15 @@ INSERT INTO category (name, description) VALUES
 -- ========================================
 -- SAMPLE DATA: customer
 -- Note: Password is '123456' encoded with BCrypt
--- BCrypt hash: $2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy
+-- BCrypt hash: $2a$10$RGRfoRy8tQPDeurB6UB3IOC9RRX9TcbCpIcHcv.z9GYOVgZa9ZbDq
 -- ========================================
 INSERT INTO customer (name, username, password, email, phone, address, customer_since, role, enabled) VALUES
-('Administrator', 'admin', '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 'admin@shop.com', '0123456789', '123 Admin Street, City Center', NOW(), 'ADMIN', TRUE),
-('John Doe', 'john_doe', '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 'john.doe@email.com', '0987654321', '456 Customer Avenue, District 1', NOW() - INTERVAL 6 MONTH, 'CUSTOMER', TRUE),
-('Jane Smith', 'jane_smith', '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 'jane.smith@email.com', '0912345678', '789 Buyer Boulevard, District 2', NOW() - INTERVAL 4 MONTH, 'CUSTOMER', TRUE),
-('Bob Wilson', 'bob_wilson', '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 'bob.wilson@email.com', '0909123456', '321 Shop Lane, District 3', NOW() - INTERVAL 3 MONTH, 'CUSTOMER', TRUE),
-('Alice Brown', 'alice_brown', '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 'alice.brown@email.com', '0898765432', '654 Market Street, District 4', NOW() - INTERVAL 2 MONTH, 'CUSTOMER', TRUE),
-('Charlie Davis', 'charlie_davis', '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 'charlie.davis@email.com', '0876543210', '987 Commerce Road, District 5', NOW() - INTERVAL 1 MONTH, 'CUSTOMER', TRUE);
+('Administrator', 'admin', '$2a$10$RGRfoRy8tQPDeurB6UB3IOC9RRX9TcbCpIcHcv.z9GYOVgZa9ZbDq', 'admin@shop.com', '0123456789', '123 Admin Street, City Center', NOW(), 'ADMIN', TRUE),
+('John Doe', 'john_doe', '$2a$10$RGRfoRy8tQPDeurB6UB3IOC9RRX9TcbCpIcHcv.z9GYOVgZa9ZbDq', 'john.doe@email.com', '0987654321', '456 Customer Avenue, District 1', NOW() - INTERVAL 6 MONTH, 'CUSTOMER', TRUE),
+('Jane Smith', 'jane_smith', '$2a$10$RGRfoRy8tQPDeurB6UB3IOC9RRX9TcbCpIcHcv.z9GYOVgZa9ZbDq', 'jane.smith@email.com', '0912345678', '789 Buyer Boulevard, District 2', NOW() - INTERVAL 4 MONTH, 'CUSTOMER', TRUE),
+('Bob Wilson', 'bob_wilson', '$2a$10$RGRfoRy8tQPDeurB6UB3IOC9RRX9TcbCpIcHcv.z9GYOVgZa9ZbDq', 'bob.wilson@email.com', '0909123456', '321 Shop Lane, District 3', NOW() - INTERVAL 3 MONTH, 'CUSTOMER', TRUE),
+('Alice Brown', 'alice_brown', '$2a$10$RGRfoRy8tQPDeurB6UB3IOC9RRX9TcbCpIcHcv.z9GYOVgZa9ZbDq', 'alice.brown@email.com', '0898765432', '654 Market Street, District 4', NOW() - INTERVAL 2 MONTH, 'CUSTOMER', TRUE),
+('Charlie Davis', 'charlie_davis', '$2a$10$RGRfoRy8tQPDeurB6UB3IOC9RRX9TcbCpIcHcv.z9GYOVgZa9ZbDq', 'charlie.davis@email.com', '0876543210', '987 Commerce Road, District 5', NOW() - INTERVAL 1 MONTH, 'CUSTOMER', TRUE);
 
 -- ========================================
 -- SAMPLE DATA: product

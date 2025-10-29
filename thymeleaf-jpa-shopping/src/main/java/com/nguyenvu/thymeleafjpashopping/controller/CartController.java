@@ -3,6 +3,7 @@ package com.nguyenvu.thymeleafjpashopping.controller;
 import com.nguyenvu.thymeleafjpashopping.dto.OrderDTO;
 import com.nguyenvu.thymeleafjpashopping.dto.OrderLineDTO;
 import com.nguyenvu.thymeleafjpashopping.dto.ProductDTO;
+import com.nguyenvu.thymeleafjpashopping.service.CustomerService;
 import com.nguyenvu.thymeleafjpashopping.service.OrderService;
 import com.nguyenvu.thymeleafjpashopping.service.ProductService;
 import lombok.RequiredArgsConstructor;
@@ -23,6 +24,7 @@ public class CartController {
     
     private final ProductService productService;
     private final OrderService orderService;
+    private final CustomerService customerService;
     
     private static final String CART_SESSION_KEY = "shopping_cart";
 
@@ -178,28 +180,27 @@ public class CartController {
                 return "redirect:/cart";
             }
             
+            // Get customer by username
+            String username = authentication.getName();
+            com.nguyenvu.thymeleafjpashopping.dto.CustomerDTO customer = 
+                customerService.getCustomerByUsername(username);
+            
             OrderDTO orderDTO = new OrderDTO();
-            orderDTO.setCustomerUsername(authentication.getName());
+            orderDTO.setCustomerId(customer.getCustomerId());
             orderDTO.setShippingAddress(shippingAddress);
             orderDTO.setPhone(phone);
             orderDTO.setStatus("PENDING");
             
             List<OrderLineDTO> orderLines = new ArrayList<>();
-            BigDecimal totalAmount = BigDecimal.ZERO;
             
             for (CartItem item : cart.values()) {
                 OrderLineDTO line = new OrderLineDTO();
                 line.setProductId(item.getProductId());
                 line.setQuantity(item.getQuantity());
-                line.setUnitPrice(item.getPrice());
-                line.setSubtotal(item.getSubtotal());
                 orderLines.add(line);
-                
-                totalAmount = totalAmount.add(item.getSubtotal());
             }
             
             orderDTO.setOrderLines(orderLines);
-            orderDTO.setTotalAmount(totalAmount);
             
             OrderDTO createdOrder = orderService.createOrder(orderDTO);
             

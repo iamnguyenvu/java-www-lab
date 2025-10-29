@@ -2,12 +2,12 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <title>Register</title>
     <link rel="stylesheet" th:href="@{/css/style.css}">
     <style>
         .login-container {
-            max-width: 400px;
-            margin: 80px auto;
+            max-width: 450px;
+            margin: 50px auto;
             padding: 40px;
             background: white;
             border-radius: 8px;
@@ -37,14 +37,17 @@
             color: #155724;
             border: 1px solid #c3e6cb;
         }
-        .remember-me {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
+        .login-footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
         }
-        .remember-me input {
-            margin-right: 8px;
-            width: auto;
+        .login-footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .login-footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -52,52 +55,95 @@
 
 <div class="login-container">
     <div class="login-header">
-        <h2>🔐 Register</h2>
+        <h2>� Đăng ký tài khoản</h2>
     </div>
 
-    <!-- Error message -->
-    <div th:if="${param.error}" class="alert alert-error">
-        Invalid username or password.
-    </div>
+    <div th:if="${error}" class="alert alert-error" th:text="${error}"></div>
+    <div th:if="${success}" class="alert alert-success" th:text="${success}"></div>
 
-    <!-- Logout success message -->
-    <div th:if="${param.logout}" class="alert alert-success">
-        You have been logged out successfully.
-    </div>
-
-    <form th:action="@{/register}" method="post">
+    <form th:action="@{/register}" th:object="${customerDTO}" method="post">
         <div class="form-group">
-            <label for="username">Username:</label>
+            <label for="name">Họ tên: *</label>
             <input type="text"
-                   id="username"
-                   name="username"
+                   id="name"
+                   th:field="*{name}"
                    class="form-control"
-                   placeholder="Enter your username"
+                   placeholder="Nhập họ tên đầy đủ"
                    required
                    autofocus>
         </div>
 
         <div class="form-group">
-            <label for="password">Password:</label>
-            <input type="password"
-                   id="password"
-                   name="password"
+            <label for="username">Tên đăng nhập: *</label>
+            <input type="text"
+                   id="username"
+                   th:field="*{username}"
                    class="form-control"
-                   placeholder="Enter your password"
+                   placeholder="Nhập tên đăng nhập"
                    required>
         </div>
 
-        <div class="remember-me">
-            <input type="checkbox"
-                   id="remember-me"
-                   name="remember-me">
-            <label for="remember-me" style="margin: 0; cursor: pointer;">Remember me</label>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email"
+                   id="email"
+                   th:field="*{email}"
+                   class="form-control"
+                   placeholder="Nhập email">
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Số điện thoại:</label>
+            <input type="tel"
+                   id="phone"
+                   th:field="*{phone}"
+                   class="form-control"
+                   placeholder="Nhập số điện thoại">
+        </div>
+
+        <div class="form-group">
+            <label for="address">Địa chỉ:</label>
+            <textarea id="address"
+                      th:field="*{address}"
+                      class="form-control"
+                      placeholder="Nhập địa chỉ"
+                      rows="2"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="newPassword">Mật khẩu: *</label>
+            <input type="password"
+                   id="newPassword"
+                   th:field="*{newPassword}"
+                   class="form-control"
+                   placeholder="Nhập mật khẩu"
+                   required
+                   minlength="6">
+        </div>
+
+        <div class="form-group">
+            <label for="confirmPassword">Xác nhận mật khẩu: *</label>
+            <input type="password"
+                   id="confirmPassword"
+                   th:field="*{confirmPassword}"
+                   class="form-control"
+                   placeholder="Nhập lại mật khẩu"
+                   required
+                   minlength="6">
         </div>
 
         <button type="submit" class="btn btn-primary" style="width: 100%; padding: 12px;">
-            Login
+            Đăng ký
         </button>
     </form>
+
+    <div class="login-footer">
+        Đã có tài khoản? <a th:href="@{/login}">Đăng nhập ngay</a>
+    </div>
+</div>
+
+</body>
+</html>
 
     <!--    <div style="text-align: center; margin-top: 20px; color: #666; font-size: 14px;">-->
     <!--        <p>Tài khoản test:</p>-->

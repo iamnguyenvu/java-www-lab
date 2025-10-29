@@ -121,13 +121,13 @@ INSERT INTO category (name, description) VALUES
 ('Đồng hồ thông minh', 'Smart watch và fitness tracker');
 
 -- Insert Customers
--- Password cho tất cả: 123456 (BCrypt encoded)
+-- Password cho tất cả: 123456 (BCrypt encoded) $2a$10$RGRfoRy8tQPDeurB6UB3IOC9RRX9TcbCpIcHcv.z9GYOVgZa9ZbDq
 INSERT INTO customer (username, password, name, email, phone, address, role, enabled, customer_since) VALUES
-('admin', '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 'Admin User', 'admin@shopping.com', '0901234567', '123 Admin Street, HCMC', 'ADMIN', TRUE, '2024-01-01 00:00:00'),
-('nguyenvana', '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 'Nguyễn Văn A', 'nguyenvana@email.com', '0912345678', '456 Nguyen Hue, HCMC', 'CUSTOMER', TRUE, '2024-06-15 10:30:00'),
-('tranthib', '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 'Trần Thị B', 'tranthib@email.com', '0923456789', '789 Le Loi, HCMC', 'CUSTOMER', TRUE, '2024-07-20 14:45:00'),
-('levanc', '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 'Lê Văn C', 'levanc@email.com', '0934567890', '321 Tran Hung Dao, Hanoi', 'CUSTOMER', TRUE, '2024-08-10 09:15:00'),
-('phamthid', '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 'Phạm Thị D', 'phamthid@email.com', '0945678901', '654 Hai Ba Trung, Danang', 'CUSTOMER', TRUE, '2024-09-05 16:20:00');
+('admin', '$2a$10$RGRfoRy8tQPDeurB6UB3IOC9RRX9TcbCpIcHcv.z9GYOVgZa9ZbDq', 'Admin User', 'admin@shopping.com', '0901234567', '123 Admin Street, HCMC', 'ADMIN', TRUE, '2024-01-01 00:00:00'),
+('nguyenvana', '$2a$10$RGRfoRy8tQPDeurB6UB3IOC9RRX9TcbCpIcHcv.z9GYOVgZa9ZbDq', 'Nguyễn Văn A', 'nguyenvana@email.com', '0912345678', '456 Nguyen Hue, HCMC', 'CUSTOMER', TRUE, '2024-06-15 10:30:00'),
+('tranthib', '$2a$10$RGRfoRy8tQPDeurB6UB3IOC9RRX9TcbCpIcHcv.z9GYOVgZa9ZbDq', 'Trần Thị B', 'tranthib@email.com', '0923456789', '789 Le Loi, HCMC', 'CUSTOMER', TRUE, '2024-07-20 14:45:00'),
+('levanc', '$2a$10$RGRfoRy8tQPDeurB6UB3IOC9RRX9TcbCpIcHcv.z9GYOVgZa9ZbDq', 'Lê Văn C', 'levanc@email.com', '0934567890', '321 Tran Hung Dao, Hanoi', 'CUSTOMER', TRUE, '2024-08-10 09:15:00'),
+('phamthid', '$2a$10$RGRfoRy8tQPDeurB6UB3IOC9RRX9TcbCpIcHcv.z9GYOVgZa9ZbDq', 'Phạm Thị D', 'phamthid@email.com', '0945678901', '654 Hai Ba Trung, Danang', 'CUSTOMER', TRUE, '2024-09-05 16:20:00');
 
 -- Insert Products
 INSERT INTO product (name, description, price, stock, image_url, in_stock, category_id) VALUES

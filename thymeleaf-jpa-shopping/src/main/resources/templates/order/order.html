@@ -66,9 +66,9 @@
                     <td>
                         <a th:href="@{/products/{id}(id=${line.productId})}" th:text="${line.productName}"></a>
                     </td>
-                    <td th:text="${#numbers.formatDecimal(line.purchasePrice, 0, 'COMMA', 0, 'POINT')} + ' VND'"></td>
-                    <td th:text="${line.amount}"></td>
-                    <td th:text="${#numbers.formatDecimal(line.purchasePrice * line.amount, 0, 'COMMA', 0, 'POINT')} + ' VND'"></td>
+                    <td th:text="${#numbers.formatDecimal(line.unitPrice, 0, 'COMMA', 0, 'POINT')} + ' VND'"></td>
+                    <td th:text="${line.quantity}"></td>
+                    <td th:text="${#numbers.formatDecimal(line.subtotal, 0, 'COMMA', 0, 'POINT')} + ' VND'"></td>
                 </tr>
             </tbody>
             <tfoot>

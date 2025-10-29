@@ -34,4 +34,13 @@ public class CustomerDTO {
     // For registration form (password not included in DTO for security)
     private String newPassword;
     private String confirmPassword;
+    
+    // Alias methods for backward compatibility with templates
+    public Long getId() {
+        return customerId;
+    }
+    
+    public void setId(Long id) {
+        this.customerId = id;
+    }
 }
