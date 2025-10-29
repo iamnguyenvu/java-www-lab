@@ -4,7 +4,7 @@ import com.nguyenvu.thymeleafjpashopping.dto.CustomerDTO;
 import com.nguyenvu.thymeleafjpashopping.model.Customer;
 import com.nguyenvu.thymeleafjpashopping.repository.CustomerRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 public class CustomerService {
     
     private final CustomerRepository customerRepository;
-    private final BCryptPasswordEncoder passwordEncoder;
+    private final PasswordEncoder passwordEncoder;
 
     @Transactional(readOnly = true)
     public List<CustomerDTO> getAllCustomers() {

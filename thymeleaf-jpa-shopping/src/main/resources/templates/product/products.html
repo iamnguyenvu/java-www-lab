@@ -193,11 +193,11 @@
         </div>
         
         <div class="card-actions">
-            <a th:href="@{/products/{id}(id=${p.id})}">Xem chi tiet</a>
+            <a th:href="@{/products/{id}(id=${p.productId})}">Xem chi tiet</a>
             <span sec:authorize="hasRole('ADMIN')">
-                <a th:href="@{/products/edit/{id}(id=${p.id})}">Sua</a>
+                <a th:href="@{/products/edit/{id}(id=${p.productId})}">Sua</a>
                 <form th:action="@{/products/delete}" method="post" style="display:inline">
-                    <input type="hidden" name="id" th:value="${p.id}">
+                    <input type="hidden" name="id" th:value="${p.productId}">
                     <button onclick="return confirm('Ban co chac muon xoa san pham nay?')">Xoa</button>
                 </form>
             </span>

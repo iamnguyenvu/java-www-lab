@@ -44,19 +44,29 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(auth -> auth
-                        // Cho phép truy cập CSS, JS, images
-                        .requestMatchers("/css/**", "/js/**", "/images/**", "/access-denied", "/login").permitAll()
+                        // Static resources - cho phép tất cả
+                        .requestMatchers("/css/**", "/js/**", "/images/**").permitAll()
+                        
+                        // Public pages
+                        .requestMatchers("/", "/login", "/register", "/access-denied").permitAll()
+                        
+                        // Guest: Xem danh sách và chi tiết sản phẩm, tìm kiếm
+                        .requestMatchers("/products", "/products/*/view", "/products/search/**").permitAll()
 
-                        // PRODUCTS CRUD - chỉ ADMIN
-                        .requestMatchers("/products/new", "/products/edit/**", "/products/delete/**").hasRole("ADMIN")
+                        // ADMIN: Toàn quyền CRUD products
+                        .requestMatchers("/products/new", "/products/*/edit", "/products/delete").hasRole("ADMIN")
 
-                        // ORDERS CRUD - chỉ ADMIN
+                        // ADMIN: Toàn quyền quản lý customers
                         .requestMatchers("/customers/**").hasRole("ADMIN")
 
+                        // ADMIN: Xem tất cả orders
+                        // CUSTOMER: Chỉ xem orders của chính mình (kiểm tra trong controller)
                         .requestMatchers("/orders/**").hasAnyRole("ADMIN", "CUSTOMER")
+                        
+                        // Cart: Chỉ authenticated users
+                        .requestMatchers("/cart/**").authenticated()
 
-                        .requestMatchers("/", "/products", "/products/**", "/products/search/**").permitAll()
-
+                        // Mọi request khác cần authenticated
                         .anyRequest().authenticated())
                 .formLogin(form -> form
                         .loginPage("/login")

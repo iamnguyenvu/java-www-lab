@@ -52,6 +52,13 @@ public class OrderService {
     }
 
     @Transactional(readOnly = true)
+    public List<OrderDTO> getOrdersByCustomerUsername(String username) {
+        Customer customer = customerRepository.findByUsername(username)
+                .orElseThrow(() -> new RuntimeException("Customer not found with username: " + username));
+        return getOrdersByCustomerId(customer.getCustomerId());
+    }
+
+    @Transactional(readOnly = true)
     public List<OrderDTO> getOrdersByStatus(String status) {
         return orderRepository.findByStatus(status).stream()
                 .map(this::convertToDTO)
