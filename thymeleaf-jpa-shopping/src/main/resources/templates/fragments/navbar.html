@@ -1,24 +1,42 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <body>
-    <nav th:fragment="navbar" style="padding: 15px; background: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 20px;">
-        <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
-            <div>
-                <a th:href="@{/}">Home</a> | 
-                <a th:href="@{/products}">Products</a>
-                <span sec:authorize="hasAnyRole('ADMIN', 'USER')"> | <a th:href="@{/orders}">Orders</a></span>
-                <span sec:authorize="hasRole('ADMIN')"> | <a th:href="@{/customers}">Customers</a></span>
+<nav th:fragment="navbar"
+     style="padding: 15px; background: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 20px;">
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
+        <div>
+            <a th:href="@{/}">Home</a>
+            <a th:href="@{/products}">Products</a>
+            <span sec:authorize="hasAnyRole('ADMIN', 'CUSTOMER')"><a th:href="@{/orders}">Orders</a></span>
+            <span sec:authorize="hasRole('ADMIN')"> <a th:href="@{/customers}">Customers</a></span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <a href="@{/cart}">
+                <img th:src="@{../../images/cart.png}" alt="Cart" style="width: 24px; height: 24px;">
+                <span th:text="${cartItemCount}"
+                      th:if="${cartItemCount != null && cartItemCount > 0}"
+                      style="min-width:18px; height:18px; padding:0 6px; line-height:18px; text-align:center;
+                          border-radius:9px; background:#e11d48; color:#fff; font-size:12px; font-weight:700;"
+                    ></span>
+            </a>
+            <!--            Guest-->
+            <div sec:authorize="isAnonymous()" style="display:flex; gap:8px;">
+                <a th:href="@{/login}" style="text-decoration:none; color:#333;">Login</a>
             </div>
-            <div style="display: flex; align-items: center; gap: 15px;">
-                <span style="color: #666; font-size: 14px;">
-                    👤 <strong sec:authentication="name"></strong> 
-                    (<span sec:authentication="principal.authorities"></span>)
+
+            <!--            Authenticated User-->
+            <div sec:authorize="isAuthenticated()">
+                    <span style="color: #666; font-size: 14px;">
+                    Hello, <strong sec:authentication="name"></strong>
                 </span>
                 <form th:action="@{/logout}" method="post" style="margin: 0;">
-                    <button type="submit" class="btn btn-secondary" style="padding: 6px 12px; font-size: 14px;">Logout</button>
+                    <button type="submit" class="btn btn-secondary" style="padding: 6px 12px; font-size: 14px;">Logout
+                    </button>
                 </form>
             </div>
+
         </div>
-    </nav>
+    </div>
+</nav>
 </body>
 </html>

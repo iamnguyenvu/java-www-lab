@@ -9,7 +9,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-@Table(name = "products")
+@Table(name = "product")
 @Entity
 @Getter
 @Setter
@@ -22,16 +22,32 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
-    private Integer id;
+    private Long productId;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 200)
     private String name;
+    
+    @Column(length = 1000)
+    private String description;
 
-    @Column(nullable = false)
+    @Column(nullable = false, precision = 10, scale = 2)
     private BigDecimal price;
 
     @Column(nullable = false)
-    private boolean inStock;
+    @Builder.Default
+    private Boolean inStock = true;
+    
+    @Column(nullable = false)
+    @Builder.Default
+    private Integer stock = 0;
+    
+    @Column(length = 500)
+    private String imageUrl;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "category_id", nullable = false)
+    @ToString.Exclude
+    private Category category;
 
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL,
             fetch = FetchType.LAZY, orphanRemoval = true)
@@ -44,6 +60,10 @@ public class Product {
     @Builder.Default
     @ToString.Exclude @EqualsAndHashCode.Exclude
     private Set<OrderLine> orderLines = new HashSet<>();
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "category_id", nullable = false)
+    private Category category;
 
     public void addComment(Comment comment) {
         comments.add(comment);

@@ -3,7 +3,9 @@ package com.nguyenvu.thymeleafjpashopping.model;
 import jakarta.persistence.*;
 import lombok.*;
 
-@Table
+import java.util.Calendar;
+
+@Table(name = "comment")
 @Entity
 @Getter @Setter
 @NoArgsConstructor
@@ -14,13 +16,27 @@ import lombok.*;
 public class Comment {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
-    private Integer id;
+    private Long commentId;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 1000)
     private String text;
+    
+    @Column(nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
+    @Builder.Default
+    private Calendar commentDate = Calendar.getInstance();
+    
+    @Column(nullable = false)
+    @Builder.Default
+    private Integer rating = 5;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "product_id", nullable = false)
     @ToString.Exclude @EqualsAndHashCode.Exclude
     private Product product;
+    
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "customer_id", nullable = false)
+    @ToString.Exclude @EqualsAndHashCode.Exclude
+    private Customer customer;
 }

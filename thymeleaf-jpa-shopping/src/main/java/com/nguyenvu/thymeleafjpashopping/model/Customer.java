@@ -3,11 +3,13 @@ package com.nguyenvu.thymeleafjpashopping.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
-@Table(name = "customers")
+@Table(name = "customer")
 @Entity
 @Getter @Setter
 @NoArgsConstructor
@@ -18,16 +20,45 @@ import java.util.Set;
 public class Customer {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
-    private Integer id;
+    private Long customerId;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 100)
     private String name;
+    
+    @Column(unique = true, nullable = false, length = 50)
+    private String username;
+    
+    @Column(nullable = false, length = 255)
+    private String password;
+    
+    @Column(unique = true, length = 100)
+    private String email;
+    
+    @Column(length = 20)
+    private String phone;
+    
+    @Column(length = 500)
+    private String address;
 
     @Column(nullable = false, name = "customer_since")
+    @Temporal(TemporalType.TIMESTAMP)
     private Calendar customerSince;
+    
+    @Column(nullable = false, length = 20)
+    @Builder.Default
+    private String role = "CUSTOMER";
+    
+    @Column(nullable = false)
+    @Builder.Default
+    private Boolean enabled = true;
 
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     @Builder.Default
     @ToString.Exclude @EqualsAndHashCode.Exclude
     private Set<Order> orders = new HashSet<>();
+    
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @Builder.Default
+    @ToString.Exclude @EqualsAndHashCode.Exclude
+    private List<Comment> comments = new ArrayList<>();
 }

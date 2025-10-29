@@ -31,19 +31,13 @@ public class SecurityConfig {
                 .roles("ADMIN")
                 .build();
         
-        UserDetails user = User.builder()
-                .username("USER")
-                .password(passwordEncoder.encode("123456"))
-                .roles("USER")
-                .build();
-        
         UserDetails customer = User.builder()
                 .username("CUSTOMER")
                 .password(passwordEncoder.encode("123456"))
                 .roles("CUSTOMER")
                 .build();
         
-        return new InMemoryUserDetailsManager(admin, user, customer);
+        return new InMemoryUserDetailsManager(admin, customer);
     }
     
     @Bean
@@ -51,26 +45,18 @@ public class SecurityConfig {
         http
                 .authorizeHttpRequests(auth -> auth
                         // Cho phép truy cập CSS, JS, images
-                        .requestMatchers("/css/**", "/js/**", "/images/**").permitAll()
-                        // Trang login
-                        .requestMatchers("/login").permitAll()
-                        // Home page - tất cả authenticated users
-                        .requestMatchers("/").authenticated()
-                        
-                        // PRODUCTS - tất cả có thể xem
-                        .requestMatchers("/products", "/products/{id}", "/products/search").authenticated()
+                        .requestMatchers("/css/**", "/js/**", "/images/**", "/access-denied", "/login").permitAll()
+
                         // PRODUCTS CRUD - chỉ ADMIN
-                        .requestMatchers("/products/new", "/products/edit/**", "/products/delete").hasRole("ADMIN")
-                        
-                        // ORDERS - ADMIN và USER có thể xem, CUSTOMER không
-                        .requestMatchers("/orders", "/orders/{id}").hasAnyRole("ADMIN", "USER")
+                        .requestMatchers("/products/new", "/products/edit/**", "/products/delete/**").hasRole("ADMIN")
+
                         // ORDERS CRUD - chỉ ADMIN
-                        .requestMatchers("/orders/new", "/orders/edit/**", "/orders/delete").hasRole("ADMIN")
-                        
-                        // CUSTOMERS - chỉ ADMIN
-                        .requestMatchers("/customers", "/customers/{id}", "/customers/new", 
-                                       "/customers/edit/**", "/customers/delete").hasRole("ADMIN")
-                        
+                        .requestMatchers("/customers/**").hasRole("ADMIN")
+
+                        .requestMatchers("/orders/**").hasAnyRole("ADMIN", "CUSTOMER")
+
+                        .requestMatchers("/", "/products", "/products/**", "/products/search/**").permitAll()
+
                         .anyRequest().authenticated())
                 .formLogin(form -> form
                         .loginPage("/login")

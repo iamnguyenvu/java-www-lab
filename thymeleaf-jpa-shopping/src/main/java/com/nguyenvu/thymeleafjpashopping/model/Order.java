@@ -3,6 +3,7 @@ package com.nguyenvu.thymeleafjpashopping.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.math.BigDecimal;
 import java.util.Calendar;
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -19,10 +20,25 @@ import java.util.Set;
 public class Order {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
-    private Integer id;
+    private Long orderId;
 
-    @Column(nullable = false)
-    private Calendar date;
+    @Column(nullable = false, name = "order_date")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Calendar orderDate;
+    
+    @Column(nullable = false, precision = 12, scale = 2)
+    @Builder.Default
+    private BigDecimal totalAmount = BigDecimal.ZERO;
+    
+    @Column(nullable = false, length = 20)
+    @Builder.Default
+    private String status = "PENDING"; // PENDING, CONFIRMED, SHIPPING, DELIVERED, CANCELLED
+    
+    @Column(length = 500)
+    private String shippingAddress;
+    
+    @Column(length = 20)
+    private String phone;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "customer_id", nullable = false)

@@ -1,2 +1,2 @@
-create database if not exists shopping
-use shopping
+create database if not exists shopping;
+use shopping;

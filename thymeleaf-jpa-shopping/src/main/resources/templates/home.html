@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
-    <title>He thong Quan ly Ban hang</title>
+    <title>He thong Ban hang</title>
     <link rel="stylesheet" th:href="@{/css/style.css}">
     <style>
         .home-container {
@@ -44,49 +44,29 @@
 </head>
 <body>
 
-<nav style="padding: 15px; background: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-    <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
-        <div>
-            <a th:href="@{/}">Home</a> | 
-            <a th:href="@{/products}">Products</a> | 
-            <a th:href="@{/orders}">Orders</a> | 
-            <a th:href="@{/customers}">Customers</a>
-        </div>
-        <div style="display: flex; align-items: center; gap: 15px;">
-            <span style="color: #666;">
-                👤 <strong sec:authentication="name"></strong> 
-                (<span sec:authentication="principal.authorities"></span>)
-            </span>
-            <form th:action="@{/logout}" method="post" style="margin: 0;">
-                <button type="submit" class="btn btn-secondary" style="padding: 6px 12px; font-size: 14px;">Logout</button>
-            </form>
-        </div>
-    </div>
-</nav>
+<nav th:replace="fragments/navbar::navbar(cartItemCount=${cartItemCount})"></nav>
 
 <div class="home-container">
-    <h1 class="home-title">He thong Quan ly Ban hang</h1>
-    <p class="home-subtitle">Quan ly san pham, don hang va khach hang</p>
     
     <div class="menu-card">
         <!-- Tất cả role đều xem được Products -->
-        <a th:href="@{/products}" class="menu-item">📦 Quan ly San pham</a>
+        <a th:href="@{/products}" class="menu-item">📦 Danh sach San pham</a>
         
-        <!-- Chỉ ADMIN và USER xem được Orders -->
-        <a sec:authorize="hasAnyRole('ADMIN', 'USER')" th:href="@{/orders}" class="menu-item">🛒 Quan ly Don hang</a>
+        <!-- Chỉ ADMIN và CUSTOMER xem được Orders -->
+        <a sec:authorize="hasAnyRole('ADMIN', 'CUSTOMER')" th:href="@{/orders}" class="menu-item">🛒 Danh sach Don hang</a>
         
         <!-- Chỉ ADMIN xem được Customers -->
-        <a sec:authorize="hasRole('ADMIN')" th:href="@{/customers}" class="menu-item">👥 Quan ly Khach hang</a>
+        <a sec:authorize="hasRole('ADMIN')" th:href="@{/customers}" class="menu-item">👥 Danh sach Khach hang</a>
     </div>
     
-    <div style="margin-top: 30px; padding: 15px; background: #fff3cd; border-radius: 4px; text-align: left; max-width: 500px; margin-left: auto; margin-right: auto;">
-        <p style="margin: 0; color: #856404; font-size: 14px;">
-            <strong>Phân quyền hệ thống:</strong><br>
-            🔑 <strong>ADMIN</strong>: Toàn quyền CRUD Products, Orders, Customers<br>
-            👤 <strong>USER</strong>: Xem Products và Orders<br>
-            🛍️ <strong>CUSTOMER</strong>: Chỉ xem Products
-        </p>
-    </div>
+<!--    <div style="margin-top: 30px; padding: 15px; background: #fff3cd; border-radius: 4px; text-align: left; max-width: 500px; margin-left: auto; margin-right: auto;">-->
+<!--        <p style="margin: 0; color: #856404; font-size: 14px;">-->
+<!--            <strong>Phân quyền hệ thống:</strong><br>-->
+<!--            🔑 <strong>ADMIN</strong>: Toàn quyền CRUD Products, Orders, Customers<br>-->
+<!--            👤 <strong>USER</strong>: Xem Products và Orders<br>-->
+<!--            🛍️ <strong>CUSTOMER</strong>: Chỉ xem Products-->
+<!--        </p>-->
+<!--    </div>-->
 </div>
 
 </body>

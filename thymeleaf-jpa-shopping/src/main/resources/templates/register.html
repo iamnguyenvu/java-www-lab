@@ -52,7 +52,7 @@
 
 <div class="login-container">
     <div class="login-header">
-        <h2>🔐 Login</h2>
+        <h2>🔐 Register</h2>
     </div>
 
     <!-- Error message -->
@@ -65,31 +65,31 @@
         You have been logged out successfully.
     </div>
 
-    <form th:action="@{/login}" method="post">
+    <form th:action="@{/register}" method="post">
         <div class="form-group">
             <label for="username">Username:</label>
-            <input type="text" 
-                   id="username" 
-                   name="username" 
-                   class="form-control" 
+            <input type="text"
+                   id="username"
+                   name="username"
+                   class="form-control"
                    placeholder="Enter your username"
-                   required 
+                   required
                    autofocus>
         </div>
 
         <div class="form-group">
             <label for="password">Password:</label>
-            <input type="password" 
-                   id="password" 
-                   name="password" 
-                   class="form-control" 
+            <input type="password"
+                   id="password"
+                   name="password"
+                   class="form-control"
                    placeholder="Enter your password"
                    required>
         </div>
 
         <div class="remember-me">
-            <input type="checkbox" 
-                   id="remember-me" 
+            <input type="checkbox"
+                   id="remember-me"
                    name="remember-me">
             <label for="remember-me" style="margin: 0; cursor: pointer;">Remember me</label>
         </div>
@@ -99,14 +99,14 @@
         </button>
     </form>
 
-<!--    <div style="text-align: center; margin-top: 20px; color: #666; font-size: 14px;">-->
-<!--        <p>Tài khoản test:</p>-->
-<!--        <p style="font-family: monospace; background: #f8f9fa; padding: 8px; border-radius: 4px; margin-top: 8px;">-->
-<!--            <strong>ADMIN</strong> / 123456 (Full quyền)<br>-->
-<!--            <strong>USER</strong> / 123456 (Xem only)<br>-->
-<!--            <strong>CUSTOMER</strong> / 123456 (Xem only)-->
-<!--        </p>-->
-<!--    </div>-->
+    <!--    <div style="text-align: center; margin-top: 20px; color: #666; font-size: 14px;">-->
+    <!--        <p>Tài khoản test:</p>-->
+    <!--        <p style="font-family: monospace; background: #f8f9fa; padding: 8px; border-radius: 4px; margin-top: 8px;">-->
+    <!--            <strong>ADMIN</strong> / 123456 (Full quyền)<br>-->
+    <!--            <strong>USER</strong> / 123456 (Xem only)<br>-->
+    <!--            <strong>CUSTOMER</strong> / 123456 (Xem only)-->
+    <!--        </p>-->
+    <!--    </div>-->
 </div>
 
 </body>
