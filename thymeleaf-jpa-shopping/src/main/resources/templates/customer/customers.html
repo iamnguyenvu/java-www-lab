@@ -12,9 +12,9 @@
 <div class="page-container">
     <h2 class="page-header">Danh sach Khach hang</h2>
 
-    <div style="margin-bottom: 20px;" sec:authorize="hasRole('ADMIN')">
-        <a th:href="@{/customers/new}" class="btn btn-primary">+ Them moi</a>
-    </div>
+<!--    <div style="margin-bottom: 20px;" sec:authorize="hasRole('ADMIN')">-->
+<!--        <a th:href="@{/customers/new}" class="btn btn-primary">+ Them moi</a>-->
+<!--    </div>-->
 
     <div th:if="${#lists.isEmpty(customers)}" class="empty-state">
         <p>Khong co khach hang.</p>

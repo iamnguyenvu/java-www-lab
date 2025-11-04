@@ -58,15 +58,6 @@
         <!-- Chỉ ADMIN xem được Customers -->
         <a sec:authorize="hasRole('ADMIN')" th:href="@{/customers}" class="menu-item">👥 Danh sach Khach hang</a>
     </div>
-    
-<!--    <div style="margin-top: 30px; padding: 15px; background: #fff3cd; border-radius: 4px; text-align: left; max-width: 500px; margin-left: auto; margin-right: auto;">-->
-<!--        <p style="margin: 0; color: #856404; font-size: 14px;">-->
-<!--            <strong>Phân quyền hệ thống:</strong><br>-->
-<!--            🔑 <strong>ADMIN</strong>: Toàn quyền CRUD Products, Orders, Customers<br>-->
-<!--            👤 <strong>USER</strong>: Xem Products và Orders<br>-->
-<!--            🛍️ <strong>CUSTOMER</strong>: Chỉ xem Products-->
-<!--        </p>-->
-<!--    </div>-->
 </div>
 
 </body>

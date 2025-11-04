@@ -10,10 +10,10 @@
 <div th:replace="~{fragments/navbar :: navbar}"></div>
 
 <div class="page-container">
-    <h2 class="page-header" th:text="${product.id != null ? 'Sua San pham' : 'Them San pham'}">Form</h2>
+    <h2 class="page-header" th:text="${product.productId != null ? 'Sua San pham' : 'Them San pham'}">Form</h2>
 
-    <div class="card" style="max-width: 600px;">
-        <form th:action="${product.id != null ? '/products/edit/' + product.id : '/products/new'}" 
+    <div class="card" style="max-wproductIdth: 600px;">
+        <form th:action="${product.productId != null ? '/products/edit/' + product.productId : '/products/new'}"
               th:object="${product}" 
               method="post">
             
@@ -35,7 +35,7 @@
             </div>
 
             <div class="form-group" style="margin-top: 20px;">
-                <button type="submit" class="btn btn-primary" th:text="${product.id != null ? 'Cap nhat' : 'Them'}">Luu</button>
+                <button type="submit" class="btn btn-primary" th:text="${product.productId != null ? 'Cap nhat' : 'Them'}">Luu</button>
                 <a th:href="@{/products}" class="btn btn-secondary">Huy</a>
             </div>
         </form>
