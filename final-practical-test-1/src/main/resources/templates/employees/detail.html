@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" th:replace="~{layout}">
+<body>
+<div th:fragment="content">
+    <h2>Employee Detail</h2>
+    <table class="table">
+        <tr><th>Name:</th><td th:text="${employee.fullName}"></td></tr>
+        <tr><th>Email:</th><td th:text="${employee.email}"></td></tr>
+        <tr><th>Department:</th><td><a th:href="@{/departments/{id}(id=${employee.department.id})}" th:text="${employee.department.name}"></a></td></tr>
+        <tr><th>Salary:</th><td th:text="${employee.salary}"></td></tr>
+        <tr><th>Hire Date:</th><td th:text="${employee.hireDate}"></td></tr>
+        <tr><th>Active:</th><td th:text="${employee.active ? 'Yes' : 'No'}"></td></tr>
+    </table>
+    <a th:href="@{/employees}">Back</a>
+    <a th:href="@{/employees/{id}/edit(id=${employee.id})}" sec:authorize="hasRole('ADMIN')">Edit</a>
+    <form th:action="@{/employees/{id}/delete(id=${employee.id})}" method="post" sec:authorize="hasRole('ADMIN')" onsubmit="return confirm('Delete?')">
+        <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
+</div>
+</body>
+</html>
