@@ -1,0 +1,756 @@
+
+ĐIỀU LỆ VẬN CHUYỂN HÀNH KHÁCH VÀ HÀNH LÝ CỦA TỔNG CÔNG TY HÀNG KHÔNG VIỆT NAM - CTCP
+
+ĐIỀU 1.  ĐỊNH NGHĨA
+
+Trong Điều lệ vận chuyển này, các thuật ngữ dưới đây được hiểu theo nghĩa sau:
+
+Điểm dừng thỏa thuận (sau đây gọi là điểm dừng) là các điểm dừng được xác định trước trong hành trình của Hành khách, ngoại trừ điểm xuất phát và điểm đến cuối cùng, đã thỏa thuận trước với Chúng tôi và được ghi trên Vé của Hành khách.
+
+Chúng tôi nghĩa là Tổng công ty Hàng không Việt Nam - CTCP (Vietnam Airlines JSC).
+
+Chứng từ điện tử đa mục đích (sau đây gọi tắt là EMD) là chứng từ điện tử được xuất bởi Chúng tôi hoặc Đại lý chỉ định của Chúng tôi, có thể được yêu cầu xuất kèm với Vé điện tử và có hiệu lực trùng với hiệu lực của Vé điện tử hoặc được xuất rời để cung cấp dịch vụ cho Hành khách, Đại lý có tên trên EMD đó.
+
+Công ước có nghĩa là Công ước Thống nhất một số quy định về vận chuyển hàng không quốc tế ký ngày 12 tháng 10 năm 1929 tại Warsaw (sau đây được gọi là Công ước Vác-xa-va); Nghị định thư sửa đổi Công ước Vác-xa-va ký tại Hague (La-hay) ngày 28 tháng 09 năm 1955; Công ước Thống nhất một số quy định về vận chuyển hàng không quốc tế ký ngày 28 tháng 5 năm 1999 tại Montreal (Mông-trê-an) và bất kỳ nghị định thư hoặc công ước nào khác được áp dụng.
+
+Đại lý chỉ định là đại lý bán Vé hành khách được Chúng tôi chỉ định để thay mặt Chúng tôi bán sản phẩm vận tải hàng không trên các chuyến bay của Chúng tôi, và khi được cho phép, trên các chuyến bay của các hãng vận chuyển khác.
+
+Sự kiện bất khả kháng là sự kiện ngoài khả năng kiểm soát của Chúng tôi và/ hoặc Hành khách, xảy ra một cách khách quan không thể lường trước được và không thể khắc phục được mặc dù đã áp dụng mọi biện pháp cần thiết và khả năng cho phép. Ví dụ: chiến tranh, xung đột vũ trang, mất ổn định chính trị, đình công làm ảnh hưởng đến chuyến bay; đại dịch phải áp dụng các biện pháp kiểm soát về đi lại theo tuyên bố của Nhà chức trách; chuyến bay không thể thực hiện hoặc bị chậm kéo dài theo yêu cầu của Nhà chức trách.... trong trường hợp các sự kiện này đáp ứng điều kiện để trở thành sự kiện bất khả kháng theo quy định của pháp luật.
+
+Điều kiện hợp đồng là các điều khoản và điều kiện áp dụng được ghi trên Vé điện tử, Tờ Hành trình/Phiếu thu được dẫn chiếu từ Điều lệ vận chuyển này và các điều kiện khác đã được Chúng tôi công khai theo quy định của pháp luật tạo thành hợp đồng của Chúng tôi với Hành khách.
+
+Điều lệ vận chuyển là Điều lệ vận chuyển này hoặc Điều lệ vận chuyển của các Hãng Vận chuyển khác trong các trường hợp liên quan.
+
+Hãng vận chuyển khác là bất kỳ hãng nào không phải Chúng tôi, Mã của hãng này được ghi trên Vé hoặc Vé nối của Hành khách.
+
+Hành khách là bất kỳ người nào, trừ thành viên tổ bay, được chuyên chở hoặc sẽ được chuyên chở trên chuyến bay với sự chấp thuận của Chúng tôi.
+
+Hành lý là những vật phẩm, đồ dùng và tư trang cá nhân của Hành khách được xem là cần thiết hoặc thích hợp cho việc mang, sử dụng trong chuyến đi. Hành lý bao gồm cả Hành lý ký gửi và Hành lý xách tay của Hành khách.
+
+Hành lý ký gửi là Hành lý mà Chúng tôi chịu trách nhiệm bảo quản, vận chuyển và xuất Thẻ hành lý.
+
+Hành lý xách tay là bất kỳ Hành lý nào của Hành khách, không phải Hành lý ký gửi, bao gồm tất cả vật dụng được Hành khách mang lên khoang tàu bay và do Hành khách tự bảo quản trong quá trình vận chuyển.
+
+Hình thức thanh toán ban đầu là các hình thức thanh toán mà Hành khách đã sử dụng (như tiền mặt, thẻ tín dụng ….) để mua dịch vụ của Chúng tôi. Các hình thức thanh toán này được ghi trên Vé và/hoặc EMD.
+
+Hồ sơ đặt chỗ hành khách là dữ liệu được Chúng tôi hoặc Đại lý chỉ định của Chúng tôi khởi tạo theo yêu cầu của Hành khách hoặc được chính Hành khách tạo trên Website hoặc Ứng dụng di động của Chúng tôi và được lưu trữ trên hệ thống đặt chỗ của Chúng tôi, bao gồm thông tin cá nhân của Hành khách (tên, giới tính, ngày tháng năm sinh, cách thức liên hệ v.v), thông tin chi tiết về hành trình (điểm xuất phát, điểm đến, hãng vận chuyển, ngày bay, giờ bay và tình trạng chỗ v.v), các dịch vụ bổ trợ khác để làm cơ sở xuất Vé điện tử và EMD.
+
+Mã hãng hàng không là mã gồm hai ký tự (chữ hoặc chữ và số) hoặc ba số sử dụng để xác định hãng vận chuyển cụ thể.
+
+Lịch trình bay là thông tin bao gồm địa điểm khởi hành, điểm đến, giờ dự định khởi hành và giờ đến dự kiến.
+
+Ngày nghĩa là ngày dương lịch, bao gồm toàn bộ bảy ngày trong tuần; với điều kiện là khi dùng cho mục đích thông báo thì không tính ngày gửi thông báo đi và khi dùng cho mục đích xác định thời gian còn hiệu lực của Vé thì không tính ngày xuất Vé hoặc ngày khởi hành của hành trình.
+
+Nhà chức trách là các cơ quan chính phủ, các cơ quan quản lý chuyên ngành hoặc các tổ chức/ cá nhân được ủy quyền.
+
+Phiếu mua hàng điện tử (sau đây gọi là E-voucher) là chứng nhận thanh toán điện tử được phát hành bởi Chúng tôi hoặc các Đại lý chỉ định. E-voucher được sử dụng để thanh toán (thay cho tiền mặt và các hình thức thanh toán khác) đối với các sản phẩm, dịch vụ được Chúng tôi chấp nhận trên Website, tại Chi nhánh và Đại lý chỉ định. Hiệu lực sử dụng của E-voucher được chỉ rõ trên E-voucher. . Hành khách có thể liên hệ với Chúng tôi để kiểm tra về hiệu lực sử dụng của E-voucher.
+
+Quy định khác của Chúng tôi là các quy tắc, quy định, ngoài Điều lệ vận chuyển này và Giá dịch vụ, do Chúng tôi ban hành và đã được công khai theo quy định của pháp luật.
+
+SDR, tiếng Anh là Special Drawing Right (Quyền rút vốn đặc biệt), là một đơn vị tính toán của Quỹ tiền tệ quốc tế (IMF). Đây là đơn vị tính toán quốc tế dựa trên giá trị của một số đồng tiền mạnh. Các giá trị đơn vị của SDR thay đổi và được tính toán lại hàng ngày. Các giá trị này được thừa nhận bởi hầu hết các ngân hàng thương mại và được báo cáo định kỳ trên các tạp chí tài chính lớn cũng như trên website của IMF (www.imf.org).
+
+Thẻ hành lý là chứng từ được xuất để nhận biết việc vận chuyển Hành lý ký gửi và là căn cứ để giải quyết các vấn đề bất thường liên quan đến Hành lý ký gửi.
+
+Thẻ lên tàu bay là chứng từ được xuất tại thời điểm làm thủ tục chuyến bay để sử dụng cho Hành khách lên tàu bay. Hành khách phải xuất trình Thẻ lên tàu bay tại cửa máy bay.
+
+Thiệt hại bao gồm (i) tử vong hoặc thương tật của Hành khách, hoặc bất kỳ tổn thương về thể xác mà Hành khách phải chịu, gây ra bởi tai nạn xảy ra trong tàu bay hoặc trong bất kỳ quá trình lên hoặc xuống tàu bay; (ii) sự hư hại, mất mát một phần hoặc toàn bộ của Hành lý phát sinh trong quá trình vận chuyển bằng đường hàng không; (iii) thiệt hại do vận chuyển chậm, chuyến bay bị hủy, Hành khách bị nhỡ nối chuyến mà không do lỗi của Hành khách.
+
+Thời gian cuối cùng làm thủ tục chuyến bay là giới hạn thời gian được quy định bởi các Hãng vận chuyển mà tại thời điểm đó Hành khách phải hoàn thành các thủ tục chuyến bay và nhận thẻ lên tàu bay.
+
+Tờ Hành trình/Phiếu thu là chứng từ hoặc bộ chứng từ do Chúng tôi hoặc các Đại lý chỉ định xuất cho Hành khách sử dụng Vé điện tử; bao gồm các thông tin về hãng xuất vé, nơi xuất vé, số vé, họ tên Hành khách, thông tin hành trình, Điều kiện hợp đồng và các thông tin khác.
+
+Tờ vận chuyển điện tử là thông tin hành trình thể hiện các điểm cụ thể mà Hành khách có quyền được vận chuyển giữa các điểm đó. Thông tin này được lưu giữ trong cơ sở dữ liệu điện tử của Chúng tôi.
+
+Tờ vận chuyển giấy thể hiện thông tin hành trình và số lượng hoặc trọng lượng hành lý quá cước mua thêm và các thông tin khác. Hành trình mà Hành khách mua thêm hành lý phải giống với hành trình Hành khách được vận chuyển trên Vé điện tử hoặc Tờ vận chuyển điện tử.
+
+Vé điện tử (sau đây gọi tắt là Vé) được xuất bởi Chúng tôi hoặc các Đại lý chỉ định, là bản ghi chứa dữ liệu thông tin Hành khách, hành trình, Tổng giá dịch vụ, được lưu trữ trong cơ sở dữ liệu điện tử của Chúng tôi và/hoặc của Hãng hàng không tham gia vận chuyển trong hành trình của Hành khách.
+
+Vé Hành lý tính cước là vé giấy do Chúng tôi xuất để thu giá dịch vụ vận chuyển hành lý vượt quá mức miễn cước cho phép về số kiện, trọng lượng, kích thước trên chuyến bay của Chúng tôi hoặc hãng vận chuyển khác được chỉ định trên Vé điện tử. Trong trường hợp này, Vé hành lý tính cước có hiệu lực trùng với hiệu lực của Vé điện tử.
+
+Vé nối là Vé được xuất cho một Hành khách cùng với một hoặc nhiều Vé khác tạo thành hợp đồng vận chuyển theo quy định của pháp luật.
+
+Chi nhánh của Chúng tôi là các chi nhánh trong và ngoài nước của Chúng tôi.
+
+Website và Ứng dụng di động của Chúng tôi tương ứng là Trang thông tin điện tử https://www.vietnamairlines.com và Ứng dụng di động Vietnam Airlines.
+
+Tổng đài CSKH là Tổng đài Chăm sóc khách hàng của Chúng tôi được công bố trên Website và Ứng dụng di động của Chúng tôi.
+
+ICAO, tiếng Anh là International Civil Aviation Organization, là Tổ chức Hàng không Dân dụng Quốc tế.
+
+IATA, tiếng Anh là International Air Transport Association, là Hiệp hội Vận tải Hàng không Quốc tế.
+
+
+ĐIỀU 2. PHẠM VI ÁP DỤNG
+
+2.1.      Khái quát
+
+2.1.1.  Trừ các quy định nêu tại Điều 2.2, Điều 2.5 và Điều 2.6, Điều lệ vận chuyển này áp dụng cho tất cả chuyến bay do Chúng tôi khai thác và trong bất kỳ trường hợp nào khi Chúng tôi có trách nhiệm pháp lý liên quan đến Hành khách và chuyến bay của Hành khách.
+
+2.1.2.  Điều lệ vận chuyển này cũng được áp dụng cho việc vận chuyển miễn phí và vận chuyển với giá giảm, trừ trường hợp có quy định khác được Chúng tôi công khai theo quy định của pháp luật.
+
+2.1.3.  Điều lệ vận chuyển được Chúng tôi công khai theo quy định của pháp luật và khách có thể yêu cầu được cung cấp chi tiết tại bất kỳ thời điểm nào.
+
+2.2       Vận chuyển đến/xuất phát từ Mỹ, Ca-na-đa
+
+2.2.1.  Điều lệ vận chuyển được áp dụng đối với Hành khách đi hoặc đến Mỹ và các vùng lãnh thổ của Mỹ theo các yêu cầu của Bộ Giao thông Vận tải Mỹ với điều kiện các điểm đó nằm trong Giá dịch vụ có hiệu lực tại Mỹ.
+
+2.2.2.   Điều lệ vận chuyển này được áp dụng cho vận chuyển giữa các điểm trong lãnh thổ Ca-na-đa và giữa một điểm trong lãnh thổ Ca-na-đa với bất kỳ một điểm nào ngoài Ca-na-đa với điều kiện các điểm đó nằm trong Giá dịch vụ có hiệu lực ở Ca-na-đa.
+
+2.3.      Chuyến bay thuê chuyến
+
+Nếu việc vận chuyển được thực hiện theo hợp đồng thuê chuyến, Điều lệ vận chuyển này chỉ áp dụng trong trường hợp được dẫn chiếu đến hoặc được quy định trên Vé hoặc trong thỏa thuận khác với Hành khách.
+
+2.4.     Chuyến bay liên danh
+
+Trên một số chuyến bay, Chúng tôi có thể có thỏa thuận liên danh với các Hãng vận chuyển khác gọi là “Chuyến bay Liên danh”. Điều này có nghĩa là ngay cả khi Hành khách đặt chỗ với Chúng tôi và có Vé mà trên đó tên hoặc Mã hãng hàng không của Chúng tôi được chỉ ra là Hãng vận chuyển, hãng khai thác tàu bay có thể là Hãng vận chuyển khác. Nếu các thỏa thuận này được áp dụng, Chúng tôi thông báo cho Hành khách tên hãng khai thác tàu bay khi Hành khách đặt chỗ.
+
+2.5.      Luật áp dụng
+
+Luật áp dụng của Điều lệ vận chuyển này là luật Việt Nam. Đối với vận chuyển quốc tế thuộc phạm vi điều chỉnh của Công ước, quy định của Công ước sẽ được áp dụng.
+
+Trường hợp có sự mâu thuẫn hoặc xung đột giữa quy định của Điều lệ này với quy định của pháp luật Việt Nam và quy định của Công ước, các quy định của pháp luật Việt Nam và quy định của Công ước sẽ được ưu tiên áp dụng.
+
+2.6.      Ưu tiên áp dụng Điều lệ vận chuyển
+
+Trừ khi được quy định tại Điều lệ vận chuyển, trong trường hợp có sự không thống nhất giữa Điều lệ vận chuyển này với Quy định khác của Chúng tôi thì Điều lệ vận chuyển này được ưu tiên áp dụng.
+
+ĐIỀU 3. VÉ
+
+3.1.      Quy định chung
+
+Vé là chứng từ vận chuyển hành khách bằng đường hàng không và hình thức vận chuyển khác do Chúng tôi hoặc các Đại lý chỉ định khởi tạo bằng phương thức điện tử theo quy định tại Điều 6 Điều lệ vận chuyển này và là bằng chứng của việc giao kết hợp đồng của Chúng tôi với Hành khách có tên trên Vé, trong đó có thông tin cá nhân của Hành khách và thông tin chi tiết về hành trình bay (chuyến bay, hạng dịch vụ, điểm dừng, tình trạng Tờ vận chuyển điện tử v.v.), Điều kiện hợp đồng và các điều khoản khác mà Hành khách và Chúng tôi đã đạt được thỏa thuận tại thời điểm đặt chỗ và xuất vé theo luật áp dụng.
+
+3.1.1.   Chúng tôi chỉ vận chuyển Hành khách khi:
+
+3.1.1.1.     Hành khách có chỗ được xác nhận trên chuyến bay và có Vé còn hiệu lực vận chuyển, trong đó Tờ vận chuyển điện tử tương ứng với chặng bay đó chưa được sử dụng; và
+
+3.1.1.2.     Hành khách có tên trên Vé đúng với tên trên Hồ sơ đặt chỗ và tên trên giấy tờ tùy thân Hành khách xuất trình tại thời điểm làm thủ tục chuyến bay. Hành khách có thể phải xuất trình Tờ Hành trình/Phiếu thu (bản in hoặc bản điện tử) cho nhân viên thủ tục hoặc nhân viên phục vụ mặt đất của Chúng tôi tại sân bay khi được yêu cầu.
+
+3.1.2.   Hành khách không được chuyển nhượng Vé của mình cho người khác.
+
+3.1.3.  Những Vé được bán với mức giá giảm có thể không được chi hoàn một phần hoặc toàn bộ. Hành khách cần lựa chọn loại giá thích hợp nhất với nhu cầu của mình.
+
+3.1.4.   Nếu Hành khách có Vé như tại Điều 3.1.3 nêu trên mà không thể thực hiện hành trình vì Sự kiện bất khả kháng và cung cấp được các chứng cứ chứng minh, Chúng tôi sẽ miễn trừ điều kiện hạn chế về chi hoàn và hoàn lại giá trị của phần hành trình chưa sử dụng theo quy định tại Điều 11.3 Điều lệ vận chuyển này. Đối với Vé có hành trình bay từ/đến Mỹ hoặc trong nội địa Mỹ, Chúng tôi không chi hoàn giá trị của phần hành trình chưa sử dụng sang EMD hoặc E-Voucher.
+
+3.1.5.   Yêu cầu đối với vé
+
+3.1.5.1.     Đối với Vé điện tử:
+
+Hành khách chỉ được vận chuyển khi có Vé còn hiệu lực được xuất đúng cho Hành khách và hạng đặt chỗ, ngày và chuyến bay trên Tờ vận chuyển điện tử phải giống với hạng đặt chỗ, ngày và chuyến bay trong Hồ sơ đặt chỗ.
+
+Nếu có sự khác biệt giữa Vé, Tờ vận chuyển điện tử và Hồ sơ đặt chỗ, Hành khách có thể bị từ chối vận chuyển trên chuyến bay hoặc được chấp nhận vận chuyển nếu Hành khách trả thêm Giá dịch vụ và các khoản phụ phí theo điều kiện của loại Giá dịch vụ áp dụng.
+
+Nếu Hành khách không thể xuất trình Tờ Hành trình/Phiếu thu (bản in hoặc bản điện tử), Chúng tôi sẽ hiển thị thông tin Vé điện tử từ Hồ sơ đặt chỗ của Hành khách trong hệ thống đặt chỗ của Chúng tôi với điều kiện Hành khách chứng minh bằng các giấy tờ tùy thân phù hợp rằng Vé đó thuộc về Hành khách và là Vé còn hiệu lực.
+
+Khi một Vé ban đầu được xuất không có đặt chỗ cụ thể ghi trên Vé, ngày và chuyến bay tương ứng với chặng bay đã xuất trên Vé có thể được đặt sau tùy theo điều kiện của loại Giá dịch vụ áp dụng và tình trạng chỗ trên chuyến bay Hành khách yêu cầu.
+
+3.1.5.2.     Đối với Vé Hành lý tính cước giấy:
+
+Chúng tôi chỉ chấp nhận vận chuyển hành lý cho đúng Hành khách, chặng bay và số lượng ghi trên Vé Hành lý nếu Hành khách xuất trình Vé điện tử có tên trùng với tên trên Vé Hành lý tính cước và giấy tờ tùy thân hợp lệ. Chúng tôi không chấp nhận vận chuyển hành lý nếu Vé Hành lý tính cước bị rách nát hoặc bị sửa đổi bởi người khác không phải là Chúng tôi.
+
+3.1.6.   Mất, rách Vé Hành lý tính cước, xuất trình Vé Hành lý tính cước không đầy đủ
+
+3.1.6.1.     Trường hợp Vé Hành lý tính cước bị mất hoặc bị rách nát (toàn bộ hoặc một phần), nếu Hành khách yêu cầu, Chúng tôi sẽ xuất Vé Hành lý tính cước mới thay thế (toàn bộ hoặc một phần) Vé Hành lý tính cước cũ, khi Chúng tôi xác định được Vé Hành lý tính cước cũ được xuất đúng quy định và còn hiệu lực vận chuyển cho chuyến bay liên quan. Trong trường hợp này, Hành khách phải cam kết bằng văn bản rằng nếu Vé Hành lý tính cước mất hoặc thất lạc hoặc các Tờ vận chuyển giấy thất lạc đã được sử dụng hoặc đã được chi hoàn thì Hành khách phải thanh toán cho Chúng tôi theo mức giá áp dụng cho việc xuất Vé Hành lý tính cước mới.
+
+3.1.6.2.     Khi không có các bằng chứng tại Điều 3.1.6.1 nêu trên hoặc Hành khách không ký cam kết bằng văn bản, Chúng tôi có thể yêu cầu Hành khách thanh toán cho việc xuất vé theo mức giá tại thời điểm xuất vé Hành lý tính cước thay thế. Nếu tìm được Vé Hành lý tính cước cũ trước khi Vé Hành lý tính cước hết hạn hiệu lực, Hành khách xuất trình Vé Hành lý tính cước này cho Chúng tôi để hoàn giá trị Vé Hành lý tính cước cũ.
+
+3.1.6.3.     Hành khách cần áp dụng các biện pháp hợp lý để giữ Vé Hành lý tính cước không bị mất hoặc bị rách nát, hư hỏng.
+
+3.2.      Hiệu lực Vé và EMD
+
+3.2.1.  Trừ khi điều kiện của loại Giá dịch vụ áp dụng có quy định khác về thời hạn hiệu lực, hoặc trong Điều lệ vận chuyển này có quy định khác, hoặc có Quy định khác của Chúng tôi, thời hạn hiệu lực của Vé được xác định như sau:
+
+3.2.1.1.    một năm kể từ ngày xuất Vé nếu Vé hoàn toàn chưa sử dụng; hoặc
+
+3.2.1.2.    một năm kể từ ngày khởi hành đầu tiên ghi trên Vé nếu Vé đã được sử dụng một phần và ngày khởi hành này trong vòng một năm kể từ ngày xuất Vé.
+
+3.2.2.   Trừ khi có Quy định khác của Chúng tôi, EMD có hiệu lực một năm kể từ ngày xuất. EMD sẽ không được chấp nhận nếu Hành khách không xuất trình EMD để sử dụng dịch vụ được chỉ định trên EMD theo hiệu lực quy định hoặc không đổi sang vé trong thời hạn một năm kể từ ngày EMD được xuất.
+
+3.2.3.  Nếu sau khi đã khởi hành chặng đầu tiên, Hành khách không thể tiếp tục hành trình trong thời hạn hiệu lực của Vé vì lý do sức khỏe, Chúng tôi có thể gia hạn hiệu lực của Vé cho tới khi Hành khách đủ sức khỏe hoặc cho tới khi có chuyến bay đầu tiên của Chúng tôi sau ngày Hành khách đủ sức khoẻ, từ nơi hành trình của Hành khách bị gián đoạn với điều kiện còn chỗ trên hạng đặt chỗ mà Hành khách đã mua. Lý do sức khỏe như đã đề cập phải được chứng minh bằng giấy xác nhận của cơ quan y tế có thẩm quyền và Vé chỉ có thể được gia hạn không quá ba tháng kể từ ngày ghi trên giấy xác nhận của cơ quan y tế. Trong trường hợp này, Chúng tôi sẽ gia hạn hiệu lực tương ứng cho Vé của các thành viên gia đình (bố mẹ, anh chị em ruột, vợ, chồng, con) đi cùng với Hành khách.
+
+3.2.4.  Trong trường hợp Hành khách bị chết trên đường đi, Vé của những thành viên gia đình (bố mẹ, anh chị em ruột, vợ, chồng, con) đi cùng Hành khách có thể được thay đổi và được miễn trừ các điều kiện hạn chế cũng như phụ phí thay đổi.
+
+Trong trường hợp có thành viên gia đình của Hành khách (bố mẹ, anh chị em ruột, vợ, chồng, con) bị chết khi Hành khách đã bắt đầu hành trình, Vé của Hành khách có thể được thay đổi và được miễn trừ các điều kiện hạn chế cũng như phụ phí thay đổi nếu Hành khách chứng minh được mối quan hệ với thành viên gia đình bị chết.
+
+Những trường hợp thay đổi nêu trên chỉ được thực hiện khi Chúng tôi nhận được giấy chứng tử hoặc xác nhận hợp lệ khác có giá trị tương đương; nếu việc thay  đổi vé dẫn đến phải gia hạn hiệu lực sử dụng vé thì thời hạn gia hạn vé này sẽ không quá 45 ngày kể từ ngày đối tượng nêu trên bị chết.
+
+3.3.      Thứ tự các tờ vận chuyển
+
+3.3.1.   Giá vé mà Hành khách đã mua được tính trên cơ sở toàn bộ hành trình, từ điểm khởi hành qua các điểm dừng đã thỏa thuận tới điểm cuối cùng của hành trình, và có hiệu lực cho việc vận chuyển theo đúng trình tự các chặng bay như đã ghi trên Vé. Nếu các Tờ vận chuyển điện tử (hoặc các chặng bay đề cập trên Vé) không được sử dụng theo đúng thứ tự ghi trên Vé, Vé sẽ mất giá trị hiệu lực vận chuyển trong hầu hết các trường hợp. Hành khách liên hệ với Đại lý chỉ định hoặc Chúng tôi để chi hoàn phần hành trình chưa sử dụng theo các điều kiện quy định tại Điều 11 Điều lệ này.
+
+3.3.2.  Nếu Hành khách muốn thay đổi bất kỳ chặng bay nào liên quan đến hành trình bay ghi trên Vé, Hành khách phải chủ động liên hệ trước với Đại lý chỉ định hoặc Chúng tôi. Đại lý chỉ định hoặc Chúng tôi sẽ tính lại Tổng giá dịch vụ cho hành trình mới (i) theo mức giá tại thời điểm khách yêu cầu nếu Vé hoàn toàn chưa sử dụng, hoặc (ii) theo mức giá tại thời điểm khách mua Vé cũ nếu Vé đã sử dụng một phần.  Hành khách có thể phải trả mức chênh lệch phát sinh giữa Tổng giá dịch vụ đã thanh toán và Tổng giá dịch vụ áp dụng cho hành trình mới. Hành khách cũng có thể lựa chọn giữ nguyên hành trình ban đầu như đã ghi trên Vé.
+
+Nếu Hành khách cần thay đổi hành trình vì Sự kiện bất khả kháng, Hành khách phải liên hệ với Chúng tôi sớm nhất và Chúng tôi sẽ cố gắng ở mức độ hợp lý để vận chuyển Hành khách tới điểm dừng tiếp theo hoặc tới điểm cuối cùng của hành trình. Chúng tôi sẽ tính lại Tổng giá dịch vụ cho hành trình mới theo nguyên tắc trên và Hành khách có thể phải trả mức chênh lệch phát sinh giữa Tổng giá dịch vụ đã thanh toán và Tổng giá dịch vụ áp dụng cho hành trình mới. Trong trường hợp Hành khách không thể thực hiện được hành trình đã mua, Chúng tôi sẽ chi hoàn Tổng giá dịch vụ chưa sử dụng, miễn thu phụ phí hoàn vé và các điều kiện hạn chế về chi hoàn.
+
+3.3.3.   Nếu Hành khách sử dụng không đúng trình tự chặng bay ghi trên Vé mà không có sự đồng ý trước của Chúng tôi, Chúng tôi sẽ áp dụng mức Giá dịch vụ mới tại thời điểm thay đổi với các điều kiện giá tương ứng phù hợp với hành trình thực đi mới của khách. Nếu Vé đã sử dụng một phần, Giá dịch vụ cho hành trình mới được căn cứ theo mức giá tại thời điểm khách mua Vé cũ. Hành khách có thể được yêu cầu trả thêm các khoản chênh lệch phát sinh giữa Giá dịch vụ đã thanh toán với Giá dịch vụ áp dụng cho hành trình mới và các khoản thuế, phí, lệ phí, phụ phí thay đổi, phụ phí bỏ chỗ (nếu có).
+
+3.3.4.   Hành khách cần lưu ý rằng có một số thay đổi không dẫn tới việc thay đổi mức Giá dịch vụ nhưng cũng có các thay đổi khác như thay đổi ngày bay, thay đổi hạng dịch vụ, thay đổi chặng bay trong hành trình có thể dẫn tới việc tăng giá. Nhiều mức Giá dịch vụ chỉ có hiệu lực cho ngày và chuyến bay ghi trên Vé và hoàn toàn không thể thay đổi, hoặc chỉ được phép thay đổi nếu Hành khách trả thêm tiền. Hành khách có thể liên hệ với Chúng tôi hoặc Đại lý xuất vé để được thông báo mức giá tăng thêm cho việc thay đổi.
+
+3.3.5.  Hành khách cần lưu ‎ý rằng nếu Hành khách không có mặt để sử dụng chặng bay theo đúng trình tự ghi trên Vé và trên Hồ sơ đặt chỗ của Hành khách mà không thông báo trước, Chúng tôi có thể hủy đặt chỗ của các chặng bay tiếp theo. Trong trường hợp này, Hành khách cần liên hệ với Chúng tôi để kiểm tra hiệu lực của Vé, đặt lại chỗ cho các chặng bay đã bị hủy hoặc chi hoàn theo điều kiện của loại Giá dịch vụ đã trả.
+
+3.4.      Tên và địa chỉ Chúng tôi
+
+Tên của chúng tôi có thể được viết tắt thành Mã hãng không “VN” trên Vé của Chúng tôi. Địa chỉ đã đăng ký của Chúng tôi là 200 Nguyễn Sơn, Long Biên, Hà Nội, Việt Nam.
+
+ĐIỀU 4. ĐIỂM DỪNG
+
+4.1.     Điểm dừng là điểm Hành khách có thể dừng trong hành trình ghi trên Vé, phù hợp yêu cầu của nhà chức trách và điều kiện của loại Giá dịch vụ áp dụng.
+
+Trường hợp hành khách có Vé được xuất với Giá dịch vụ có hạn chế về điểm dừng hoặc hạn chế bởi nhà chức trách, Hành khách phải tuân thủ theo các hạn chế, lệnh cấm dừng hoặc phải trả thêm phí điểm dừng theo quy định trong biểu giá áp dụng đã được Chúng tôi công khai theo quy định của pháp luật.
+
+4.2.      Điểm dừng phải được thỏa thuận trước với Hãng vận chuyển và được ghi trên Vé.
+
+ĐIỀU 5.  GIÁ DỊCH VỤ, THUẾ, PHÍ, LỆ PHÍ VÀ PHỤ THU, PHỤ PHÍ
+
+5.1.      Giá dịch vụ
+
+Là mức giá áp dụng cho việc vận chuyển Hành khách từ sân bay của điểm xuất phát tới sân bay của điểm đến. Mức Giá dịch vụ có thể bao gồm một số chặng vận chuyển trên đối tác không phải đường hàng không theo hợp đồng hợp tác với Chúng tôi. Trường hợp Giá dịch vụ có thể bao gồm các dịch vụ khác thì Hành khách được thông báo về các dịch vụ này và điều kiện đi kèm tại thời điểm mua vé.
+
+Mức Giá dịch vụ được Chúng tôi công khai theo quy định của pháp luật.
+
+5.2.      Thuế, phí và lệ phí
+
+5.2.1.   Các khoản thuế, phí, lệ phí được quy định bởi Nhà chức trách hoặc tổ chức có thẩm quyền, hoặc tổ chức điều hành bay của sân bay chưa bao gồm trong Giá dịch vụ. Hành khách có trách nhiệm thanh toán cho Chúng tôi - người thay mặt cho các tổ chức này - mọi khoản thuế, phí và lệ phí áp dụng cho hành trình mua Vé. Tại thời điểm mua Vé, Hành khách sẽ được thông báo các khoản thuế, phí và lệ phí ngoài Giá dịch vụ, phần lớn các khoản này được ghi riêng biệt theo thông lệ lên mặt Vé.
+
+5.2.2.   Trường hợp các khoản thuế, phí và lệ phí được thay đổi và/hoặc được ban hành mới sau khi Hành khách đã mua vé, Chúng tôi sẽ thông báo cho Hành khách về điều kiện áp dụng cụ thể của các khoản thuế, phí, lệ phí đó. Nếu Hành khách không chấp nhận thanh toán bổ sung các khoản thuế, phí và lệ phí này trước khi thực hiện chuyến bay, Hành khách thực hiện chi hoàn Vé theo Điều 11 Điều lệ vận chuyển này.
+
+5.3.      Phụ thu, phụ phí
+
+Các khoản phụ thu, phụ phí được quy định bởi Chúng tôi hoặc Hãng vận chuyển khác.
+
+Phụ thu có thể bao gồm các loại phụ thu xăng dầu, phụ thu quản trị hệ thống, phụ thu dịch vụ bán vé, phụ thu bảo hiểm.
+
+Phụ phí có thể bao gồm các loại phụ phí thay đổi Vé, phụ phí xử lý dịch vụ, phụ phí bỏ chỗ.
+
+Chi tiết các loại phụ thu, phụ phí được Chúng tôi công khai theo quy định của pháp luật.
+
+Hành khách có trách nhiệm thanh toán đầy đủ các khoản phụ thu, phụ phí tại thời điểm mua vé.
+
+5.4.      Tổng giá dịch vụ
+
+Tổng giá dịch vụ bao gồm toàn bộ số tiền khách phải trả để mua vé bao gồm Giá dịch vụ, thuế, phí, lệ phí và các khoản phụ thu, phụ phí.
+
+5.5       Các khoản phát sinh
+
+Việc thay đổi chặng bay trong hành trình hoặc ngày bay theo yêu cầu của Hành khách có thể dẫn đến việc thay đổi mức Giá dịch vụ áp dụng và phát sinh tăng các khoản thuế, phí, lệ phí và các mức phụ thu, phụ phí khác. Hành khách có trách nhiệm thanh toán các khoản phát sinh tăng này.
+
+5.6.      Thanh toán Tổng giá dịch vụ
+
+Chúng tôi không có nghĩa vụ vận chuyển và có quyền từ chối tiếp tục vận chuyển Hành khách và Hành lý nếu Hành khách không thanh toán đầy đủ Tổng giá dịch vụ.
+
+5.7.     Đồng tiền thanh toán
+
+Giá dịch vụ, thuế, phí, lệ phí, phụ thu và phụ phí được thanh toán bằng đồng tiền của nước mà Vé được xuất, thay đổi (đối với Vé xuất trên Website hoặc Ứng dụng di động của Chúng tôi, là đồng tiền của quốc gia/vùng mà Hành khách lựa chọn khi truy cập), trừ trường hợp loại đồng tiền khác được quy định bởi Chúng tôi hoặc Đại lý chỉ định, tại thời điểm thanh toán hoặc trước thời điểm thanh toán (ví dụ: lý do đồng tiền địa phương không thể chuyển đổi). Chúng tôi, tuỳ theo quyết định của mình, có thể chấp nhận thanh toán bằng loại đồng tiền khác phù hợp với quy định của luật áp dụng.
+
+ĐIỀU 6. ĐẶT GIỮ CHỖ
+
+6.1.      Điều kiện giữ chỗ
+
+6.1.1.   Chúng tôi hoặc các Đại lý chỉ định đặt chỗ cho Hành khách. Khi được yêu cầu, Chúng tôi sẽ cung cấp thông tin Hồ sơ đặt chỗ cho Hành khách.
+
+Khi Hành khách đặt chỗ trực tiếp tại Chi nhánh hoặc tại các Đại lý chỉ định hoặc thông qua Website, Ứng dụng di động, Tổng đài CSKH của Chúng tôi, thông tin hồ sơ đặt chỗ được lưu lại trên hệ thống đặt chỗ của Chúng tôi và Vé sau khi được xuất sẽ được gửi đến địa chỉ email Hành khách đăng ký trong Hồ sơ đặt chỗ nếu Hành khách yêu cầu. Một Vé hợp lệ sẽ hiển thị số vé và tình trạng xác nhận chỗ của chuyến bay. Nếu Hành khách hoặc Đại lý chỉ định đặt chỗ nhưng vì lý do khách quan hoặc chủ quan (ví dụ do lỗi hệ thống hoặc nhập thiếu trường thông tin theo yêu cầu) mà không thành công và không tạo ra Hồ sơ đặt chỗ (không tạo ra mã Hồ sơ đặt chỗ), Hành khách sẽ không có đặt chỗ hợp lệ trên hệ thống của Chúng tôi. Trong trường hợp này, Hành khách, Đại lý chỉ định cần liên hệ với các Chi nhánh của Chúng tôi hoặc Tổng CSKH để yêu cầu trợ giúp.
+
+6.1.2.  Một số loại giá có điều kiện giới hạn hoặc không cho phép Hành khách thay đổi hoặc hủy chỗ đã giữ. Hành khách cần kiểm tra điều kiện áp dụng của loại giá mà khách đã chọn và Chúng tôi không chịu trách nhiệm với các sai sót của Hành khách.
+
+6.2.      Thời hạn mua Vé
+
+Hồ sơ đặt chỗ hành khách có quy định về thời hạn thanh toán, xuất vé và được thông báo cho Hành khách tại thời điểm đặt chỗ. Nếu quá thời hạn này mà Hành khách không thực hiện thanh toán hoặc cung cấp số vé đã mua trước đó để cập nhật, Hồ sơ đặt chỗ sẽ bị hủy.
+
+6.3.      Thông tin cá nhân
+
+Chúng tôi tuân thủ Quy định chung về bảo vệ dữ liệu cá nhân (General Data Protection Regulation - GDPR) của Liên minh châu Âu (EU) khi thu thập, xử lý, lưu trữ dữ liệu của Hành khách cho mục đích thực hiện hợp đồng vận chuyển. Để biết thêm thông tin, và trước khi xác thực hay tiếp tục thực hiện giao dịch đặt chỗ của Hành khách, xin vui lòng tham khảo Chính sách bảo mật thông tin của Vietnam Airlines.
+
+6.4.      Xếp chỗ
+
+6.4.1.   Chúng tôi sẽ xếp chỗ ngồi hợp lý cho Hành khách cần sự hỗ trợ phù hợp với luật định.
+
+6.4.2.   Chúng tôi sẽ cố gắng xếp chỗ theo yêu cầu trước của Hành khách. Tuy nhiên, Chúng tôi không đảm bảo bất kỳ vị trí chỗ cụ thể trên tàu bay. Chúng tôi có quyền xếp chỗ hoặc xếp lại chỗ bất kì lúc nào, ngay cả khi Hành khách đã lên tàu bay, nếu thấy cần thiết để đảm bảo an toàn, tuân thủ quy định của nhà chức trách, vì lí do an ninh hoặc vì Sự kiện bất khả kháng. Nếu hành khách không ngồi đúng vị trí đã được xếp chỗ trong những trường hợp như vậy, Chúng tôi có thể từ chối vận chuyển Hành khách.
+
+6.5.      Phụ phí bỏ chỗ
+
+Trừ trường hợp Giá dịch vụ áp dụng có điều kiện hạn chế không được chi hoàn hoặc thay đổi, Hành khách có thể phải trả một khoản phụ phí nếu Hành khách không thực hiện chuyến bay nhưng không hoàn hoặc thay đổi Vé ít nhất 03 giờ trước giờ khởi hành ghi trên Vé của chuyến bay mà Hành khách đã đặt chỗ. Mức phụ phí được Chúng tôi công khai theo quy định của pháp luật và được Chúng tôi xác nhận tại thời điểm phát sinh.
+
+6.6.      Các dịch vụ đặc biệt
+
+6.6.1.  Chúng tôi cố gắng đảm bảo cung cấp các dịch vụ đặc biệt mà Hành khách yêu cầu khi đặt chỗ theo khả năng cung cấp của Chúng tôi. Chúng tôi sẽ thông báo cho Hành khách trong trường hợp Chúng tôi không cung cấp được dịch vụ đặc biệt theo yêu cầu của Hành khách. Yêu cầu dịch vụ đặc biệt của Hành khách sẽ được xác nhận ngay hoặc được xác nhận sau khi Chúng tôi kiểm tra các điều kiện vận chuyển hoặc sau khi Hành khách hoàn thành các thủ tục theo điều kiện chấp nhận vận chuyển.
+
+Đối với các trường hợp Hành khách yêu cầu dịch vụ đặc biệt ngay tại sân bay, Chúng tôi sẽ kiểm tra điều kiện phục vụ và thông báo cho Hành khách về khả năng cung cấp dịch vụ. Trong trường hợp Chúng tôi xác nhận không thể cung cấp dịch vụ theo yêu cầu đã đặt trước của Hành khách, Chúng tôi không chịu trách nhiệm với Hành khách về những tổn thất, chi phí phát sinh có liên quan.
+
+6.6.2.  Nếu Hành khách gặp khó khăn trong việc di chuyển và Hành khách yêu cầu bất kỳ sự trợ giúp đặc biệt nào, Hành khách cần thông báo với Chúng tôi khi đặt chỗ.
+
+6.6.3.  Nếu Hành khách gặp khó khăn trong việc di chuyển, Chúng tôi sẽ chuyên chở Hành khách nếu Chúng tôi thu xếp được các điều kiện cần thiết để đáp ứng nhu cầu đặc biệt của Hành khách. Nếu Hành khách không thông báo trước cho Chúng tôi khi cần dịch vụ đặc biệt, Chúng tôi sẽ cố gắng cung cấp cho Hành khách các yêu cầu đặc biệt khách cần.
+
+6.6.4.  Chúng tôi có thể yêu cầu Hành khách phải có người đi kèm vì lý do an toàn hoặc nếu Hành khách không thể tự thoát hiểm hoặc Hành khách không có khả năng hiểu các hướng dẫn an toàn trên chuyến bay.
+
+6.6.5.  Chúng tôi có quyền không chấp nhận chuyên chở các Hành khách bắt buộc phải nằm cáng trên bất kỳ chuyến bay nào.
+
+6.6.6.  Hành khách có thể phải thanh toán giá dịch vụ đối với một số dịch vụ đặc biệt của Chúng tôi. Mức giá dịch vụ được Chúng tôi công khai theo quy định của pháp luật và được Chúng tôi xác nhận tại thời điểm Hành khách đặt dịch vụ.
+
+6.6.7.  Việc chấp nhận vận chuyển trẻ em không có người lớn đi kèm, Hành khách khuyết tật, ốm yếu, phụ nữ mang thai hoặc những Hành khách khác yêu cầu sự trợ giúp đặc biệt có thể phụ thuộc vào sự thu xếp trước với Chúng tôi và tuân thủ các quy định về vận chuyển được Chúng tôi công khai theo quy định của pháp luật.
+
+6.7.      Dịch vụ trên tàu bay
+
+6.7.1.  Chúng tôi sẽ cung cấp các thiết bị, chương trình giải trí trên chuyến bay, các loại suất ăn hoặc các dịch vụ khác trên chuyến bay tùy thuộc vào khả năng cung ứng dịch vụ và độ dài chuyến bay. Hành khách có thể phải thanh toán giá dịch vụ đối với một số dịch vụ trên tàu bay. Mức giá dịch vụ được Chúng tôi công khai theo quy định của pháp luật và được Chúng tôi xác nhận tại thời điểm Hành khách đặt dịch vụ.
+
+6.7.2.  Trường hợp Chúng tôi không thể cung cấp dịch vụ mà Hành khách đã trả giá dịch vụ, Chúng tôi sẽ thông báo cho Hành khách và thực hiện các nghĩa vụ đi kèm được Chúng tôi công khai theo quy định của pháp luật.
+
+6.8.     Hủy chỗ chặng tiếp theo
+
+            Nếu Hành khách không thông báo trước cho Chúng tôi về việc không sử dụng chỗ của  chặng bay trong hành trình hoặc không có mặt để sử dụng chặng bay như đề cập tại Điều 3.3.5 Điều lệ vận chuyển này thì Chúng tôi sẽ hủy đặt chỗ các chặng bay tiếp theo. Tuy nhiên, nếu Hành khách thông báo trước, Chúng tôi sẽ giữ đặt chỗ các chặng bay tiếp theo.
+
+
+ĐIỀU 7. THỦ TỤC ĐI TÀU BAY
+
+7.1.      Hành khách đi tàu bay phải có mặt tại quầy làm thủ tục chuyến bay và cửa ra tàu bay đúng thời gian quy định để đảm bảo hoàn tất các thủ tục cần thiết trước khi tàu bay khởi hành. Chúng tôi có quyền hủy đặt chỗ của Hành khách nếu Hành khách không tuân thủ thời gian làm thủ tục cuối cùng của chuyến bay. Hành khách cần phải biết quy định về thời gian phải có mặt tại quầy làm thủ tục chuyến bay. Quy định này được Chúng tôi công khai theo quy định của pháp luật.
+
+Tùy thuộc vào điều kiện thực tế, Chúng tôi có thể cung cấp tiện ích tự làm thủ tục chuyến bay. Các điều kiện cụ thể và hướng dẫn tiện ích này được Chúng tôi công khai theo quy định của pháp luật. Đối với các chuyến bay quốc tế, Hành khách tự làm thủ tục được yêu cầu phải có mặt tại quầy trong thời gian làm thủ tục của chuyến bay và xuất trình cho Chúng tôi các giấy tờ tùy thân theo quy định tại Điều 14.2 Điều lệ vận chuyển này.
+
+7.2.     Hành khách phải có mặt tại cửa ra tàu bay không muộn hơn thời gian được ghi trên thẻ lên tàu bay của Hành khách.
+
+7.3.     Nếu Hành khách không tuân thủ các quy định trên hoặc không xuất trình đầy đủ giấy tờ vận chuyển như quy định tại Điều 14.2 Điều lệ vận chuyển này hoặc không sẵn sàng khởi hành, Chúng tôi có quyền hủy chỗ của Hành khách.
+
+7.4.      Chúng tôi không chịu trách nhiệm về bất kỳ thiệt hại hay phí tổn nào phát sinh do Hành khách không tuân thủ đúng quy định tại Điều 7 Điều lệ vận chuyển này.
+
+ĐIỀU 8. TỪ CHỐI VÀ HẠN CHẾ VẬN CHUYỂN
+
+8.1.      Từ chối vận chuyển
+
+Chúng tôi có quyền từ chối vận chuyển bất kỳ Hành khách nào cũng như bất kỳ kiện Hành lý nào của Hành khách (ngay cả khi Hành khách có Vé còn giá trị hoặc thẻ lên tàu bay) trong các trường hợp sau:
+
+8.1.1.  Việc từ chối vận chuyển là cần thiết để tuân thủ các luật lệ, quy định, chỉ thị hiện hành của quốc gia hoặc vùng, lãnh thổ mà tàu bay bay đi, đến hoặc bay qua.
+
+8.1.2.  Hành khách từ chối cung cấp cho Chúng tôi thông tin cá nhân cần thiết và/hoặc các thông tin theo yêu cầu của Nhà chức trách để Chúng tôi căn cứ vào đó cung cấp sản phẩm, dịch vụ theo yêu cầu của Hành khách.
+
+8.1.3.   Các trường hợp từ chối vận chuyển theo quy định của Luật Hàng không dân dụng Việt Nam:
+
+8.1.3.1.     Do tình trạng sức khỏe của hành khách mà người vận chuyển nhận thấy việc vận chuyển hoặc vận chuyển tiếp sẽ gây nguy hại cho hành khách đó, cho những người khác trong tàu bay hoặc gây nguy hại cho chuyến bay
+
+8.1.3.2.     Để ngăn ngừa lây lan dịch bệnh.
+
+8.1.3.3.     Hành khách không chấp hành quy định về bảo đảm an toàn hàng không, an ninh hàng không, khai thác vận chuyển hàng không.
+
+8.1.3.4.     Hành khách có hành vi làm mất trật tự công cộng, uy hiếp an toàn bay hoặc gây ảnh hưởng đến tính mạng, sức khỏe, tài sản của người khác.
+
+8.1.3.5.     Hành khách trong tình trạng say rượu, bia hoặc các chất kích thích khác mà không làm chủ được hành vi.
+
+8.1.3.6.     Vì lý do an ninh.
+
+8.1.3.7.     Theo yêu cầu của cơ quan nhà nước có thẩm quyền.
+
+8.1.4.   Hành khách cần sự trợ giúp đặc biệt của Chúng tôi nhưng không có sự thu xếp trước.
+
+8.1.5.  Hành khách không đồng ý để kiểm tra an ninh bản thân hoặc Hành lý, hoặc Hành khách đã đồng ý để kiểm tra an ninh bản thân hoặc Hành lý nhưng không trả lời thoả đáng các câu hỏi an ninh tại quầy làm thủ tục hay tại cửa ra tàu, hoặc Hành khách không qua được cuộc phân tích/đánh giá an ninh về hồ sơ, hoặc Hành khách làm giả hoặc gỡ bất kỳ tem/nhãn kiểm tra an ninh nào trên Hành lý hay trên thẻ lên tàu bay.
+
+8.1.6.  Hành khách chưa thanh toán các khoản tiền phạt, bồi thường, tất cả các chi phí cộng dồn và nghĩa vụ tài chính khác mà Hành khách phải trả cho Chúng tôi.
+
+8.1.7.  Hành khách không có giấy tờ hợp lệ, có thể tìm cách nhập cảnh vào một nước quá cảnh, hoặc nhập cảnh vào nước mà không có đủ giấy tờ hợp lệ, hoặc tự huỷ giấy tờ trên chuyến bay, hoặc từ chối giao giấy tờ của mình cho nhân viên tổ bay khi được yêu cầu.
+
+8.1.8.  Hành khách xuất trình Vé (i) không hợp lệ, hoặc (ii) đã được báo mất hoặc bị đánh cắp; hoặc (iii) là Vé giả; hoặc (iv) Hành khách không chứng minh được rằng chính mình là người đứng tên trong ô “Họ tên Hành khách”. Trong các trường hợp trên, Chúng tôi được quyền thu giữ Vé đó.
+
+8.1.9.  Hành khách không tuân thủ yêu cầu tại Điều 3.3 liên quan đến việc sử dụng đúng trình tự tờ vận chuyển.
+
+8.2.      Chúng tôi có quyền thông báo từ chối vận chuyển, có thời hạn hoặc vô thời hạn, với Hành khách trên tất cả các chuyến bay do Chúng tôi khai thác đối với các trường hợp quy định tại Điều 8.1 Điều lệ vận chuyển này. Thông báo từ chối vận chuyển cũng yêu cầu Hành khách không được mua Vé hoặc đề nghị hoặc cho phép người khác mua Vé hộ Hành khách. Nếu Hành khách cố gắng sử dụng dịch vụ vận chuyển của Chúng tôi khi thông báo từ chối vận chuyển còn hiệu lực, Chúng tôi sẽ từ chối vận chuyển Hành khách.
+
+8.3.      Trách nhiệm trong trường hợp từ chối vận chuyển
+
+8.3.1.  Chúng tôi không chịu trách nhiệm đối với bất kỳ thiệt hại hoặc tổn thất phát sinh do Hành khách bị từ chối vận chuyển hoặc không được chấp nhận vận chuyển tiếp theo quy định tại Điều này. Trường hợp khách bị từ chối vận chuyển theo Điều 8.1.3 nêu trên, khách được chi hoàn tiền vé hoặc số tiền tương ứng phần vé chưa sử dụng - sau khi trừ phí và tiền phạt (nếu có) theo điều kiện của loại Giá dịch vụ áp dụng.
+
+8.3.2.  Ngược lại, Chúng tôi có quyền yêu cầu Hành khách bồi thường các chi phí liên quan đến khiếu nại hoặc tổn thất, bao gồm các chi phí do việc đổi hướng chuyến bay là hệ quả của cách cư xử, hành vi hoặc trạng thái quy định tại Điều 8.1 nêu trên và hệ quả của việc từ chối vận chuyển hoặc không chấp nhận tiếp tục vận chuyển Hành khách.
+
+8.4.     Giới hạn trọng tải/ chỗ ngồi tàu bay
+
+8.4.1.  Nếu số Hành khách vận chuyển vượt quá giới hạn quy định của tàu bay, Chúng tôi có thể, tùy theo khả năng cung cấp dịch vụ của mình, thu xếp việc vận chuyển Hành khách trên chuyến bay khác hoặc vận chuyển Hành khách theo hình thức mới phù hợp và trên cơ sở thỏa thuận với Hành khách.
+
+8.4.2.  Trách nhiệm của Chúng tôi đối với những Hành khách đã được xác nhận chỗ trên chuyến bay nhưng không được vận chuyển thực hiện theo quy định tại Điều 10 Điều lệ vận chuyển này.
+
+8.4.3.  Trách nhiệm của Chúng tôi đối với những Hành lý không được vận chuyển của Hành khách đã được xác nhận chỗ trên chuyến bay và có mặt tại nơi làm thủ tục đúng nơi quy định thực hiện theo quy định tại Điều 9.6.3 Điều lệ vận chuyển này.
+
+8.5.      Chó hỗ trợ đi cùng khách khuyết tật
+
+Chó hỗ trợ là bất kể giống/loài chó nào đã được cấp chứng chỉ huấn luyện để thực hiện công việc hoặc nhiệm vụ vì lợi ích của người bị khuyết tật về mặt thể chất, giác quan, tâm thần hay các khuyết tật khác về mặt trí tuệ.
+
+Việc vận chuyển chó hỗ trợ phải tuân thủ đầy đủ các điều kiện cũng như quy định của quốc gia khởi hành, quá cảnh và quốc gia đến.
+
+Chúng tôi có thể từ chối vận chuyển chó hỗ trợ của Hành khách nếu xảy ra một trong các trường hợp sau:
+
+8.5.1.  Vị trí của chó hỗ trợ trên tàu bay có thể cản trở lối đi hoặc các khu vực khác mà theo các quy định về an toàn bắt buộc không bị cản trở khi thoát hiểm.
+
+8.5.2.   Việc vận chuyển chó hỗ trợ có thể gây mất an toàn do kích thước và cân nặng của chó quá to để vận chuyển trên khoang khách.
+
+8.5.3.  Chó hỗ trợ có biểu hiện gây đe doạ trực tiếp tới sức khoẻ hoặc an toàn của Hành khách khác trên tàu bay.
+
+8.5.4.   Không có đủ bằng chứng cho thấy chó đã được huấn luyện đầy đủ và được công nhận là chó hỗ trợ.
+
+ĐIỀU 9. HÀNH LÝ
+
+9.1.      Hành lý miễn cước
+
+Số lượng Hành lý miễn cước được mang theo  điều kiện của loại Giá dịch vụ mà Hành khách đã thanh toán và được ghi trên Vé. Hành lý miễn cước phải tuân thủ các điều kiện và giới hạn theo quy định được Chúng tôi công khai theo quy định của pháp luật.
+
+9.2.      Hành lý tính cước
+
+Hành khách phải trả giá hành lý tính cước cho số Hành lý vượt quá mức miễn cước cho phép và theo phương thức được Chúng tôi công khai theo quy định của pháp luật.
+
+9.3.      Cấm/ hạn chế vận chuyển
+
+9.3.1.   Hành khách không được mang theo các đồ vật sau trong Hành lý:
+
+9.3.1.1.     Những vật phẩm có thể gây nguy hiểm cho tàu bay, người, tài sản trên tàu bay hoặc bị cấm/ hạn chế vận chuyển theo người, hành lý trên tàu bay (i) đã được chỉ rõ trong Hướng dẫn kỹ thuật vận chuyển an toàn hàng hóa nguy hiểm của ICAO và Quy định hàng hóa nguy hiểm của IATA, (ii) theo quy định khác của Nhà chức trách và (iii) các quy định được Chúng tôi công khai theo quy định của pháp luật;
+
+9.3.1.2.     Các vật phẩm bị cấm vận chuyển theo các quy định hiện hành của các quốc gia và lãnh thổ mà tàu bay bay đi, bay đến hoặc bay qua;
+
+9.3.2.  Các vật phẩm nguy hiểm (bao gồm các loại vũ khí, đạn dược, công cụ hỗ trợ trừ khi được cho phép của Nhà chức trách; các loại chất nổ, vật liệu nổ; các chất dễ cháy; các loại vật dụng có thể được sử dụng làm hung khí tấn công đe doạ và các vật chất nguy hiểm khác) nếu được chấp nhận chuyên chở thì chỉ được vận chuyển như Hành lý ký gửi theo quy định được Chúng tôi công khai theo quy định của pháp luật. Đạn phải được tháo rời khỏi súng để đảm bảo an toàn cho vận chuyển. Đạn phải được để trong hộp đạn, băng đạn hoặc đóng gói theo đúng quy định. Tất cả các quy định vận chuyển vũ khí, đạn dược và công cụ hỗ trợ của nhà chức trách sân bay có liên quan, ICAO, IATA và của Chúng tôi được công khai theo quy định của pháp luật phải được tuân thủ.
+
+9.3.3.   Chúng tôi khuyến cáo hành khách không nên để các đồ vật dễ vỡ, hàng mau hỏng (đồ tươi sống, thực phẩm dễ hư hỏng….), tác phẩm nghệ thuật, máy quay phim, máy ảnh, tiền, đồ trang sức, kim loại quý, đá quý, máy tính, các thiết bị điện tử, giấy tờ có giá trị chuyển đổi thành tiền, chứng khoán, tài liệu đàm phán, hợp đồng, tài liệu kinh doanh, hàng mẫu, giấy tờ tùy thân, các vật dụng quý và/hoặc có giá trị khác trong hành lý ký gửi.
+
+9.3.4.  Chúng tôi không chịu trách nhiệm đối với bất kỳ Thiệt hại nào mà Hành khách phải chịu nếu Hành khách vẫn để những đồ vật được quy định tại Điều 9.3 trong Hành lý ký gửi của mình, cho dù Chúng tôi có biết hay không.
+
+9.4.      Quyền từ chối vận chuyển
+
+9.4.1.  Chúng tôi có quyền từ chối vận chuyển các Hành lý bao gồm những đồ vật được quy định ở Điều 9.3 Điều lệ vận chuyển này và cũng có thể từ chối tiếp tục vận chuyển Hành lý nếu như chúng tôi phát hiện ra những đồ vật đó trong Hành lý.
+
+9.4.2.  Vì lý do an toàn, an ninh, Chúng tôi có thể từ chối vận chuyển bất kỳ hành lý cũng như đồ vật nào. Chúng tôi không chịu trách nhiệm đối với bất kỳ Thiệt hại hoặc sự phiền hà nào mà Hành khách phải chịu do việc từ chối vận chuyển nêu trên.
+
+9.4.3.  Chúng tôi có thể từ chối nhận hành lý ký gửi nếu hành lý đó không được đóng gói hoặc chứa trong các vali hay các bao, thùng thích hợp để đảm bảo an toàn trong quá trình vận chuyển cũng như bốc xếp thông thường.
+
+9.4.4.  Chúng tôi và đại diện của chúng tôi không thực hiện gửi thẳng hành lý cho các Hãng hàng không khác mà chúng tôi không ký hợp đồng vận chuyển liên chặng với họ. Vì vậy nếu hành khách có ý định đi trên chuyến bay của Hãng khác đến một sân bay để nối chuyến với chuyến bay của Chúng tôi hoặc đi trên chuyến bay của Chúng tôi đến một sân bay để nối chuyến với chuyến bay của Hãng khác, Hành khách phải kiểm tra, xác định trước rằng liệu Chúng tôi có ký Hợp đồng vận chuyển liên chặng với Hãng hàng không đó hay không. Trong trường hợp Chúng tôi không ký kết Hợp đồng vận chuyển liên chặng với họ, Hành khách phải có trách nhiệm nhận lại Hành lý, làm thủ tục lại cho Hành lý của mình và nhận thẻ hành lý cho chuyến bay kế tiếp. Chúng tôi không chịu trách nhiệm về bất kỳ Thiệt hại đối với Hành khách và Hành lý của Hành khách đối với các chặng bay mà Chúng tôi không khai thác.
+
+9.5.      Quyền kiểm tra
+
+9.5.1.   Chúng tôi có quyền yêu cầu Hành khách cho phép kiểm tra an ninh hàng không người cũng như Hành lý. Nếu Hành khách vắng mặt khi đã được yêu cầu, Chúng tôi vẫn có thể tiến hành kiểm tra Hành lý nhằm mục đích xác minh Hành khách có mang theo hoặc Hành lý của Hành khách có chứa các đồ vật được Quy định ở Điều 9.3 hay không. Nếu Hành khách không đồng ý cho kiểm tra, Chúng tôi có thể từ chối vận chuyển Hành khách hoặc Hành lý đó. Trong trường hợp việc kiểm tra gây thiệt hại cho Hành khách hoặc Hành lý của Hành khách như ảnh hưởng do sử dụng máy soi chiếu, Chúng tôi không chịu trách nhiệm đối với những tổn thất và/hoặc thiệt hại đó trừ khi những tổn thất và thiệt hại đó do lỗi của Chúng tôi.
+
+9.5.2.  Chúng tôi không chịu trách nhiệm đối với những đồ vật trong người hoặc trong Hành lý của Hành khách do Nhà chức trách thu giữ theo quy định quốc tế hoặc Nhà chức trách nước sở tại, kể cả khi những đồ vật này sau đó bị giữ lại hay tiêu huỷ.
+
+9.6.      Hành lý ký gửi
+
+9.6.1.  Chúng tôi có trách nhiệm bảo quản và xuất Thẻ hành lý cho từng kiện Hành lý ký gửi của Hành khách khi Hành lý được ký gửi và giao cho Chúng tôi.
+
+9.6.2.  Hành lý ký gửi phải có tên của Hành khách hoặc phải được gắn ký hiệu nhận biết cá nhân.
+
+9.6.3.  Hành lý ký gửi được vận chuyển trên cùng chuyến bay với Hành khách. Nếu việc vận chuyển như vậy không thể thực hiện được vì lý do an toàn, an ninh, thiếu tải hoặc thiếu vị trí chất xếp, Chúng tôi sẽ vận chuyển Hành lý đó trên chuyến bay khác hoặc vận chuyển Hành lý theo hình thức mới phù hợp và trên cơ sở thỏa thuận với Hành khách. Trong trường hợp này, Hành lý ký gửi sẽ được vận chuyển và giao lại cho hành khách tại địa chỉ đăng ký trừ khi Hành khách phải có mặt tại cảng hàng không để hoàn thành các thủ tục hải quan theo quy định của pháp luật hiện hành.
+
+9.6.4.   Giới hạn tối đa để một kiện Hành lý ký gửi được chấp nhận vận chuyển là 32kg (70lb) về trọng lượng và 203 cm về kích thước ba chiều.
+
+Kiện hành lý ký gửi có trọng lượng và kích thước vượt quá giới hạn nêu trên chỉ được vận chuyển trong trường hợp (i) Hành khách thông báo trước và được Chúng tôi chấp nhận khi đặt giữ chỗ; hoặc (ii) phần trọng lượng vượt quá quy định nêu trên được tách và đóng lại thành kiện nhỏ hơn khi làm thủ tục.
+
+Trong bất kỳ trường hợp nào, Chúng tôi không chịu trách nhiệm về: (i) Thiệt hại do Hành khách không tuân thủ quy định về trọng lượng và kích thước, quy định về việc tách và đóng gói lại, (ii) việc từ chối vận chuyển Hành lý quá trọng lượng và kích thước quy định.
+
+9.7.      Kê khai và thanh toán phụ thu dịch vụ ký gửi cho Hành lý có giá trị
+
+Chúng tôi có thể nhận vận chuyển Hành lý ký gửi có giá trị vượt quá giới hạn trách nhiệm nếu Hành khách kê khai giá trị của Hành lý và thanh toán phụ thu dịch vụ ký gửi cho Hành lý đó theo mức phí được Chúng tôi công khai theo quy định của pháp luật. Việc thực hiện tuân theo pháp luật, quy định hiện hành của các quốc gia, lãnh thổ mà tàu bay đi, đến hoặc bay qua.
+
+9.8.      Hành lý xách tay
+
+9.8.1.  Hành lý xách tay mà Hành khách mang lên khoang tàu bay phải có kích cỡ và trọng lượng theo quy định được Chúng tôi công khai theo quy định của pháp luật. Nếu Hành lý xách tay của Hành khách có kích cỡ và/hoặc có trọng lượng quá mức quy định hoặc vì lý do an toàn hoặc khả năng chất xếp trên khoang hành khách của tàu bay, Hành lý đó phải được vận chuyển như Hành lý ký gửi.
+
+9.8.2.   Những hành lý dễ vỡ, gãy, hỏng; hành lý có giá trị cao hoặc khách cho rằng không phù hợp khi ký gửi (ví dụ như: nhạc cụ âm nhạc…); hành lý vượt quá mức miễn cước cho phép của Chúng tôi chỉ được chấp nhận vận chuyển trên khoang hành khách của tàu bay nếu Hành khách có thông báo trước và được sự đồng ý của Chúng tôi. Cước phí vận chuyển các Hành lý đó được tính riêng.
+
+9.9.      Giao nhận Hành lý
+
+9.9.1.  Hành khách phải nhận lại Hành lý khi Hành lý được đưa tới nơi giao nhận tại điểm đến hoặc điểm dừng ngay sau khi kết thúc chuyến bay. Nếu Hành lý ký gửi của Hành khách không được nhận trong vòng ba (3) tháng kể từ khi Hành lý được chuyển đến, Chúng tôi sẽ không chịu trách nhiệm đối với Hành khách về Hành lý này.
+
+9.9.2.   Người được nhận Hành lý phải là người có tên trên Thẻ hành lý.
+
+9.9.3.   Chúng tôi có thể yêu cầu Hành khách xuất trình Thẻ hành lý trước khi nhận Hành lý. Chúng tôi chỉ giao Hành lý cho Hành khách với điều kiện Hành khách đó chứng minh được  quyền sở hữu của mình đối với Hành lý. Các thông tin, tài liệu Chúng tôi xem xét để xác nhận quyền sở hữu đối với Hành lý bao gồm: Tên hành khách, số hiệu chuyến bay, ngày bay, số thẻ hành lý, số kiện hành lý.
+
+9.9.4.  Việc Hành khách nhận Hành lý ký gửi mà không có khiếu nại tại nơi giao nhận hành lý là bằng chứng đầy đủ rằng Hành lý ký gửi đã được giao trả nguyên vẹn và phù hợp với hợp đồng vận chuyển.
+
+9.10.  Động vật
+
+Chúng tôi chấp nhận chuyên chở các loại động vật nuôi (chó, mèo, chim) với các điều kiện sau:
+
+9.10.1.   Các loại động vật nuôi phải được đóng lồng cũi thích hợp hoặc vận chuyển trong thùng theo luật định, có kèm theo giấy chứng nhận thú y và tiêm chủng có giá trị, có giấy phép xuất nhập cảnh và các loại giấy tờ khác theo yêu cầu của nước xuất, nhập và quá cảnh. Việc chuyên chở có thể phải tuân thủ theo Quy định khác của Chúng tôi để việc vận chuyển được an toàn.
+
+9.10.2.  Để đảm bảo an toàn trong quá trình vận chuyển, chúng tôi không chấp nhận vận chuyển một số loại động vật nuôi. Thông tin về các chủng loại động vật nuôi không chấp nhận vận chuyển được Chúng tôi công khai theo quy định của pháp luật.
+
+9.10.3.  Nếu được chấp nhận là Hành lý, động vật nuôi cùng với lồng cũi và thức ăn mang theo không được coi là Hành lý miễn cước của Hành khách mà phải tính riêng là Hành lý tính cước theo quy định tại Điều 9.2 Điều lệ vận chuyển này. Động vật nuôi phải được chuyên chở, trong lồng thích hợp, trong khoang hàng hóa của tàu bay, trừ quy định tại Điều 9.10.6 và 9.10.7 Điều lệ vận chuyển này.
+
+9.10.4.   Động vật nuôi được chấp nhận vận chuyển với điều kiện Hành khách phải chịu hoàn toàn trách nhiệm về động vật đó. Chúng tôi không chịu trách nhiệm về việc tổn thương, mất mát, chậm trễ, ốm đau hoặc cái chết của động vật nuôi trong quá trình vận chuyển, ngoại trừ do lỗi của Chúng tôi.
+
+9.10.5.  Chúng tôi không chịu trách nhiệm trong trường hợp động vật nuôi đó không được phép cho vào hay đi qua một nước, một quốc gia hay một lãnh thổ nào.
+
+9.10.6.  Không ảnh hưởng đến mức Hành lý miễn cước theo quy định được Chúng tôi công khai theo quy định của pháp luật, Chúng tôi vận chuyển miễn phí chó hỗ trợ (cùng lồng, cũi) đi cùng khách khuyết tật.
+
+9.10.7.  Động vật nuôi được phép mang lên khoang hành khách phải tuân theo trọng lượng, số lượng, kích thước do chúng tôi quy định và tùy thuộc vào điều kiện chất xếp, hạng dịch vụ và đường bay. Hành khách không được phép cho động vật nuôi ra khỏi lồng trong suốt chuyến bay. Trong trường hợp nếu xét thấy động vật nuôi có thể ảnh hưởng đến hành khách khác, an toàn của chuyến bay, chúng tôi có thể yêu cầu khách chuyển động vật xuống hầm hàng của tàu bay.
+
+9.10.8.   Chúng tôi có thể thu xếp vận chuyển hành khách và động vật đi cùng trên chuyến bay khác nếu tại thời điểm làm thủ tục cho chuyến bay tàu bay đó không đủ điều kiện vận chuyển động vật sống mặc dù khách và động vật đã được xác nhận trên chuyến bay đó từ thời điểm đặt chỗ.
+
+ĐIỀU 10.  LỊCH BAY VÀ THAY ĐỔI LỊCH BAY
+
+10.1.      Lịch trình bay và loại tàu bay
+
+10.1.1.   Lịch trình bay và loại tàu bay được hiển thị trong lịch bay của Chúng tôi có thể thay đổi trong khoảng thời gian từ ngày công bố đến ngày bay thực tế của Hành khách. Việc thay đổi lịch trình bay được xử lý theo quy định tại các Điều 10.2 Điều lệ vận chuyển này.
+
+10.1.2.   Trước khi Chúng tôi chấp nhận đặt chỗ của Hành khách, Chúng tôi hoặc các Đại lý chỉ định thông báo cho Hành khách về lịch trình bay hiệu lực tại thời điểm đó và các thông tin này được thể hiện trên Vé của Hành khách.
+
+              Khi cần thiết Chúng tôi có thể thay đổi lịch trình bay sau khi đã xuất Vé cho Hành khách và/hoặc hủy bỏ, chấm dứt, thay đổi đường bay hoặc chuyển hướng bay, hoãn việc xếp lại lịch bay, làm chậm bất kỳ chuyến bay nào hoặc thay đổi tàu bay và điểm dừng nếu thấy là hợp lý để thích ứng với các trường hợp ngoài sự kiểm soát của Chúng tôi, theo yêu cầu của Nhà chức trách và vì các lý do an toàn hoặc lý do thương mại. Nếu Hành khách thông báo cho Chúng tôi địa chỉ liên lạc, Chúng tôi, trong phạm vi trách nhiệm của mình, sẽ thông báo cho Hành khách những thay đổi về lịch trình bay.
+
+10.2.      Thay đổi lịch bay
+
+10.2.1.   Chúng tôi sẽ áp dụng mọi biện pháp cần thiết để tránh chậm trễ trong việc vận chuyển Hành khách và Hành lý của Hành khách. Khi thực hiện các biện pháp này và để tránh việc hủy chuyến bay, trong trường hợp cần thiết, Chúng tôi có thể sắp xếp chuyến bay được thực hiện bởi tàu bay khác hoặc Hãng vận chuyển khác.
+
+10.2.2.   Trường hợp chuyến bay bị chậm, bị hủy, khởi hành sớm, hành khách không được vận chuyển, tùy theo luật áp dụng, Chúng tôi sẽ:
+
+10.2.2.1    Cung cấp, cập nhật đầy đủ thông tin cho hành khách theo phương thức thích hợp; xin lỗi hành khách; bảo đảm việc ăn, nghỉ, đi lại và chịu các chi phí khác có liên quan trực tiếp phù hợp với thời gian chờ đợi tại cảng hàng không (như thông tin liên lạc, vận chuyển mặt đất, tham quan thành phố tùy theo mức độ ảnh hưởng) và đảm bảo chất lượng dịch vụ hành khách tại cảng hàng không theo quy định của pháp luật;
+
+10.2.2.2    Trong phạm vi cung cấp dịch vụ của mình, thực hiện chuyển đổi hành trình phù hợp cho hành khách hoặc chuyển sang chuyến bay khác để hành khách tới được điểm cuối của hành trình, miễn trừ điều kiện hạn chế về chuyển đổi hành trình hoặc chuyển đổi chuyến bay và phụ phí đổi vé (nếu có) cho hành khách; hoặc
+
+                 Hoàn trả toàn bộ tiền vé hoặc hoàn trả phần vé chưa sử dụng theo sự lựa chọn của hành khách tại cảng hàng không hoặc tại các văn phòng đại diện, chi nhánh hoặc Đại lý chỉ định hoặc theo hình thức thanh toán khác như được thông báo tới khách hàng tại thời điểm khách hàng có yêu cầu chi hoàn.
+
+10.2.2.3    Bồi thường ứng trước không hoàn lại cho hành khách đã được xác nhận chỗ và có vé trên chuyến bay theo quy định của Nhà chức trách (nếu có);
+
+10.2.2.4.   Thực hiện các nghĩa vụ khác theo quy định của Nhà chức trách (nếu có).
+
+10.2.3    Trường hợp không do lỗi của Chúng tôi mà (i) chuyến bay bị chậm hoặc (ii) hành khách không được vận chuyển hoặc (iii) chuyến bay bị hủy hoặc (iii) hành khách đã được xác nhận chỗ nhưng không được vận chuyển và không nhận được thông báo về việc thay đổi thời gian khởi hành sớm hoặc không đồng ý với việc thay đổi thời gian khởi hành sớm: Chúng tôi không có trách nhiệm thực hiện các nghĩa vụ quy định tại Điều 10.2.2.2, 10.2.2.3, 10.2.2.4 Điều lệ vận chuyển này. Tuy nhiên, Chúng tôi sẽ cố gắng trợ giúp Hành khách tốt nhất trong trong điều kiện có thể.
+
+ĐIỀU 11. CHI HOÀN
+
+11.1.    Điều kiện chi hoàn
+
+Chúng tôi sẽ chi hoàn toàn bộ hoặc phần Vé, EMD chưa sử dụng theo những quy định dưới đây và phù hợp với các luật áp dụng:
+
+11.1.1.   Vé và EMD được chi hoàn trong thời hạn hiệu lực. Chúng tôi sẽ từ chối chi hoàn nếu Hành khách yêu cầu hoàn sau 30 ngày kể từ ngày Vé hoặc EMD hết hạn.
+
+              Đối với vé được xuất bởi Đại lý chỉ định của Chúng tôi hoặc Hãng hàng không khác, Hành khách phải yêu cầu Đại lý chỉ định hoặc Hãng hàng không xuất vé đó thực hiện chi hoàn.
+
+11.1.2.   Chúng tôi chỉ chi hoàn khi các Tờ vận chuyển điện tử của Vé, EMD chưa sử dụng. Đối với Vé Hành lý tính cước giấy, Hành khách phải giao cho Chúng tôi các Tờ vận chuyển giấy chưa sử dụng.
+
+11.1.3.   Trừ những trường hợp được quy định trong Điều này, Chúng tôi chỉ chi hoàn cho người có tên trên Vé, EMD hoặc cho người đã trả tiền mua Vé, EMD khi người yêu cầu chi hoàn xuất trình giấy tờ tùy thân, giấy ủy quyền phù hợp với quy định pháp luật và chứng từ vận chuyển yêu cầu chi hoàn.
+
+11.1.4.   Việc chi hoàn theo Điều 11.1 này được coi là chi hoàn đúng đối tượng. Khi đó Chúng tôi sẽ được miễn trừ trách nhiệm đối với bất kỳ khiếu nại nào của Hành khách hoặc bất kỳ người nào khác về việc chi hoàn này.
+
+11.2.      Chi hoàn tự nguyện
+
+Nếu Hành khách chi hoàn Vé, EMD vì lý do khác ngoài những lý do nêu tại Điều 11.3 Điều lệ vận chuyển này, khoản chi hoàn sẽ là:
+
+11.2.1    Đối với Vé, EMD được mua theo loại Giá dịch vụ không hạn chế chi hoàn.
+
+11.2.1.1   Nếu Vé, EMD hoàn toàn chưa được sử dụng, khoản chi hoàn sẽ bằng Tổng giá dịch vụ khách đã trả trừ các khoản phụ phí.
+
+11.2.1.2    Nếu Vé, EMD đã được sử dụng một phần, khoản chi hoàn là phần chênh lệch giữa Tổng giá dịch vụ Hành khách đã trả và Tổng giá dịch vụ áp dụng cho phần hành trình đã sử dụng trừ các khoản phụ phí.
+
+11.2.1.3    Phụ phí thay đổi Vé, EMD; phụ phí xử lý dịch vụ; phụ thu áp dụng cho dịch vụ bán vé, phục vụ Hành khách sẽ không được chi hoàn và không được bao gồm trong khoản chi hoàn.
+
+11.2.2    Đối với Vé, EMD được mua theo loại Giá dịch vụ không được chi hoàn
+
+11.2.2.1.  Chúng tôi sẽ không chi hoàn mức Giá dịch vụ và phụ thu cho toàn bộ hoặc phần Vé, EMD chưa sử dụng, ngoại trừ có những quy định khác phù hợp với luật áp dụng.
+
+11.2.2.2.   Chúng tôi chi hoàn các khoản thuế, phí, lệ phí thu hộ Nhà chức trách chưa sử dụng và có điều kiện được chi hoàn và sẽ trừ khoản phụ phí nhất định theo từng thị trường hoặc kênh bán Vé, EMD được Chúng tôi công khai theo quy định của pháp luật. Nếu khoản phụ phí vượt quá khoản thuế, phí, lệ phí được chi hoàn thì Hành khách sẽ không được hoàn tiền.
+
+11.3.  Chi hoàn không tự nguyện
+
+Nếu do lỗi của Chúng tôi hủy chuyến bay, không khai thác được chuyến bay theo lịch bay một cách hợp lý, không đến điểm đến cuối cùng hoặc điểm dừng đã ghi trên Vé của Hành khách hoặc Hành khách không được vận chuyển mặc dù đã được xác nhận chỗ hoặc làm cho Hành khách lỡ chuyến bay tiếp theo đã được xác nhận chỗ, khoản chi hoàn sẽ là:
+
+11.3.1.   Nếu Vé, EMD hoàn toàn chưa được sử dụng, khoản chi hoàn sẽ bằng Tổng giá dịch vụ Hành khách đã trả.
+
+11.3.2.   Nếu Vé, EMD đã được sử dụng một phần, khoản chi hoàn sẽ là phần chênh lệch giữa Tổng giá dịch vụ Hành khách đã trả và Tổng giá dịch vụ áp dụng cho phần hành trình đã sử dụng. Phụ phí xử lý dịch vụ đối với Vé, EMD đã sử dụng một phần sẽ không được chi hoàn.
+
+11.3.3.   Điều kiện hạn chế về hoàn vé, phí hoàn vé và phụ phí bỏ chỗ sẽ được miễn trừ.
+
+11.3.4.  Khi Hành khách đã chấp nhận khoản chi hoàn trong những trường hợp trên, hợp đồng vận chuyển giữa Chúng tôi và Hành khách sẽ chấm dứt.
+
+11.4.      Chi hoàn đối với Vé Hành lý tính cước bị mất
+
+11.4.1.   Nếu toàn bộ hoặc một phần vé bị mất và Hành khách cung cấp được cho Chúng tôi bằng chứng mất vé thỏa đáng và chấp nhận trả phí dịch vụ áp dụng, việc chi hoàn sẽ được thực hiện sau khi vé bị mất hết hiệu lực, với điều kiện:
+
+11.4.1.1.   Toàn bộ hoặc một phần vé bị mất chưa được sử dụng hoặc hoàn hoặc đổi, trừ trường hợp do lỗi của Chúng tôi mà vé bị mất đã được sử dụng hoặc đã chi hoàn hoặc đã đổi cho người nào khác;
+
+11.4.1.2.   Người được chi hoàn phải khai theo mẫu của Chúng tôi và cam kết trả lại cho Chúng tôi số tiền nhận chi hoàn do có sự gian lận và/hoặc toàn bộ hoặc một phần vé bị mất được sử dụng bởi người khác, trừ trường hợp do lỗi của Chúng tôi mà vé bị mất đã được sử dụng bởi người nào khác.
+
+11.4.2.   Nếu Chúng tôi hoặc Đại lý chỉ định làm mất toàn bộ vé hoặc một phần vé thì việc xử lý Vé bị mất sẽ thuộc về trách nhiệm của Chúng tôi.
+
+11.5.      Quyền từ chối chi hoàn
+
+11.5.1.   Chúng tôi có thể từ chối chi hoàn nếu Vé đã được xuất trình cho Chúng tôi hay nhà chức trách của một nước như một chứng cứ chứng tỏ Hành khách rời nước đó, trừ khi Hành khách chứng minh cho Chúng tôi một cách thỏa đáng rằng Hành khách được phép ở lại hoặc rời nước đó bằng Hãng vận chuyển khác hoặc bằng phương tiện vận tải khác.
+
+11.5.2.  Chúng tôi có thể từ chối chi hoàn trong các trường hợp được quy định tại Điều 8.1 Điều lệ vận chuyển này.
+
+11.6.      Thực hiện chi hoàn
+
+11.6.1.   Hình thức chi hoàn
+
+Chúng tôi thực hiện chi hoàn cho Hành khách về Hình thức thanh toán ban đầu hoặc hình thức khác theo chính sách của Chúng tôi (tùy từng thời điểm) và phù hợp với quy định pháp luật. Chi tiết các hình thức chi hoàn được Chúng tôi công khai theo quy định của pháp luật.
+
+11.6.2.  Đồng tiền chi hoàn
+
+Việc chi hoàn thường được thực hiện bằng đồng tiền mà Hành khách đã dùng để mua Vé hoặc bằng đồng tiền khác theo quy định pháp luật của nơi thực hiện chi hoàn.
+
+11.6.3.   Thời hạn chi hoàn
+
+Chúng tôi tuân thủ các luật áp dụng về thời hạn chi hoàn vé.
+
+ĐIỀU 12. HÀNH VI TRÊN TÀU BAY
+
+12.1.    Trên tàu bay nếu Hành khách thực hiện một trong các hành vi sau đây: (i) phạm tội; (ii) đe dọa, uy hiếp an toàn hàng không, an ninh hàng không; (iii) hành hung hoặc đe dọa thành viên tổ bay, Hành khách; (iv) không tuân theo sự hướng dẫn của người chỉ huy tàu bay hoặc của thành viên tổ bay thay mặt người chỉ huy tàu bay về việc bảo đảm an toàn cho tàu bay, duy trì trật tự, kỷ luật trong tàu bay; (v) phá hoại thiết bị, tài sản trong tàu bay; (vi) sử dụng ma túy; (vii) hút thuốc trên tàu bay kể cả trong buồng vệ sinh; (viii) các hành vi vi phạm thuần phong, mỹ tục, trật tự công cộng khác, thì Chúng tôi sẽ tiến hành những biện pháp an ninh cần thiết để ngăn chặn việc tiếp tục những hành vi như vậy. Chúng tôi có quyền yêu cầu Hành khách đó rời khỏi tàu bay và giao cho nhà chức trách sân bay nơi tàu bay khởi hành hoặc nơi tàu bay hạ cánh, từ chối vận chuyển Hành khách đó vĩnh viễn hoặc có thời hạn trên các chuyến bay do Chúng tôi khai thác hoặc đề nghị truy tố theo quy định của pháp luật.
+
+12.2.    Hành khách không được sử dụng đồ uống có cồn trên các chuyến bay của Chúng tôi trừ khi được Chúng tôi phục vụ. Chúng tôi có quyền từ chối phục vụ hoặc thu lại những đồ uống có cồn đã phục vụ Hành khách.
+
+12.3.    Nếu Hành khách vi phạm quy định tại Điều 12.1 Điều lệ vận chuyển này thì Chúng tôi có quyền yêu cầu Hành khách phải bồi thường những thiệt hại phát sinh do lỗi của Hành khách bao gồm những chi phí liên quan đến việc tàu bay hạ cánh khẩn cấp, những thiệt hại về người, tài sản và những thiệt hại khác mà Chúng tôi, các đại lý, nhân viên, nhà cung cấp dịch vụ, hành khách và bên thứ ba của Chúng tôi đã gánh chịu.
+
+12.4.    Thiết bị điện tử
+
+Vì lý do an toàn, trên tàu bay Hành khách không được sử dụng các thiết bị điện tử (ví dụ: điện thoại di động, máy tính xách tay, các thiết bị ghi âm, máy thu thanh, MP3, các máy nghe nhạc CD, trò chơi điện tử, sản phẩm la-de hoặc các phương tiện truyền tín hiệu gồm đồ chơi điều khiển từ xa và máy thu, phát vô tuyến xách tay/ máy bộ đàm…) nếu không được phép của Chúng tôi. Trong trường hợp được Chúng tôi cho phép, việc sử dụng các thiết bị nêu trên trên phải tuân thủ theo đúng quy định của Chúng tôi được thông báo khi Hành khách lên tàu bay qua video hướng dẫn an toàn, phát thanh của tiếp viên và bảng hướng dẫn an toàn tại mỗi vị trí ghế ngồi của Hành khách. Máy trợ thính và ổn định tim được phép sử dụng.
+
+ĐIỀU 13. THU XẾP CÁC DỊCH VỤ KHÁC
+
+13.1.    Trừ khi có Quy định khác của Chúng tôi, Chúng tôi không duy trì, khai thác hoặc cung cấp các dịch vụ vận chuyển mặt đất giữa các sân bay hoặc từ sân bay đến các điểm khác. Chúng tôi không chịu trách nhiệm về hoạt động của nhà khai thác các dịch vụ này kể cả trường hợp nhân viên của Chúng tôi hoặc người đại diện của Chúng tôi giúp đỡ Hành khách sử dụng các dịch vụ đó.
+
+13.2.    Nếu Chúng tôi thu xếp cho Hành khách với bất kỳ bên thứ ba nào để cung cấp bất kỳ dịch vụ mà không phải là vận chuyển bằng đường hàng không, bao gồm vận chuyển đường bộ, đường sắt và đường biển hoặc nếu Chúng tôi xuất vé hoặc phiếu cung cấp dịch vụ liên quan đến việc vận chuyển hoặc dịch vụ (không phải dịch vụ vận chuyển bằng đường hàng không) do một bên thứ ba cung cấp, chẳng hạn như đặt phòng khách sạn hay thuê ô tô, thì điều này có nghĩa rằng Chúng tôi chỉ đóng vai trò như đại diện của Hành khách với bên thứ ba đó. Các điều kiện và điều khoản của nhà cung cấp dịch vụ thứ ba sẽ áp dụng, và Chúng tôi không chịu bất kỳ trách nhiệm nào với Hành khách về các dịch vụ đó, bao gồm cả quyết định của nhà cung cấp dịch vụ thứ ba quyết định huỷ hoặc từ chối cung cấp dịch vụ cho Hành khách, trừ trường hợp do lỗi của Chúng tôi.
+
+13.3.    Nếu Chúng tôi cung cấp dịch vụ vận chuyển đường bộ, đường sắt hoặc đường biển cho Hành khách, các điều kiện khác có thể áp dụng cho việc vận chuyển đó.
+
+13.4.    Hành khách phải tự trả các chi phí khác ngoài những chi phí cho các dịch vụ đã được bao gồm trong Giá dịch vụ.
+
+ĐIỀU 14. THỦ TỤC HÀNH CHÍNH
+
+14.1.      Khái quát chung
+
+14.1.1.   Hành khách phải nghiên cứu các quy định liên quan đến xuất, nhập, quá cảnh đối với quốc gia mà Hành khách có ý định xuất hoặc nhập hoặc quá cảnh; và xuất trình hộ chiếu, thị thực, giấy chứng nhận sức khoẻ (nếu cần) và các loại giấy tờ tùy thân khác cho Chúng tôi.
+
+14.1.2.   Hành khách phải tuân thủ pháp luật, quy định, lệnh, sắc luật, yêu cầu và điều kiện của những quốc gia nơi có điểm bay đi, bay đến hoặc bay qua.
+
+14.1.3.   Chúng tôi không chịu trách nhiệm trong các trường hợp Hành khách: (i) không có các giấy tờ cần thiết như hộ chiếu, thị thực, giấy chứng nhận sức khỏe và các giấy tờ khác, hoặc (ii) có hộ chiếu, thị thực, giấy chứng nhận sức khỏe và các giấy tờ khác đã hết hạn hoặc không hợp lệ, hoặc (iii) không tuân thủ pháp luật, quy chế, sắc lệnh, các yêu cầu, các quy định và hướng dẫn của Nhà chức trách liên quan đến hành trình.
+
+14.1.4.   Nhằm hỗ trợ Khách hàng, nhân viên của Chúng tôi hay Đại lý chỉ định của Chúng tôi có thể cung cấp các hướng dẫn hay thông báo liên quan đến việc xin các giấy tờ hoặc thị thực cần thiết hoặc yêu cầu tuân thủ quy định, quy chế, yêu cầu, sắc lệnh, hướng dẫn của Nhà chức trách liên quan đến hành trình. Các hướng dẫn hay thông báo do Chúng tôi hoặc Đại lý được chỉ định cung cấp dưới bất kỳ hình thức nào chỉ mang giá trị tham khảo.
+
+14.2.      Giấy tờ tuỳ thân
+
+Trước khi khởi hành, Hành khách phải xuất trình cho Chúng tôi tất cả các giấy tờ theo yêu cầu của pháp luật, quy định, sắc lệnh, yêu cầu hoặc điều kiện của các nước có liên quan, bao gồm hộ chiếu, giấy thông hành hoặc giấy tờ có giá trị xuất, nhập cảnh và các giấy tờ khác. Nếu Chúng tôi yêu cầu, Hành khách phải cho phép Chúng tôi giữ và sao chụp hộ chiếu hoặc các loại giấy tờ tuỳ thân tương đương khác; các giấy tờ này sẽ được giao cho thành viên tổ bay giữ và bảo quản cho tới khi kết thúc chuyến bay. Chúng tôi có quyền từ chối vận chuyển nếu Hành khách không tuân thủ các yêu cầu này hoặc giấy tờ tuỳ thân của Hành khách có dấu hiệu không hợp lệ.
+
+14.3.      Từ chối nhập cảnh
+
+Nếu Hành khách bị từ chối nhập cảnh vào một quốc gia, Hành khách sẽ phải thanh toán: (i) các khoản phạt hoặc phí mà Chúng tôi phải trả theo quy định của nhà chức trách nước sở tại, (ii) các chi phí liên quan đến việc tạm giữ, vận chuyển Hành khách ra khỏi quốc gia đó, và (iii) các khoản chi phí hợp lý mà Chúng tôi phải trả. Chúng tôi không hoàn lại Giá dịch vụ và phụ thu vận chuyển Hành khách đến điểm bị từ chối nhập cảnh hay bị trục xuất.
+
+14.4.      Trách nhiệm của Hành khách đối với các khoản tiền phạt, tạm giữ và mua Vé cho hành trình vận chuyển theo yêu cầu của Nhà chức trách
+
+Nếu Chúng tôi phải thanh toán hoặc đặt cọc bất kỳ khoản phạt hoặc bất kỳ chi phí nào do việc Hành khách không tuân thủ các luật, quy định, lệnh hoặc các điều kiện khác về việc đi lại của các nước có liên quan hoặc Hành khách không có các giấy tờ cần thiết, thì Hành khách sẽ phải hoàn trả cho Chúng tôi mọi khoản tiền mà Chúng tôi đã thanh toán hoặc sẽ phải thanh toán. Chúng tôi có thể dùng các khoản tiền mà Hành khách đã trả cho Chúng tôi nhưng chưa dùng đến hoặc bất cứ khoản tiền nào mà Chúng tôi đang giữ của Hành khách để thanh toán các khoản chi phí trên.
+
+14.5.      Kiểm tra hải quan
+
+Nếu được yêu cầu, Hành khách phải có mặt để các nhân viên hải quan hay các nhà chức trách khác kiểm tra Hành lý. Chúng tôi không chịu trách nhiệm đối với mọi mất mát hay Thiệt hại xảy ra trong quá trình kiểm tra hoặc do việc Hành khách không tuân thủ các yêu cầu này trừ trường hợp do lỗi của Chúng tôi.
+
+14.6.      Kiểm tra an ninh
+
+Hành khách và Hành lý phải chịu sự kiểm tra an ninh của Chúng tôi, Nhà chức trách sân bay, hoặc Hãng vận chuyển khác. Chúng tôi không chịu trách nhiệm về mọi thiệt hại phát sinh do kết quả của quá trình kiểm tra an ninh trừ khi do lỗi của Chúng tôi; hoặc thiệt hại phát sinh do việc Hành khách không tuân thủ những yêu cầu này.
+
+ĐIỀU 15. VẬN CHUYỂN KẾ TIẾP
+
+Việc vận chuyển kế tiếp được áp dụng theo quy định của Công ước.
+
+ĐIỀU 16. TRÁCH NHIỆM ĐỐI VỚI THIỆT HẠI
+
+16.1.      Điều khoản nguyên tắc
+
+16.1.1.   Điều lệ vận chuyển và Luật áp dụng điều chỉnh trách nhiệm của Chúng tôi đối với Hành khách. Trong trường hợp hành trình của Hành khách có sự tham gia của Hãng vận chuyển khác, trách nhiệm của họ được quy định bởi luật áp dụng, trừ khi Điều lệ vận chuyển này có quy định khác về điều kiện vận chuyển của họ. Các Hãng vận chuyển này có thể có mức giới hạn trách nhiệm thấp hơn.
+
+16.1.2.   Luật áp dụng có thể bao gồm Công ước và/hoặc các điều luật áp dụng đối với từng quốc gia riêng biệt.
+
+16.1.3.  Chúng tôi chỉ chịu trách nhiệm đối với những thiệt hại phát sinh trên chuyến bay do Chúng tôi khai thác, hoặc trên chuyến bay mà Chúng tôi có trách nhiệm pháp lý với Hành khách. Nếu Chúng tôi xuất Vé họăc làm thủ tục Hành lý cho Hành khách trên chuyến bay của Hãng vận chuyển khác thì Chúng tôi chỉ chịu trách nhiệm như là một đại lý của Hãng vận chuyển đó.
+
+16.1.4.   Điều 16 này quy định các mức giới hạn trách nhiệm và tóm tắt các quy định mà Chúng tôi áp dụng theo Luật áp dụng. Trường hợp Điều 16 này có mâu thuẫn với Luật áp dụng, Luật áp dụng sẽ được ưu tiên áp dụng.
+
+16.2.      Trách nhiệm bồi thường Thiệt hại về tính mạng, sức khỏe của Hành khách
+
+Trách nhiệm của Chúng tôi đối với các thiệt hại được chứng minh trong trường hợp Hành khách bị chết, bị thương do tai nạn tàu bay phát sinh từ hay liên quan đến quá trình vận chuyển do Chúng tôi thực hiện phụ thuộc vào các quy tắc và giới hạn của Luật áp dụng cũng như các quy định bổ sung sau:
+
+16.2.1.   Giới hạn trách nhiệm của Chúng tôi đối với mỗi Hành khách bị chết hoặc bị thương áp dụng theo quy định của Công ước. Chúng tôi không chịu trách nhiệm đối với các thiệt hại phát sinh cho mỗi Hành khách với mức vượt quá quy định tại Công ước nếu Chúng tôi chứng minh được rằng:
+
+(i)      Thiệt hại xảy ra không phải do sự cẩu thả hoặc hành động sai trái khác hay sự thiếu sót của Chúng tôi hoặc của nhân viên hoặc Đại lý chỉ định; hoặc
+
+(ii)     Thiệt hại xảy ra hoàn toàn do sự cẩu thả hoặc hành động sai trái khác hay sự thiếu sót của bên thứ ba.
+
+16.2.2.   Chúng tôi chỉ chịu trách nhiệm về những thiệt hại đối với Hành khách do tai nạn xảy ra trên tàu bay hoặc trong quá trình Chúng tôi đưa Hành khách lên hoặc rời tàu bay. Trong trường hợp thiệt hại xảy ra do lỗi của Hành khách, Chúng tôi có thể được miễn hoặc giảm trách nhiệm bồi thường thiệt hại.
+
+16.2.3.  Chúng tôi sẽ thực hiện trả một khoản tiền trả trước cho Hành khách hoặc người có quyền yêu cầu bồi thường thiệt hại theo Quy định khác của Chúng tôi phù hợp với quy định của pháp luật. Khoản tiền trả trước này không phải là bằng chứng để xác định lỗi của Chúng tôi và được trừ vào số tiền bồi thường thiệt hại mà Chúng tôi phải trả.
+
+16.3.      Trách nhiệm bồi thường Thiệt hại về Hành lý
+
+16.3.1.   Chúng tôi không chịu trách nhiệm đối với các Thiệt hại về Hành lý xách tay (không tính các trường hợp Thiệt hại gây ra bởi việc chậm chuyến) trừ trường hợp Thiệt hại gây ra do lỗi của Chúng tôi hoặc của Đại lý chỉ định của Chúng tôi.
+
+16.3.2.  Phù hợp với Luật áp dụng, Chúng tôi không chịu trách nhiệm đối với những Thiệt hại gây ra bởi các khiếm khuyết về mặt bản chất, chất lượng hay nhược điểm của Hành lý. Cũng như vậy, Chúng tôi sẽ không chịu trách nhiệm đối những hao mòn và rách vỡ một cách hợp lý của Hành lý gây ra bởi sự di chuyển và va đập thông thường khi vận chuyển bằng đường hàng không.
+
+16.3.3.   Mức giới hạn trách nhiệm của Chúng tôi đối với Thiệt hại về Hành lý (bao gồm cả Hành lý xách tay và Hành lý ký gửi) bị phá hủy, mất mát, hư hỏng hoặc chậm trễ áp dụng theo quy định của Công ước hoặc mức cao hơn không vượt quá giá trị kê khai theo quy định tại Điều 9.7 Điều lệ vận chuyển này (trừ trường hợp Chúng tôi chứng minh được rằng giá trị đã kê khai lớn hơn giá trị thực tế).
+
+16.3.4.  Chúng tôi bồi thường Thiệt hại về Hành lý cho Hành khách dựa trên nguyên tắc chung là bồi thường theo Thiệt hại thực tế nhưng không vượt quá mức giới hạn trách nhiệm của Chúng tôi. Hành khách có trách nhiệm chứng minh Thiệt hại thực tế đối với Hành lý của mình.
+
+16.3.5.  Các mức giới hạn trách nhiệm nêu trên đây sẽ không được áp dụng nếu Thiệt hại về Hành lý gây ra bởi hành động hoặc thiếu sót của Chúng tôi hoặc nhân viên hoặc Đại lý chỉ định một cách cố ý hoặc do sự cẩu thả nhưng với nhận thức rằng thiệt hại có thể xảy ra. Trong trường hợp hành vi đó do nhân viên hoặc đại lý thực hiện thì phải chứng minh được rằng nhân viên hoặc đại lý đó đã hành động khi thực hiện nhiệm vụ của mình.
+
+16.3.6.  Nếu hành trình của Hành khách thuộc phạm vi điều chỉnh theo luật của nước sở tại, giới hạn trách nhiệm đối với Thiệt hại của Hành lý ký gửi và Hành lý xách tay theo luật này được áp dụng với Hành lý của Hành khách.
+
+16.3.7.  Nếu hành trình của Hành khách không thuộc phạm vi điều chỉnh của Công ước và luật của nước sở tại không quy định mức giới hạn trách nhiệm đối với Thiệt hại về Hành lý ký gửi và Hành lý xách tay của Hành khách, Chúng tôi áp dụng mức giới hạn trách nhiệm quy định tại Điều 16.3.3 Điều lệ vận chuyển này.
+
+16.3.8.   Hành khách có thể kê khai giá trị (theo Điều 9.7 Điều lệ vận chuyển này) hoặc có thể mua bảo hiểm riêng cho Hành lý của mình trong trường hợp giá trị thực tế hoặc chi phí thay thế của Hành lý ký gửi vượt quá mức giới hạn trách nhiệm của Chúng tôi.
+
+16.3.9.  Nếu trọng lượng/ số kiện của Hành lý không được ghi trên Vé hành lý tính cước thì tổng trọng lượng/ số kiện Hành lý ký gửi của Hành khách được coi như không vượt quá trọng lượng/ số kiện miễn cước áp dụng đối với hạng dịch vụ tương ứng của Hành khách được Chúng tôi công khai theo quy định của pháp luật.
+
+16.3.10.    Chúng tôi không chịu trách nhiệm đối với những Thiệt hại về Hành lý gây ra bởi chậm chuyến nếu Chúng tôi chứng minh được rằng Chúng tôi, nhân viên và Đại lý chỉ định (i) đã thực hiện mọi biện pháp cần thiết một cách hợp lý để tránh Thiệt hại đó nhưng Thiệt hại vẫn xảy ra, hoặc (ii) không thể thực hiện các biện pháp đó.
+
+16.3.11.    Chúng tôi không chịu trách nhiệm đối với thương tích của Hành khách hoặc Thiệt hại đối với Hành lý của Hành khách gây ra bởi những đồ vật có trong Hành lý của bản thân Hành khách hoặc của người khác. Hành khách phải chịu trách nhiệm về bất kỳ Thiệt hại nào gây ra bởi Hành lý của Hành khách đối với những người khác, bao gồm cả tài sản và Hành khách đó phải bồi thường cho Chúng tôi tất cả các tổn thất và chi phí mà Chúng tôi phải chịu do hậu quả của việc này.
+
+16.3.12.    Chúng tôi không chịu bất kỳ trách nhiệm nào về Thiệt hại đối với các đồ vật theo quy định tại Điều 9.3.3 Điều lệ vận chuyển này trong Hành lý ký gửi của Hành khách mà không khai báo vận chuyển theo dạng Hành lý có giá trị cao và thiệt hại đối với các đồ vật tương tự khác cho dù Chúng tôi có biết hay không.
+
+16.3.13.    Chúng tôi không chịu bất kỳ trách nhiệm nào về Thiệt hại đối với Hành lý của Hành khách do Hành khách không thực hiện theo Điều 9.4.4 Điều lệ vận chuyển này bao gồm cả việc Hành khách không thể nhận Hành lý, làm thủ tục Hành lý và gắn lại thẻ hành lý để vận chuyển trên chuyến bay của một Hãng vận chuyển khác mà Chúng tôi không có hợp đồng vận chuyển liên chặng với Hãng đó.
+
+16.3.14.    Chúng tôi không chịu trách nhiệm về những thiệt hại đối với Hành lý trừ khi sự thiệt hại đó là lỗi của Chúng tôi. Nếu thiệt hại do một phần lỗi của Hành khách thì trách nhiệm của Chúng tôi phụ thuộc vào Luật áp dụng xác định phần trách nhiệm của các bên.
+
+16.4.      Trách nhiệm bồi thường Thiệt hại do vận chuyển chậm đối với Hành khách
+
+16.4.1.   Trách nhiệm của Chúng tôi đối với các Thiệt hại do sự chậm trễ trong việc vận chuyển người được giới hạn bởi Công ước.
+
+16.4.2.   Dù Công ước có được áp dụng cho yêu cầu bồi thường của Hành khách hay không, Chúng tôi không chịu trách nhiệm về các Thiệt hại đối với Hành khách do bị chậm chuyến nếu Chúng tôi chứng minh rằng Chúng tôi, nhân viên và Đại lý chỉ định (i) đã thực hiện mọi biện pháp cần thiết một cách hợp lý để tránh Thiệt hại đó nhưng Thiệt hại vẫn xảy ra, hoặc (ii) không thể thực hiện các biện pháp đó.
+
+16.5.      Quy định khác
+
+Trong chừng mực không mâu thuẫn với các quy định trên và bất kể có nằm trong phạm vi áp dụng của Công ước hay không, thì:
+
+16.5.1.   Chúng tôi không chịu trách nhiệm về bất kỳ Thiệt hại nào do việc Chúng tôi tuân theo hoặc do việc Hành khách không tuân theo các quy định của pháp luật.
+
+16.5.2.   Trừ khi Điều lệ vận chuyển này quy định khác đi, trách nhiệm bồi thường của Chúng tôi được giới hạn đối với các Thiệt hại thực tế được Hành khách chứng minh và phù hợp với các quy định của Luật áp dụng.
+
+16.5.3.  Nếu Hành khách được vận chuyển trong tình trạng tâm thần hoặc tuổi tác hoặc tình trạng cơ thể có thể gây nguy hiểm hay rủi ro cho chính Hành khách đó thì Chúng tôi không chịu trách nhiệm về bất kỳ đau ốm, thương tổn hay tàn tật, kể cả sự thiệt mạng do một trong những tình trạng nêu trên hoặc do hậu quả của tình trạng đó gây ra.
+
+16.5.4.   Bất kỳ sự loại bỏ trách nhiệm hoặc giới hạn trách nhiệm nào của Chúng tôi được áp dụng và vì lợi ích của nhân viên và Đại lý được chỉ định của Chúng tôi cũng như bên có tàu bay do Chúng tôi khai thác và nhân viên, người phục vụ và đại diện của họ. Tổng số tiền bồi thường thiệt hại mà Chúng tôi, nhân viên và Đại lý chỉ định của Chúng tôi phải chịu không vượt quá mức giới hạn trách nhiệm bồi thường thiệt hại theo quy định tại Điều lệ vận chuyển này và các Luật áp dụng có liên quan.
+
+16.5.5.  Trừ khi có quy định khác tại Điều lệ này, không một nội dung nào trong Điều lệ vận chuyển này hủy bỏ bất kỳ một sự miễn trừ hay giới hạn trách nhiệm nào của Chúng tôi do Công ước hay luật định.
+
+16.5.6.  Chúng tôi không chịu trách nhiệm đối với những Thiệt hại gây ra bởi các Sự kiện bất khả kháng.
+
+
+
+ĐIỀU 17. KHIẾU NẠI VÀ KHỞI KIỆN
+
+17.1.      Thời hạn khiếu nại Hành lý
+
+17.1.1.   Việc Hành khách nhận Hành lý ký gửi mà không có khiếu nại tại nơi giao nhận hành lý là bằng chứng đầy đủ rằng Hành lý đã được giao trả nguyên vẹn và phù hợp với hợp đồng vận chuyển.
+
+17.1.2.  Văn bản khiếu nại
+
+Trước khi khởi kiện về mất mát, thiếu hụt, hư hỏng, vận chuyển chậm Hành lý ký gửi, hành khách hoặc người đại diện hợp pháp của họ phải khiếu nại bằng văn bản đến Chúng tôi  trong thời hạn sau đây:
+
+17.1.2.1.   Ngay sau khi đã phát hiện ra Thiệt hại và muộn nhất trong vòng 07 (bảy) ngày kể từ ngày nhận hành lý trong trường hợp thiếu hụt, hư hỏng hành lý.
+
+17.1.2.2.   Ngay sau khi đã phát hiện ra thiệt hại và muộn nhất trong vòng 07 (bảy) kể từ ngày lẽ ra phải nhận được hành lý trong trường hợp mất một hay nhiều kiện hành lý.
+
+17.1.2.3.   Hai mươi mốt ngày kể từ ngày người có quyền nhận đã nhận được hành lý trong trường hợp hành lý bị vận chuyển chậm.
+
+17.2.      Mọi phản ánh, yêu cầu, khiếu nại của Hành khách về chất lượng dịch vụ, yêu cầu bồi thường sẽ được Chúng tôi tiếp nhận và xử lý trên nguyên tắc phù hợp với Điều lệ vận chuyển này và tuân thủ các Luật áp dụng. Hành khách có thể phản ánh, khiếu nại trực tiếp với Chúng tôi hoặc qua Website, Tổng đài CSKH của Chúng tôi.
+
+17.3.      Thời hiệu khởi kiện
+
+Thời hiệu khởi kiện về trách nhiệm bồi thường thiệt hại của Chúng tôi đối với Thiệt hại xảy ra cho Hành khách, Hành lý là trong vòng hai năm, kể từ ngày tàu bay đến địa điểm đến, ngày tàu bay phải đến địa điểm đến hoặc từ ngày việc vận chuyển bị chấm dứt, tùy thuộc vào thời điểm nào muộn nhất. Phương pháp tính thời gian do luật nơi có tòa án thụ lý vụ kiện quy định.
+
+ĐIỀU 18. HIỆU LỰC VÀ SỬA ĐỔI
+
+18.1.    Điều lệ vận chuyển này và Quy định của Hãng vận chuyển có thể sửa đổi, bổ sung vào bất cứ thời điểm nào. Bất kỳ sửa đổi, bổ sung nào của Điều lệ vận chuyển này sẽ được đăng ký với Nhà chức trách và công khai theo quy định của pháp luật ngay sau khi được Nhà chức trách phê chuẩn. Điều lệ vận chuyển này sẽ có hiệu lực sau 03 ngày kể từ ngày công bố công khai theo quy định của pháp luật.
+
+18.2.    Không một nhân viên, người làm thuê hoặc đại diện nào của Chúng tôi có quyền sửa đổi, điều chỉnh hay loại bỏ bất kỳ một điều khoản nào trong Điều lệ vận chuyển này.
+
+
+ĐIỀU 19. ĐIỀU KIỆN KHÁC
+
+Quyền và nghĩa vụ của Chúng tôi trong việc vận chuyển Hành khách và Hành lý của Hành khách còn được thực hiện theo các quy định pháp luật khác có liên quan.
+
+ĐIỀU 20. TIÊU ĐỀ, ĐỀ MỤC
+
+Các tiêu đề và đề mục của các Điều khoản trong Điều lệ vận chuyển này là để tham chiếu đến các Điều khoản, không sử dụng cho việc diễn giải nội dung của Điều khoản đó.
+

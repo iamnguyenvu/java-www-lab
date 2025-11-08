@@ -1,0 +1,47 @@
+application:
+  name: spring-ai-flight
+
+server:
+  port: 8088
+
+spring:
+  datasource:
+    url: jdbc:postgresql://${POSTGRES_HOST:localhost}:${POSTGRES_PORT:5432}/${POSTGRES_DB:spring_ai}
+    username: ${POSTGRES_USER:postgres}
+    password: ${POSTGRES_PASSWORD:postgres}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  ai:
+    google:
+      genai:
+        api-key: ${GEMINI_API_KEY}
+        chat:
+          options:
+            model: "gemini-2.0-flash"
+            temperature: 0.2
+        embedding:
+          text:
+            options:
+              model: text-embedding-004
+              task-type: RETRIEVAL_DOCUMENT
+    vectorstore:
+      pgvector:
+        index-type: hnsw
+        distance-type: cosine_distance
+        dimensions: 384
+        initialize-schema: true
+
+logging:
+  level:
+    org:
+        springframework:
+            ai: INFO
+    com:
+      nguyenvu:
+        springai: DEBUG
