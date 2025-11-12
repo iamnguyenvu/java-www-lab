@@ -147,6 +147,9 @@ public class ProductService {
             return null;
         }
         
+        Long categoryId = product.getCategory() != null ? product.getCategory().getCategoryId() : null;
+        String categoryName = product.getCategory() != null ? product.getCategory().getName() : null;
+
         ProductDTO dto = ProductDTO.builder()
                 .productId(product.getProductId())
                 .name(product.getName())
@@ -155,8 +158,8 @@ public class ProductService {
                 .inStock(product.getInStock())
                 .stock(product.getStock())
                 .imageUrl(product.getImageUrl())
-                .categoryId(product.getCategory().getCategoryId())
-                .categoryName(product.getCategory().getName())
+                .categoryId(categoryId)
+                .categoryName(categoryName)
                 .commentCount(product.getComments() != null ? product.getComments().size() : 0)
                 .orderLineCount(product.getOrderLines() != null ? product.getOrderLines().size() : 0)
                 .build();

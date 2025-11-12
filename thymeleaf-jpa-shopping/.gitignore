@@ -41,3 +41,6 @@ build/
 *api-key*
 *secret*
 application-local.properties
+
+!README.md
+!HELP.md

@@ -20,7 +20,8 @@ public class HomeController {
     
     @GetMapping({"/", "/home"})
     public String home() {
-        return "home";
+        // Redirect to products page for all users (including guests)
+        return "redirect:/products";
     }
     
     @GetMapping("/login")

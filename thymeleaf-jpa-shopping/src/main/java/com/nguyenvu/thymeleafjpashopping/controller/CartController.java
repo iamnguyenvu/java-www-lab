@@ -8,6 +8,7 @@ import com.nguyenvu.thymeleafjpashopping.service.OrderService;
 import com.nguyenvu.thymeleafjpashopping.service.ProductService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -151,6 +152,10 @@ public class CartController {
 
     @GetMapping("/checkout")
     public String showCheckout(HttpSession session, Model model, Authentication authentication) {
+        if (!isAuthenticated(authentication)) {
+            return "redirect:/login";
+        }
+        
         Map<Long, CartItem> cart = getCart(session);
         
         if (cart.isEmpty()) {
@@ -176,6 +181,10 @@ public class CartController {
                                  Authentication authentication,
                                  Model model,
                                  RedirectAttributes redirectAttributes) {
+        if (!isAuthenticated(authentication)) {
+            return "redirect:/login";
+        }
+        
         try {
             Map<Long, CartItem> cart = getCart(session);
             
@@ -234,6 +243,12 @@ public class CartController {
             session.setAttribute(CART_SESSION_KEY, cart);
         }
         return cart;
+    }
+    
+    private boolean isAuthenticated(Authentication authentication) {
+        return authentication != null
+                && authentication.isAuthenticated()
+                && !(authentication instanceof AnonymousAuthenticationToken);
     }
 
     public static class CartItem implements java.io.Serializable {

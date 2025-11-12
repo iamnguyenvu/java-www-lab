@@ -66,30 +66,28 @@
                 </table>
             </div>
 
-            <div style="margin: 20px 0;">
-                <!-- Customer: Thêm vào giỏ -->
-                <span sec:authorize="isAuthenticated()">
-                    <form th:if="${product.inStock}" th:action="@{/cart/add/{id}(id=${product.productId})}" method="post" style="display: inline;">
-                        <label for="quantity">Số lượng:</label>
-                        <input type="number" id="quantity" name="quantity" value="1" min="1" 
-                               th:max="${product.stock}" style="width: 80px; margin: 0 10px;">
-                        <button type="submit" class="btn btn-success">🛒 Thêm vào giỏ</button>
-                    </form>
-                </span>
+            <div style="margin: 20px 0; display:flex; flex-wrap:wrap; gap:12px; align-items:center;">
+                <form th:if="${product.inStock}" th:action="@{/cart/add/{id}(id=${product.productId})}" method="post" style="display:flex; align-items:center; gap:10px;">
+                    <label for="quantity" style="font-weight:600;">Số lượng:</label>
+                    <input type="number" id="quantity" name="quantity" value="1" min="1"
+                           th:max="${product.stock}"
+                           style="width: 80px; margin-right: 5px;">
+                    <button type="submit" class="btn btn-primary">🛒 Thêm vào giỏ</button>
+                </form>
                 
-                <!-- Guest: Yêu cầu đăng nhập -->
-                <span sec:authorize="!isAuthenticated()">
-                    <p style="color: #f39c12;">Vui lòng <a th:href="@{/login}">đăng nhập</a> để mua hàng</p>
-                </span>
+                <div th:if="${!product.inStock}" class="badge badge-danger">Sản phẩm đã hết hàng</div>
                 
-                <!-- Admin: Sửa/Xóa -->
-                <span sec:authorize="hasRole('ADMIN')">
-                    <a th:href="@{/products/edit/{id}(id=${product.productId})}" class="btn btn-primary">Sửa</a>
+                <p class="page-subtitle" style="margin:0;" sec:authorize="isAnonymous()">
+                    Bạn có thể thêm vào giỏ mà không cần đăng nhập. Tài khoản chỉ bắt buộc khi thanh toán.
+                </p>
+                
+                <div sec:authorize="hasRole('ADMIN')" style="display:flex; gap:8px;">
+                    <a th:href="@{/products/edit/{id}(id=${product.productId})}" class="btn btn-ghost">Sửa</a>
                     <form th:action="@{/products/delete}" method="post" style="display:inline">
                         <input type="hidden" name="id" th:value="${product.productId}">
                         <button class="btn btn-danger" onclick="return confirm('Xóa sản phẩm này?')">Xóa</button>
                     </form>
-                </span>
+                </div>
                 
                 <a th:href="@{/products}" class="btn btn-secondary">← Quay lại</a>
             </div>

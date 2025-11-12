@@ -34,11 +34,8 @@ public class SecurityConfig {
                         .requestMatchers("/api/chat/**").permitAll()
                         
                         // Public pages
-                        .requestMatchers("/", "/login", "/register", "/access-denied").permitAll()
+                        .requestMatchers("/", "/home", "/login", "/register", "/access-denied").permitAll()
                         
-                        // Guest: Xem danh sách và chi tiết sản phẩm, tìm kiếm
-                        .requestMatchers("/products", "/products/*", "/products/search/**").permitAll()
-
                         // ADMIN only: CRUD products
                         .requestMatchers("/products/new", "/products/edit/**", "/products/delete/**").hasRole("ADMIN")
 
@@ -48,11 +45,15 @@ public class SecurityConfig {
                         // Orders: ADMIN xem tất cả, CUSTOMER xem của mình
                         .requestMatchers("/orders/**").hasAnyRole("ADMIN", "CUSTOMER")
                         
-                        // Cart: Authenticated users only
-                        .requestMatchers("/cart/**").authenticated()
+                        // Guest: Xem danh sách và chi tiết sản phẩm, tìm kiếm
+                        .requestMatchers("/products", "/products/**", "/products/search/**").permitAll()
 
-                        // Mọi request khác cần authenticated
-                        .anyRequest().authenticated())
+                        // Cart: Guest có thể xem và thêm vào giỏ, nhưng checkout phải đăng nhập
+                        .requestMatchers("/cart/checkout", "/cart/process-checkout").authenticated()
+                        .requestMatchers("/cart", "/cart/**").permitAll()
+
+                        // Các endpoint còn lại mặc định public
+                        .anyRequest().permitAll())
                 .formLogin(form -> form
                         .loginPage("/login")
                         .defaultSuccessUrl("/", true)

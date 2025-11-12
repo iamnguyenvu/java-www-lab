@@ -6,7 +6,7 @@
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-    <div th:replace="~{fragments/navbar::navbar(cartItemCount=${cartItems?.size() ?: 0})}"></div>
+    <div th:replace="~{fragments/navbar :: navbar}"></div>
     
     <div class="container">
         <h1>Giỏ hàng của bạn</h1>
@@ -73,6 +73,9 @@
                     </button>
                 </form>
                 <a th:href="@{/cart/checkout}" class="btn btn-primary">Đặt hàng</a>
+                <p class="page-subtitle" style="margin:0;" sec:authorize="isAnonymous()">
+                    Bạn sẽ được yêu cầu đăng nhập ở bước thanh toán.
+                </p>
             </div>
         </div>
     </div>
