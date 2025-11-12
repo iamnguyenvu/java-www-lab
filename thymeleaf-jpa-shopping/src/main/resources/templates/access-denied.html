@@ -2,53 +2,61 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
-    <title>Access Denied</title>
+    <title>Không có quyền truy cập</title>
     <link rel="stylesheet" th:href="@{/css/style.css}">
     <style>
-        .error-container {
-            max-width: 600px;
-            margin: 100px auto;
+        body {
+            background: linear-gradient(135deg, var(--primary-light), var(--background));
+        }
+        .status-shell {
+            min-height: calc(100vh - var(--header-height));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-12) var(--space-4);
+        }
+        .status-card {
+            max-width: 560px;
             text-align: center;
-            padding: 40px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        .error-icon {
-            font-size: 80px;
-            margin-bottom: 20px;
-        }
-        .error-title {
-            font-size: 28px;
-            color: #e74c3c;
-            margin-bottom: 10px;
-        }
-        .error-message {
-            color: #666;
-            margin-bottom: 30px;
-            line-height: 1.6;
+        .status-icon {
+            font-size: 64px;
+            margin-bottom: var(--space-4);
         }
     </style>
 </head>
-<body style="background: #f5f5f5;">
+<body>
 
 <div th:replace="~{fragments/navbar :: navbar}"></div>
 
-<div class="error-container">
-    <div class="error-icon">🚫</div>
-    <h1 class="error-title">Access Denied</h1>
-    <p class="error-message">
-        Xin lỗi, bạn không có quyền truy cập chức năng này.<br>
-        Tài khoản của bạn: <strong sec:authentication="name"></strong><br>
-        Quyền hiện tại: <span sec:authentication="principal.authorities"></span>
-    </p>
-    <div>
-        <a th:href="@{/}" class="btn btn-primary">← Về trang chủ</a>
-        <form th:action="@{/logout}" method="post" style="display: inline;">
-            <button type="submit" class="btn btn-secondary">Đăng xuất</button>
-        </form>
+<section class="status-shell">
+    <div class="page-section status-card">
+        <div class="status-icon" aria-hidden="true">🚫</div>
+        <h1 class="page-title" style="text-align:center;">Bạn không có quyền truy cập</h1>
+        <p class="page-subtitle" style="text-align:center; margin-bottom: var(--space-6);">
+            Quyền hạn hiện tại không cho phép bạn sử dụng chức năng này. Vui lòng quay lại trang chủ
+            hoặc đăng xuất để sử dụng tài khoản khác.
+        </p>
+
+        <ul class="detail-list" style="margin-bottom:var(--space-6);">
+            <li class="detail-item">
+                <span class="detail-item__label">Tài khoản</span>
+                <span class="detail-item__value" sec:authentication="name"></span>
+            </li>
+            <li class="detail-item">
+                <span class="detail-item__label">Quyền hạn</span>
+                <span class="detail-item__value" sec:authentication="principal.authorities"></span>
+            </li>
+        </ul>
+
+        <div class="page-actions" style="justify-content:center;">
+            <a th:href="@{/}" class="btn btn-primary">← Về trang chủ</a>
+            <form th:action="@{/logout}" method="post" style="margin:0;">
+                <button type="submit" class="btn btn-ghost">Đăng xuất</button>
+            </form>
+        </div>
     </div>
-</div>
+</section>
 
 </body>
 </html>

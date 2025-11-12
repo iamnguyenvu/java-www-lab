@@ -4,89 +4,112 @@
     <meta charset="UTF-8">
     <title>Thanh toán</title>
     <link rel="stylesheet" th:href="@{/css/style.css}">
-    <style>
-        .field-error {
-            color: #dc3545;
-            font-size: 12px;
-            margin-top: 5px;
-            display: block;
-        }
-        input.error, textarea.error {
-            border-color: #dc3545;
-        }
-    </style>
 </head>
 <body>
     <div th:replace="~{fragments/navbar :: navbar}"></div>
     
-    <div class="container">
-        <h1>Thanh toán đơn hàng</h1>
-        
+    <div class="page-container">
+        <div class="page-header">
+            <div>
+                <h1 class="page-title">💳 Thanh toán đơn hàng</h1>
+                <p class="page-subtitle">Kiểm tra thông tin và hoàn tất đặt hàng trong một bước.</p>
+            </div>
+        </div>
+
         <div th:if="${error}" class="alert alert-error" th:text="${error}"></div>
         
-        <div class="checkout-container">
-            <div class="order-summary">
-                <h2>Chi tiết đơn hàng</h2>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Sản phẩm</th>
-                            <th>Số lượng</th>
-                            <th>Giá</th>
-                            <th>Tổng</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr th:each="item : ${cartItems}">
-                            <td th:text="${item.productName}"></td>
-                            <td th:text="${item.quantity}"></td>
-                            <td th:text="${#numbers.formatDecimal(item.price, 0, 'COMMA', 0, 'POINT')} + ' VNĐ'"></td>
-                            <td th:text="${#numbers.formatDecimal(item.subtotal, 0, 'COMMA', 0, 'POINT')} + ' VNĐ'"></td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <td colspan="3" style="text-align: right;"><strong>Tổng cộng:</strong></td>
-                            <td><strong th:text="${#numbers.formatDecimal(total, 0, 'COMMA', 0, 'POINT')} + ' VNĐ'"></strong></td>
-                        </tr>
-                    </tfoot>
-                </table>
-            </div>
+        <div class="checkout-layout">
+            <section class="order-summary-card">
+                <h2 class="page-title" style="font-size:22px;">Chi tiết đơn hàng</h2>
+                <p class="page-subtitle">Kiểm tra lần cuối các sản phẩm trong giỏ của bạn.</p>
+                
+                <div class="table-scroll" style="margin-top:var(--space-4);">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Sản phẩm</th>
+                                <th>Số lượng</th>
+                                <th>Đơn giá</th>
+                                <th>Tổng</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="item : ${cartItems}">
+                                <td th:text="${item.productName}"></td>
+                                <td th:text="${item.quantity}"></td>
+                                <td th:text="${#numbers.formatDecimal(item.price, 0, 'COMMA', 0, 'POINT')} + ' ₫'"></td>
+                                <td th:text="${#numbers.formatDecimal(item.subtotal, 0, 'COMMA', 0, 'POINT')} + ' ₫'"></td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="3" style="text-align:right;">Tổng cộng</td>
+                                <td th:text="${#numbers.formatDecimal(total, 0, 'COMMA', 0, 'POINT')} + ' ₫'"></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+
+                <ul class="order-breakdown" style="margin-top:var(--space-5);">
+                    <li>
+                        <span>Tạm tính</span>
+                        <span th:text="${#numbers.formatDecimal(total, 0, 'COMMA', 0, 'POINT')} + ' ₫'"></span>
+                    </li>
+                    <li>
+                        <span>Phí vận chuyển</span>
+                        <span>Miễn phí</span>
+                    </li>
+                    <li style="border-top:1px solid var(--border-light); padding-top:var(--space-3); font-size:18px;">
+                        <span>Tổng thanh toán</span>
+                        <span th:text="${#numbers.formatDecimal(total, 0, 'COMMA', 0, 'POINT')} + ' ₫'"></span>
+                    </li>
+                </ul>
+            </section>
             
-            <div class="shipping-info">
-                <h2>Thông tin giao hàng</h2>
+            <section class="page-section">
+                <h2 style="margin-top:0;">Thông tin giao hàng</h2>
+                <p class="page-subtitle">Chúng tôi sẽ sử dụng thông tin này để liên lạc khi giao hàng.</p>
+
                 <form th:action="@{/cart/checkout}" th:object="${orderDTO}" method="post">
                     <div class="form-group">
-                        <label for="shippingAddress">Địa chỉ giao hàng: *</label>
-                        <textarea id="shippingAddress" th:field="*{shippingAddress}"
+                        <label for="shippingAddress">Địa chỉ giao hàng *</label>
+                        <textarea id="shippingAddress"
+                                  class="form-control"
+                                  th:field="*{shippingAddress}"
                                   th:classappend="${#fields.hasErrors('shippingAddress')} ? 'error' : ''"
-                                  rows="3" required 
-                                  placeholder="Nhập địa chỉ giao hàng đầy đủ"></textarea>
+                                  rows="3"
+                                  required
+                                  placeholder="Ví dụ: 123 Lý Thường Kiệt, P.7, Q.10, TP.HCM"></textarea>
+                        <span class="form-hint">Hãy ghi rõ số nhà, phường/xã và quận/huyện.</span>
                         <span class="field-error" th:if="${#fields.hasErrors('shippingAddress')}" 
                               th:errors="*{shippingAddress}"></span>
                     </div>
                     
                     <div class="form-group">
-                        <label for="phone">Số điện thoại: *</label>
-                        <input type="tel" id="phone" th:field="*{phone}"
+                        <label for="phone">Số điện thoại liên hệ *</label>
+                        <input type="tel"
+                               id="phone"
+                               class="form-control"
+                               th:field="*{phone}"
                                th:classappend="${#fields.hasErrors('phone')} ? 'error' : ''"
-                               required 
-                               placeholder="Nhập số điện thoại (10-11 số)">
+                               required
+                               placeholder="0912 345 678">
+                        <span class="form-hint">Nhân viên giao hàng sẽ liên hệ qua số này khi cần.</span>
                         <span class="field-error" th:if="${#fields.hasErrors('phone')}" 
                               th:errors="*{phone}"></span>
                     </div>
                     
-                    <div class="form-actions">
-                        <a th:href="@{/cart}" class="btn">Quay lại giỏ hàng</a>
-                        <button type="submit" class="btn btn-primary">Xác nhận đặt hàng</button>
+                    <div class="form-actions" style="justify-content:space-between;">
+                        <a th:href="@{/cart}" class="btn btn-ghost">← Quay lại giỏ hàng</a>
+                        <button type="submit" class="btn btn-primary btn-lg">Xác nhận đặt hàng</button>
                     </div>
                 </form>
-            </div>
+            </section>
         </div>
     </div>
 
-<!-- Include Chatbot -->
-<div th:replace="~{fragments/chatbot :: chatbot}"></div>
+    <!-- Include Chatbot -->
+    <div th:replace="~{fragments/chatbot :: chatbot}"></div>
 
 </body>
 </html>

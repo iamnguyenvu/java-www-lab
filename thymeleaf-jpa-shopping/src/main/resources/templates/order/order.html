@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Chi tiet Don hang</title>
+    <title>Chi tiết đơn hàng</title>
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
@@ -11,80 +11,95 @@
 
 <div class="page-container">
 
-<div th:if="${order != null}">
-    <h2 class="page-header">Chi tiet Don hang</h2>
-    
-    <div class="card" style="margin-bottom: 20px;">
-        <h3>Thong tin Don hang</h3>
-        <table>
-            <tr>
-                <td style="width: 200px;"><b>Ma Don:</b></td>
-                <td th:text="${order.orderId}"></td>
-            </tr>
-            <tr>
-                <td><b>Ngay dat:</b></td>
-                <td th:text="${#calendars.format(order.orderDate, 'dd/MM/yyyy HH:mm')}"></td>
-            </tr>
-            <tr>
-                <td><b>Khach hang:</b></td>
-                <td th:text="${order.customerName}"></td>
-            </tr>
-            <tr>
-                <td><b>Khach tu:</b></td>
-                <td th:text="${#calendars.format(order.customerSince, 'dd/MM/yyyy')}"></td>
-            </tr>
-            <tr>
-                <td><b>So san pham:</b></td>
-                <td><span class="badge badge-info" th:text="${order.orderLineCount} + ' items'"></span></td>
-            </tr>
-            <tr>
-                <td><b>Tong tien:</b></td>
-                <td style="color: #e74c3c; font-weight: bold; font-size: 18px;" th:text="${#numbers.formatDecimal(order.totalAmount, 0, 'COMMA', 0, 'POINT')} + ' VND'"></td>
-            </tr>
-        </table>
+    <div th:if="${order != null}">
+        <div class="page-header">
+            <div>
+                <p class="page-subtitle" style="margin:0;">Mã đơn hàng #<span th:text="${order.orderId}"></span></p>
+                <h1 class="page-title">Chi tiết đơn hàng</h1>
+                <p class="page-subtitle">
+                    Đặt lúc <span th:text="${#calendars.format(order.orderDate, 'dd/MM/yyyy HH:mm')}"></span>
+                </p>
+            </div>
+            <div class="page-actions">
+                <a th:href="@{/orders}" class="btn btn-ghost">← Về danh sách đơn</a>
+            </div>
+        </div>
+
+        <section class="page-section">
+            <div class="detail-grid">
+                <div>
+                    <h3 style="margin-top:0;">Thông tin khách hàng</h3>
+                    <ul class="detail-list">
+                        <li class="detail-item">
+                            <span class="detail-item__label">Khách hàng</span>
+                            <span class="detail-item__value" th:text="${order.customerName}"></span>
+                        </li>
+                        <li class="detail-item">
+                            <span class="detail-item__label">Khách từ</span>
+                            <span class="detail-item__value" th:text="${#calendars.format(order.customerSince, 'dd/MM/yyyy')}"></span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="margin-top:0;">Thông tin đơn hàng</h3>
+                    <ul class="detail-list">
+                        <li class="detail-item">
+                            <span class="detail-item__label">Số sản phẩm</span>
+                            <span class="detail-item__value">
+                                <span class="badge badge-info" th:text="${order.orderLineCount} + ' sản phẩm'"></span>
+                            </span>
+                        </li>
+                        <li class="detail-item">
+                            <span class="detail-item__label">Tổng tiền</span>
+                            <span class="detail-item__value price-display"
+                                  th:text="${#numbers.formatDecimal(order.totalAmount, 0, 'COMMA', 0, 'POINT')} + ' ₫'"></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section" th:if="${order.orderLines != null && !#lists.isEmpty(order.orderLines)}">
+            <h3 style="margin-top:0;">Chi tiết sản phẩm</h3>
+            <div class="table-scroll" style="margin-top:var(--space-4);">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Sản phẩm</th>
+                            <th>Đơn giá</th>
+                            <th>Số lượng</th>
+                            <th>Thành tiền</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="line, stat : ${order.orderLines}">
+                            <td th:text="${stat.count}"></td>
+                            <td>
+                                <a th:href="@{/products/{id}(id=${line.productId})}" th:text="${line.productName}"></a>
+                            </td>
+                            <td th:text="${#numbers.formatDecimal(line.unitPrice, 0, 'COMMA', 0, 'POINT')} + ' ₫'"></td>
+                            <td th:text="${line.quantity}"></td>
+                            <td th:text="${#numbers.formatDecimal(line.subtotal, 0, 'COMMA', 0, 'POINT')} + ' ₫'"></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="4" style="text-align:right;">Tổng cộng</td>
+                            <td th:text="${#numbers.formatDecimal(order.totalAmount, 0, 'COMMA', 0, 'POINT')} + ' ₫'"></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
     </div>
 
-    <div style="margin: 20px 0;">
-        <a th:href="@{/orders}" class="btn btn-secondary">← Quay lai</a>
+    <div th:if="${order == null}" class="empty-state">
+        <div style="font-size:60px; margin-bottom:var(--space-4);">🔍</div>
+        <h3>Không tìm thấy đơn hàng</h3>
+        <p>Đơn hàng có thể đã bị xóa hoặc bạn không đủ quyền xem.</p>
+        <a th:href="@{/orders}" class="btn btn-ghost" style="margin-top:var(--space-4);">← Quay lại danh sách</a>
     </div>
-
-    <div th:if="${order.orderLines != null && !#lists.isEmpty(order.orderLines)}" class="card">
-        <h3>Chi tiet San pham</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>STT</th>
-                    <th>Ten san pham</th>
-                    <th>Don gia</th>
-                    <th>So luong</th>
-                    <th>Thanh tien</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr th:each="line, stat : ${order.orderLines}">
-                    <td th:text="${stat.count}"></td>
-                    <td>
-                        <a th:href="@{/products/{id}(id=${line.productId})}" th:text="${line.productName}"></a>
-                    </td>
-                    <td th:text="${#numbers.formatDecimal(line.unitPrice, 0, 'COMMA', 0, 'POINT')} + ' VND'"></td>
-                    <td th:text="${line.quantity}"></td>
-                    <td th:text="${#numbers.formatDecimal(line.subtotal, 0, 'COMMA', 0, 'POINT')} + ' VND'"></td>
-                </tr>
-            </tbody>
-            <tfoot>
-                <tr style="background: #f8f9fa; font-weight: bold;">
-                    <td colspan="4" style="text-align: right;">Tong:</td>
-                    <td style="color: #e74c3c;" th:text="${#numbers.formatDecimal(order.totalAmount, 0, 'COMMA', 0, 'POINT')} + ' VND'"></td>
-                </tr>
-            </tfoot>
-        </table>
-    </div>
-</div>
-
-<div th:if="${order == null}" class="empty-state">
-    <p>Khong tim thay don hang.</p>
-    <a th:href="@{/orders}" class="btn btn-secondary">Quay lai</a>
-</div>
 
 </div>
 

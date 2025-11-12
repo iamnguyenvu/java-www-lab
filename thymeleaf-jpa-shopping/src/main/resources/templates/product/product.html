@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
-    <title th:text="${product != null ? product.name : 'San pham'}"></title>
+    <title th:text="${product != null ? product.name : 'Sản phẩm'}">Sản phẩm</title>
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
@@ -11,107 +11,117 @@
 
 <div class="page-container">
 
-<div th:if="${product != null}">
-    <div th:if="${success}" class="alert alert-success" th:text="${success}"></div>
-    <div th:if="${error}" class="alert alert-error" th:text="${error}"></div>
-    
-    <h2 class="page-header" th:text="${product.name}"></h2>
-    
-    <div class="product-detail-container">
-        <div class="product-image">
-            <img th:if="${product.imageUrl}" th:src="@{${product.imageUrl}}" 
-                 th:alt="${product.name}" style="max-width: 400px; border-radius: 8px;">
-            <img th:unless="${product.imageUrl}" th:src="@{/images/no-image.png}" 
-                 alt="No image" style="max-width: 400px; border-radius: 8px;">
-        </div>
-        
-        <div class="product-info">
-            <div class="card" style="margin-bottom: 20px;">
-                <table>
-                    <tr>
-                        <td style="width: 150px;"><b>Mã sản phẩm:</b></td>
-                        <td th:text="${product.productId}"></td>
-                    </tr>
-                    <tr th:if="${product.categoryName}">
-                        <td><b>Danh mục:</b></td>
-                        <td th:text="${product.categoryName}"></td>
-                    </tr>
-                    <tr th:if="${product.description}">
-                        <td><b>Mô tả:</b></td>
-                        <td th:text="${product.description}"></td>
-                    </tr>
-                    <tr>
-                        <td><b>Giá:</b></td>
-                        <td style="color: #e74c3c; font-weight: bold; font-size: 24px;" 
-                            th:text="${#numbers.formatDecimal(product.price, 0, 'COMMA', 0, 'POINT')} + ' VNĐ'"></td>
-                    </tr>
-                    <tr>
-                        <td><b>Tồn kho:</b></td>
-                        <td th:text="${product.stock} + ' sản phẩm'"></td>
-                    </tr>
-                    <tr>
-                        <td><b>Trạng thái:</b></td>
-                        <td>
-                            <span th:class="${product.inStock ? 'badge badge-success' : 'badge badge-danger'}" 
-                                  th:text="${product.inStock ? 'Còn hàng' : 'Hết hàng'}"></span>
-                        </td>
-                    </tr>
-                    <tr th:if="${product.averageRating != null}">
-                        <td><b>Đánh giá:</b></td>
-                        <td>
-                            <span th:text="${#numbers.formatDecimal(product.averageRating, 1, 'POINT', 1, 'POINT')} + '/5'"></span>
-                            <span class="badge badge-info" th:text="'(' + ${product.commentCount} + ' đánh giá)'"></span>
-                        </td>
-                    </tr>
-                </table>
-            </div>
+    <div th:if="${product != null}">
+        <div th:if="${success}" class="alert alert-success" th:text="${success}"></div>
+        <div th:if="${error}" class="alert alert-error" th:text="${error}"></div>
 
-            <div style="margin: 20px 0; display:flex; flex-wrap:wrap; gap:12px; align-items:center;">
-                <form th:if="${product.inStock}" th:action="@{/cart/add/{id}(id=${product.productId})}" method="post" style="display:flex; align-items:center; gap:10px;">
-                    <label for="quantity" style="font-weight:600;">Số lượng:</label>
-                    <input type="number" id="quantity" name="quantity" value="1" min="1"
-                           th:max="${product.stock}"
-                           style="width: 80px; margin-right: 5px;">
-                    <button type="submit" class="btn btn-primary">🛒 Thêm vào giỏ</button>
-                </form>
-                
-                <div th:if="${!product.inStock}" class="badge badge-danger">Sản phẩm đã hết hàng</div>
-                
-                <p class="page-subtitle" style="margin:0;" sec:authorize="isAnonymous()">
-                    Bạn có thể thêm vào giỏ mà không cần đăng nhập. Tài khoản chỉ bắt buộc khi thanh toán.
-                </p>
-                
-                <div sec:authorize="hasRole('ADMIN')" style="display:flex; gap:8px;">
-                    <a th:href="@{/products/edit/{id}(id=${product.productId})}" class="btn btn-ghost">Sửa</a>
-                    <form th:action="@{/products/delete}" method="post" style="display:inline">
+        <div class="page-header">
+            <div>
+                <p class="page-subtitle" style="margin:0;">Mã sản phẩm #<span th:text="${product.productId}"></span></p>
+                <h1 class="page-title" th:text="${product.name}"></h1>
+                <p class="page-subtitle" th:text="${product.description ?: 'Sản phẩm đang cập nhật mô tả'}"></p>
+            </div>
+            <div class="page-actions">
+                <a th:href="@{/products}" class="btn btn-ghost">← Danh sách sản phẩm</a>
+                <div sec:authorize="hasRole('ADMIN')" style="display:flex; gap:var(--space-2);">
+                    <a th:href="@{/products/edit/{id}(id=${product.productId})}" class="btn btn-outline">Chỉnh sửa</a>
+                    <form th:action="@{/products/delete}" method="post" style="margin:0;" onsubmit="return confirm('Xóa sản phẩm này?');">
                         <input type="hidden" name="id" th:value="${product.productId}">
-                        <button class="btn btn-danger" onclick="return confirm('Xóa sản phẩm này?')">Xóa</button>
+                        <button class="btn btn-danger">Xóa</button>
                     </form>
                 </div>
-                
-                <a th:href="@{/products}" class="btn btn-secondary">← Quay lại</a>
             </div>
         </div>
-    </div>
 
-    <!-- Comments section -->
-    <div th:if="${product.comments != null && !#lists.isEmpty(product.comments)}" class="card" style="margin: 20px 0;">
-        <h3>Đánh giá từ khách hàng</h3>
-        <div th:each="c : ${product.comments}" style="border-bottom: 1px solid #eee; padding: 15px 0;">
-            <div style="display: flex; justify-content: space-between;">
-                <strong th:text="${c.customerName ?: 'Khách hàng'}"></strong>
-                <span th:if="${c.rating}" th:text="${c.rating} + '/5⭐'"></span>
+        <div class="product-detail-grid">
+            <div class="product-gallery">
+                <div class="product-gallery__media">
+                    <img th:if="${product.imageUrl}" th:src="@{${product.imageUrl}}" th:alt="${product.name}">
+                    <div th:unless="${product.imageUrl}" style="font-size:64px;">🛍️</div>
+                </div>
+                <div class="tag-row" style="margin-top:var(--space-4);">
+                    <span th:class="${product.inStock ? 'badge badge-success' : 'badge badge-danger'}"
+                          th:text="${product.inStock ? 'Còn hàng' : 'Hết hàng'}"></span>
+                    <span class="badge badge-info" th:text="${'Tồn kho: ' + (product.stock != null ? product.stock : 0)}"></span>
+                    <span class="badge badge-warning" th:if="${product.categoryName}" th:text="${product.categoryName}"></span>
+                </div>
             </div>
-            <p th:text="${c.text}" style="margin: 10px 0;"></p>
-            <small style="color: #7f8c8d;" th:text="${#dates.format(c.commentDate, 'dd/MM/yyyy HH:mm')}"></small>
-        </div>
-    </div>
-</div>
 
-<div th:if="${product == null}" class="empty-state">
-    <p>Khong tim thay san pham.</p>
-    <a th:href="@{/products}" class="btn btn-secondary">Quay lai</a>
-</div>
+            <div class="product-meta">
+                <section class="page-section" style="margin:0;">
+                    <p class="price-display" th:text="${#numbers.formatDecimal(product.price, 0, 'COMMA', 0, 'POINT')} + ' ₫'"></p>
+                    <p class="page-subtitle" style="margin-bottom:var(--space-5);">
+                        Giá đã bao gồm VAT. Kiểm tra tồn kho trước khi thêm vào giỏ.
+                    </p>
+
+                    <ul class="detail-list">
+                        <li class="detail-item">
+                            <span class="detail-item__label">Danh mục</span>
+                            <span class="detail-item__value" th:text="${product.categoryName ?: 'Chưa phân loại'}"></span>
+                        </li>
+                        <li class="detail-item">
+                            <span class="detail-item__label">Số lượng tồn</span>
+                            <span class="detail-item__value"
+                                  th:text="${(product.stock != null ? product.stock : 0)} + ' sản phẩm'"></span>
+                        </li>
+                        <li class="detail-item" th:if="${product.averageRating != null}">
+                            <span class="detail-item__label">Đánh giá</span>
+                            <span class="detail-item__value">
+                                <strong th:text="${#numbers.formatDecimal(product.averageRating, 1, 'POINT', 1, 'POINT')} + '/5'"></strong>
+                                <span class="badge badge-info" th:text="'(' + ${product.commentCount} + ' đánh giá)'"></span>
+                            </span>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="page-section" style="margin:0;">
+                    <h3 style="margin-top:0;">Thao tác</h3>
+                    <div style="display:flex; flex-wrap:wrap; gap:var(--space-3); align-items:center;">
+                        <form th:if="${product.inStock}"
+                              th:action="@{/cart/add/{id}(id=${product.productId})}"
+                              method="post"
+                              style="display:flex; gap:var(--space-3); align-items:center;">
+                            <label for="quantity" style="font-weight:600;">Số lượng:</label>
+                            <input type="number"
+                                   id="quantity"
+                                   name="quantity"
+                                   value="1"
+                                   min="1"
+                                   th:max="${product.stock}"
+                                   class="form-control"
+                                   style="max-width:120px;">
+                            <button type="submit" class="btn btn-primary">🛒 Thêm vào giỏ</button>
+                        </form>
+
+                        <div th:if="${!product.inStock}" class="badge badge-danger">Sản phẩm đã hết hàng</div>
+
+                        <p class="page-subtitle" style="margin:0;" sec:authorize="isAnonymous()">
+                            Bạn có thể thêm vào giỏ mà không cần đăng nhập. Đăng nhập sẽ cần khi thanh toán.
+                        </p>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <section class="page-section" th:if="${product.comments != null && !#lists.isEmpty(product.comments)}" style="margin-top:var(--space-6);">
+            <h3 style="margin-top:0;">Đánh giá từ khách hàng</h3>
+            <div th:each="c : ${product.comments}" style="padding:var(--space-4) 0; border-bottom:1px solid var(--border-light);">
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <strong th:text="${c.customerName ?: 'Khách hàng'}"></strong>
+                    <span th:if="${c.rating}" th:text="${c.rating} + '/5 ⭐'"></span>
+                </div>
+                <p th:text="${c.text}" style="margin:var(--space-2) 0;"></p>
+                <small class="text-muted" th:text="${#dates.format(c.commentDate, 'dd/MM/yyyy HH:mm')}"></small>
+            </div>
+        </section>
+    </div>
+
+    <div th:if="${product == null}" class="empty-state">
+        <div style="font-size:60px; margin-bottom:var(--space-4);">🙈</div>
+        <h3>Không tìm thấy sản phẩm</h3>
+        <p>Có thể sản phẩm đã bị xóa hoặc không tồn tại.</p>
+        <a th:href="@{/products}" class="btn btn-ghost" style="margin-top:var(--space-4);">← Quay lại danh sách</a>
+    </div>
 
 </div>
 

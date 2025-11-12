@@ -77,7 +77,6 @@
     <div class="products-header">
         <div>
             <h1 class="page-title">Danh sách sản phẩm</h1>
-            <p class="page-subtitle">Mọi người đều có thể xem và thêm sản phẩm vào giỏ.</p>
         </div>
 
         <form th:action="@{/products/search}" method="get" class="filter-form" style="grid-column: span 2;">
@@ -91,7 +90,6 @@
     </div>
 
     <div th:if="${#lists.isEmpty(products)}" class="empty-state">
-        <div style="font-size:48px; margin-bottom:12px;">📦</div>
         <p>Chưa có sản phẩm nào.</p>
         <div sec:authorize="hasRole('ADMIN')">
             <a th:href="@{/products/new}" class="btn btn-primary">Thêm sản phẩm đầu tiên</a>

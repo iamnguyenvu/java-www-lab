@@ -37,20 +37,20 @@
         </div>
 
         <div class="app-nav__actions">
-            <a th:href="@{/cart}" class="cart-button" aria-label="Giỏ hàng">
-                <img th:src="@{/images/cart.png}" alt="Cart icon">
+            <a th:href="@{/cart}" class="cart-button" aria-label="Giỏ hàng" sec:authorize="isAuthenticated()">
+                <span>Cart</span>
                 <span class="cart-badge"
                       th:if="${cartItemCount != null && cartItemCount > 0}"
                       th:text="${cartItemCount}"></span>
             </a>
 
-            <div sec:authorize="isAnonymous()" style="display:flex; gap:10px;">
+            <div sec:authorize="isAnonymous()" style="display:flex; gap:var(--space-2); flex-wrap:wrap;">
                 <a th:href="@{/login}" class="btn btn-outline">Đăng nhập</a>
                 <a th:href="@{/register}" class="btn btn-primary">Đăng ký</a>
             </div>
 
-            <div sec:authorize="isAuthenticated()" style="display:flex; align-items:center; gap:12px;">
-                <span style="color:var(--muted); font-size:14px;">Xin chào, <strong sec:authentication="name"></strong></span>
+            <div sec:authorize="isAuthenticated()" style="display:flex; align-items:center; gap:var(--space-3); flex-wrap:wrap;">
+                <span style="color:var(--text-light); font-size:14px;">Xin chào, <strong sec:authentication="name" style="color:var(--primary);"></strong></span>
                 <form th:action="@{/logout}" method="post" style="margin:0;">
                     <button type="submit" class="btn btn-ghost">Đăng xuất</button>
                 </form>

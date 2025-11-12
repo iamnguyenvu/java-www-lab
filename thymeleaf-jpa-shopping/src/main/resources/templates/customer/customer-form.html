@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Form Khach hang</title>
+    <title th:text="${customer.id != null ? 'Sửa khách hàng' : 'Thêm khách hàng'}">Khách hàng</title>
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
@@ -10,24 +10,40 @@
 <div th:replace="~{fragments/navbar :: navbar}"></div>
 
 <div class="page-container">
-    <h2 class="page-header" th:text="${customer.id != null ? 'Sua Khach hang' : 'Them Khach hang'}">Form</h2>
+    <div class="page-header">
+        <div>
+            <h1 class="page-title" th:text="${customer.id != null ? '✏️ Cập nhật khách hàng' : '🆕 Thêm khách hàng mới'}"></h1>
+            <p class="page-subtitle">Chỉ cần nhập tên khách hàng để lưu vào hệ thống.</p>
+        </div>
+        <div class="page-actions">
+            <a th:href="@{/customers}" class="btn btn-ghost">← Danh sách khách hàng</a>
+        </div>
+    </div>
 
-    <div class="card" style="max-width: 600px;">
-        <form th:action="${customer.id != null ? '/customers/edit/' + customer.id : '/customers/new'}" 
-              th:object="${customer}" 
+    <section class="page-section" style="max-width:640px;">
+        <form th:action="${customer.id != null} ? @{/customers/edit/{id}(id=${customer.id})} : @{/customers/new}"
+              th:object="${customer}"
               method="post">
-            
+
             <div class="form-group">
-                <label>Ten khach hang:</label>
-                <input type="text" name="name" th:field="*{name}" required class="form-control">
+                <label for="name">Tên khách hàng *</label>
+                <input type="text"
+                       id="name"
+                       th:field="*{name}"
+                       class="form-control"
+                       placeholder="Nhập họ tên đầy đủ"
+                       required>
+                <span class="field-error" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
             </div>
 
-            <div class="form-group" style="margin-top: 20px;">
-                <button type="submit" class="btn btn-primary" th:text="${customer.id != null ? 'Cap nhat' : 'Them'}">Luu</button>
-                <a th:href="@{/customers}" class="btn btn-secondary">Huy</a>
+            <div class="form-actions">
+                <a th:href="@{/customers}" class="btn btn-ghost">Hủy</a>
+                <button type="submit"
+                        class="btn btn-primary"
+                        th:text="${customer.id != null ? 'Lưu thay đổi' : 'Thêm khách hàng'}"></button>
             </div>
         </form>
-    </div>
+    </section>
 </div>
 
 </body>

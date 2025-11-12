@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
-    <title>Chi tiet Khach hang</title>
+    <title>Chi tiết khách hàng</title>
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
@@ -11,46 +11,72 @@
 
 <div class="page-container">
 
-<div th:if="${customer != null}">
-    <h2 class="page-header">Chi tiet Khach hang</h2>
-    
-    <div class="card">
-        <table>
-            <tr>
-                <td style="width: 200px;"><b>ID:</b></td>
-                <td th:text="${customer.id}"></td>
-            </tr>
-            <tr>
-                <td><b>Ten:</b></td>
-                <td th:text="${customer.name}"></td>
-            </tr>
-            <tr>
-                <td><b>Ngay dang ky:</b></td>
-                <td th:text="${#calendars.format(customer.customerSince, 'dd/MM/yyyy HH:mm')}"></td>
-            </tr>
-            <tr>
-                <td><b>So don hang:</b></td>
-                <td><span class="badge badge-info" th:text="${customer.orderCount} + ' orders'"></span></td>
-            </tr>
-        </table>
+    <div th:if="${customer != null}">
+        <div class="page-header">
+            <div>
+                <p class="page-subtitle" style="margin:0;">Mã khách hàng #<span th:text="${customer.id}"></span></p>
+                <h1 class="page-title" th:text="${customer.name}">Chi tiết khách hàng</h1>
+                <p class="page-subtitle">
+                    Thành viên từ <span th:text="${#calendars.format(customer.customerSince, 'dd/MM/yyyy')}"></span>
+                </p>
+            </div>
+            <div class="page-actions">
+                <a th:href="@{/customers}" class="btn btn-ghost">← Danh sách khách hàng</a>
+                <span sec:authorize="hasRole('ADMIN')" style="display:flex; gap:var(--space-2);">
+                    <a th:href="@{/customers/edit/{id}(id=${customer.id})}" class="btn btn-outline">Chỉnh sửa</a>
+                    <form th:action="@{/customers/delete}" method="post" style="margin:0;" onsubmit="return confirm('Xóa khách hàng này?');">
+                        <input type="hidden" name="id" th:value="${customer.id}">
+                        <button class="btn btn-danger">Xóa</button>
+                    </form>
+                </span>
+            </div>
+        </div>
+
+        <section class="page-section">
+            <div class="detail-grid">
+                <div>
+                    <h3 style="margin-top:0;">Thông tin chung</h3>
+                    <ul class="detail-list">
+                        <li class="detail-item">
+                            <span class="detail-item__label">Tên khách hàng</span>
+                            <span class="detail-item__value" th:text="${customer.name}"></span>
+                        </li>
+                        <li class="detail-item">
+                            <span class="detail-item__label">Ngày tạo tài khoản</span>
+                            <span class="detail-item__value" th:text="${#calendars.format(customer.customerSince, 'dd/MM/yyyy HH:mm')}"></span>
+                        </li>
+                        <li class="detail-item">
+                            <span class="detail-item__label">Số đơn hàng</span>
+                            <span class="detail-item__value">
+                                <span class="badge badge-info" th:text="${customer.orderCount} + ' đơn'"></span>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 style="margin-top:0;">Thống kê nhanh</h3>
+                    <div class="stat-grid">
+                        <div class="stat-card">
+                            <div class="stat-card__label">Đơn hàng</div>
+                            <div class="stat-card__value" th:text="${customer.orderCount}"></div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card__label">Thành viên từ</div>
+                            <div class="stat-card__value" style="font-size:20px;" th:text="${#calendars.format(customer.customerSince, 'MM/yyyy')}"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 
-    <div style="margin: 20px 0;">
-        <span sec:authorize="hasRole('ADMIN')">
-            <a th:href="@{/customers/edit/{id}(id=${customer.id})}" class="btn btn-primary">Sua</a>
-            <form th:action="@{/customers/delete}" method="post" style="display:inline">
-                <input type="hidden" name="id" th:value="${customer.id}">
-                <button class="btn btn-danger" onclick="return confirm('Xoa?')">Xoa</button>
-            </form>
-        </span>
-        <a th:href="@{/customers}" class="btn btn-secondary">← Quay lai</a>
+    <div th:if="${customer == null}" class="empty-state">
+        <div style="font-size:60px; margin-bottom:var(--space-4);">🕵️</div>
+        <h3>Không tìm thấy khách hàng</h3>
+        <p>Hồ sơ này có thể đã bị xóa hoặc không tồn tại.</p>
+        <a th:href="@{/customers}" class="btn btn-ghost" style="margin-top:var(--space-4);">← Về danh sách khách hàng</a>
     </div>
-</div>
-
-<div th:if="${customer == null}" class="empty-state">
-    <p>Khong tim thay khach hang.</p>
-    <a th:href="@{/customers}" class="btn btn-secondary">Quay lai</a>
-</div>
 
 </div>
 

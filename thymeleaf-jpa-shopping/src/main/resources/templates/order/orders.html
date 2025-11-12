@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Danh sach Don hang</title>
+    <title>Danh sách đơn hàng</title>
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
@@ -11,37 +11,43 @@
 
 <div class="page-container">
     <div class="page-header">
-        <h2>Danh sach Don hang</h2>
+        <div>
+            <h1 class="page-title">Quản lý đơn hàng</h1>
+        </div>
     </div>
 
     <div th:if="${#lists.isEmpty(orders)}" class="empty-state">
-        <p>Chua co don hang nao.</p>
+        <h3>Chưa có đơn hàng nào</h3>
     </div>
 
-    <table th:if="${!#lists.isEmpty(orders)}">
-        <thead>
-            <tr>
-                <th>Ma Don</th>
-                <th>Ngay dat</th>
-                <th>Khach hang</th>
-                <th>So san pham</th>
-                <th>Tong tien</th>
-                <th>Hanh dong</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr th:each="order : ${orders}">
-                <td><strong th:text="${order.orderId}"></strong></td>
-                <td th:text="${#calendars.format(order.orderDate, 'dd/MM/yyyy HH:mm')}"></td>
-                <td th:text="${order.customerName}"></td>
-                <td><span class="badge badge-info" th:text="${order.orderLineCount} + ' item'"></span></td>
-                <td><strong th:text="${#numbers.formatDecimal(order.totalAmount, 0, 'COMMA', 0, 'POINT')} + ' VND'" style="color: #e74c3c;"></strong></td>
-                <td>
-                    <a th:href="@{/orders/{id}(id=${order.orderId})}" class="btn btn-secondary btn-sm">Chi tiet</a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <div th:if="${!#lists.isEmpty(orders)}" class="table-scroll">
+        <table>
+            <thead>
+                <tr>
+                    <th>Mã đơn</th>
+                    <th>Ngày đặt</th>
+                    <th>Khách hàng</th>
+                    <th>Số sản phẩm</th>
+                    <th>Tổng tiền</th>
+                    <th>Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="order : ${orders}">
+                    <td><strong th:text="${order.orderId}"></strong></td>
+                    <td th:text="${#calendars.format(order.orderDate, 'dd/MM/yyyy HH:mm')}"></td>
+                    <td th:text="${order.customerName}"></td>
+                    <td><span class="badge badge-info" th:text="${order.orderLineCount} + ' sản phẩm'"></span></td>
+                    <td>
+                        <strong style="color:var(--primary-dark);" th:text="${#numbers.formatDecimal(order.totalAmount, 0, 'COMMA', 0, 'POINT')} + ' ₫'"></strong>
+                    </td>
+                    <td>
+                        <a th:href="@{/orders/{id}(id=${order.orderId})}" class="btn btn-outline btn-sm">Chi tiết</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
 
 <!-- Include Chatbot -->

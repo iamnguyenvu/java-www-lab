@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
-    <title>Danh sach Khach hang</title>
+    <title>Danh sách khách hàng</title>
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
@@ -10,45 +10,52 @@
 <div th:replace="~{fragments/navbar :: navbar}"></div>
 
 <div class="page-container">
-    <h2 class="page-header">Danh sach Khach hang</h2>
-
-<!--    <div style="margin-bottom: 20px;" sec:authorize="hasRole('ADMIN')">-->
-<!--        <a th:href="@{/customers/new}" class="btn btn-primary">+ Them moi</a>-->
-<!--    </div>-->
-
-    <div th:if="${#lists.isEmpty(customers)}" class="empty-state">
-        <p>Khong co khach hang.</p>
+    <div class="page-header">
+        <div>
+            <h1 class="page-title">Danh sách khách hàng</h1>
+        </div>
+        <div class="page-actions" sec:authorize="hasRole('ADMIN')">
+            <!-- <a th:href="@{/customers/new}" class="btn btn-primary">+ Thêm khách hàng</a> -->
+        </div>
     </div>
 
-    <table th:if="${!#lists.isEmpty(customers)}">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Ten</th>
-                <th>Ngay dang ky</th>
-                <th>So don hang</th>
-                <th>Hanh dong</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr th:each="c : ${customers}">
-                <td th:text="${c.id}"></td>
-                <td th:text="${c.name}"></td>
-                <td th:text="${#calendars.format(c.customerSince, 'dd/MM/yyyy')}"></td>
-                <td><span class="badge badge-info" th:text="${c.orderCount} + ' orders'"></span></td>
-                <td>
-                    <a th:href="@{/customers/{id}(id=${c.id})}" class="btn btn-primary" style="font-size: 13px; padding: 4px 10px;">Xem</a>
-                    <span sec:authorize="hasRole('ADMIN')">
-                        <a th:href="@{/customers/edit/{id}(id=${c.id})}" class="btn btn-secondary" style="font-size: 13px; padding: 4px 10px;">Sua</a>
-                        <form th:action="@{/customers/delete}" method="post" style="display:inline">
-                            <input type="hidden" name="id" th:value="${c.id}">
-                            <button class="btn btn-danger" style="font-size: 13px; padding: 4px 10px;" onclick="return confirm('Xoa?')">Xoa</button>
-                        </form>
-                    </span>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <div th:if="${#lists.isEmpty(customers)}" class="empty-state">
+        <div style="font-size:60px; margin-bottom:var(--space-4);">📭</div>
+        <h3>Chưa có khách hàng nào</h3>
+    </div>
+
+    <div th:if="${!#lists.isEmpty(customers)}" class="table-scroll">
+        <table>
+            <thead>
+                <tr>
+                    <th>Khách hàng</th>
+                    <th>Ngày đăng ký</th>
+                    <th>Đơn hàng</th>
+                    <th>Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="c : ${customers}">
+                    <td>
+                        <strong th:text="${c.name}"></strong>
+                        <p class="page-subtitle" style="margin:0;">Mã KH #<span th:text="${c.id}"></span></p>
+                    </td>
+                    <td th:text="${#calendars.format(c.customerSince, 'dd/MM/yyyy')}"></td>
+                    <td><span class="badge badge-info" th:text="${c.orderCount} + ' đơn'"></span></td>
+                    <td style="display:flex; gap:var(--space-2); flex-wrap:wrap;">
+                        <a th:href="@{/customers/{id}(id=${c.id})}" class="btn btn-outline btn-sm">Xem</a>
+                        <span sec:authorize="hasRole('ADMIN')" style="display:flex; gap:var(--space-2); flex-wrap:wrap;">
+                            <a th:href="@{/customers/edit/{id}(id=${c.id})}" class="btn btn-ghost btn-sm">Sửa</a>
+                            <form th:action="@{/customers/delete}" method="post" style="display:inline" onsubmit="return confirm('Xóa khách hàng này?');">
+                                <input type="hidden" name="id" th:value="${c.id}">
+                                <button class="btn btn-danger btn-sm">Xóa</button>
+                            </form>
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
 
 <!-- Include Chatbot -->
