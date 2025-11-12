@@ -65,7 +65,9 @@ public class SecurityConfig {
                         .deleteCookies("JSESSIONID")
                         .permitAll())
                 .exceptionHandling(ex -> ex
-                        .accessDeniedPage("/access-denied"));
+                        .accessDeniedPage("/access-denied"))
+                .csrf(csrf -> csrf
+                        .ignoringRequestMatchers("/api/chat/**"));
 
         return http.build();
     }
