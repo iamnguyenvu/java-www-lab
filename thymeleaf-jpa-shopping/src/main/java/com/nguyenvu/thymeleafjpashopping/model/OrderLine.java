@@ -30,12 +30,10 @@ public class OrderLine {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "product_id", nullable = false)
-    @ToString.Exclude @EqualsAndHashCode.Exclude
     private Product product;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "order_id", nullable = false)
-    @ToString.Exclude @EqualsAndHashCode.Exclude
     private Order order;
     
     @PrePersist

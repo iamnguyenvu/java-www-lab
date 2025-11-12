@@ -42,12 +42,10 @@ public class Order {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "customer_id", nullable = false)
-    @ToString.Exclude @EqualsAndHashCode.Exclude
     private Customer customer;
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
     @Builder.Default
-    @ToString.Exclude @EqualsAndHashCode.Exclude
     private Set<OrderLine> orderLines = new LinkedHashSet<>();
 
 

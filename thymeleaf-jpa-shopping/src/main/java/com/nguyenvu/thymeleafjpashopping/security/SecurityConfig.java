@@ -30,6 +30,9 @@ public class SecurityConfig {
                         // Static resources - cho phép tất cả
                         .requestMatchers("/css/**", "/js/**", "/images/**").permitAll()
                         
+                        // API endpoints - cho phép chatbot
+                        .requestMatchers("/api/chat/**").permitAll()
+                        
                         // Public pages
                         .requestMatchers("/", "/login", "/register", "/access-denied").permitAll()
                         

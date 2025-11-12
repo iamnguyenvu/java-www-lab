@@ -2,124 +2,192 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
-    <title>Danh sach San pham</title>
+    <title>🛍️ Danh sách sản phẩm</title>
     <link rel="stylesheet" th:href="@{/css/style.css}">
     <style>
-        .header {
-            background: white;
-            padding: 15px;
-            margin-bottom: 20px;
-            border-radius: 4px;
+        .products-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .products-header h2 {
+            margin: 0 0 15px 0;
+            font-size: 32px;
+        }
+        .header-actions {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
         }
         .search-bar {
-            margin: 15px 0;
+            display: flex;
+            gap: 10px;
+            flex: 1;
+            min-width: 300px;
         }
         .search-bar input {
-            padding: 8px;
-            width: 300px;
-            border: 1px solid #ddd;
-        }
-        .search-bar button {
-            padding: 8px 15px;
-            background: #333;
-            color: white;
+            flex: 1;
+            padding: 10px 15px;
             border: none;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .search-bar button, .btn-add-new {
+            padding: 10px 20px;
+            background: white;
+            color: #667eea;
+            border: none;
+            border-radius: 4px;
             cursor: pointer;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
         }
-        .search-bar button:hover {
-            background: #555;
-        }
-        .search-bar a {
-            margin-left: 10px;
+        .search-bar button:hover, .btn-add-new:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
         .card-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
             margin-top: 20px;
         }
-        .card {
+        .product-card {
             background: white;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            padding: 15px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
         }
-        .card-header {
-            border-bottom: 1px solid #eee;
-            padding-bottom: 10px;
-            margin-bottom: 10px;
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         }
-        .card-title {
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        .product-body {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .product-title {
             font-size: 18px;
-            font-weight: bold;
-            margin: 0;
+            font-weight: 700;
+            margin: 0 0 10px 0;
             color: #333;
+            line-height: 1.4;
         }
-        .card-price {
-            font-size: 16px;
+        .product-description {
+            font-size: 14px;
+            color: #666;
+            margin: 0 0 15px 0;
+            line-height: 1.6;
+            flex: 1;
+        }
+        .product-price {
+            font-size: 24px;
+            font-weight: 700;
             color: #e74c3c;
-            margin: 5px 0;
+            margin: 10px 0;
         }
-        .card-status {
+        .product-meta {
+            display: flex;
+            gap: 10px;
+            margin: 10px 0;
+            flex-wrap: wrap;
+        }
+        .badge {
             display: inline-block;
-            padding: 3px 8px;
-            border-radius: 3px;
+            padding: 4px 10px;
+            border-radius: 12px;
             font-size: 12px;
-            margin-top: 5px;
+            font-weight: 600;
         }
-        .status-in-stock {
+        .badge-success {
             background: #d4edda;
             color: #155724;
         }
-        .status-out-stock {
+        .badge-danger {
             background: #f8d7da;
             color: #721c24;
         }
-        .card-comments {
-            margin: 10px 0;
-            min-height: 60px;
+        .badge-info {
+            background: #d1ecf1;
+            color: #0c5460;
         }
-        .comment-title {
-            font-size: 13px;
-            color: #666;
-            margin-bottom: 8px;
-        }
-        .comment-item {
-            background: #f9f9f9;
-            padding: 8px;
-            margin: 5px 0;
-            border-left: 3px solid #ddd;
-            font-size: 13px;
-            color: #555;
-        }
-        .no-comments {
-            color: #999;
-            font-size: 13px;
-            font-style: italic;
-        }
-        .card-actions {
-            margin-top: 10px;
-            padding-top: 10px;
+        .product-actions {
+            margin-top: 15px;
+            padding-top: 15px;
             border-top: 1px solid #eee;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
         }
-        .card-actions a, .card-actions button {
-            padding: 6px 12px;
-            margin-right: 8px;
+        .btn {
+            padding: 8px 16px;
             text-decoration: none;
-            border: 1px solid #ddd;
-            background: white;
-            color: #333;
+            border-radius: 6px;
             font-size: 13px;
+            font-weight: 600;
             cursor: pointer;
+            transition: all 0.2s;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
         }
-        .card-actions a:hover, .card-actions button:hover {
-            background: #f5f5f5;
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+        .btn-primary:hover {
+            background: #5568d3;
+        }
+        .btn-success {
+            background: #28a745;
+            color: white;
+        }
+        .btn-success:hover {
+            background: #218838;
+        }
+        .btn-warning {
+            background: #ffc107;
+            color: #333;
+        }
+        .btn-warning:hover {
+            background: #e0a800;
+        }
+        .btn-danger {
+            background: #dc3545;
+            color: white;
+        }
+        .btn-danger:hover {
+            background: #c82333;
         }
         .empty-message {
             text-align: center;
-            padding: 40px;
+            padding: 60px;
             background: white;
-            border-radius: 4px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .empty-message p {
+            font-size: 18px;
+            color: #666;
+            margin: 20px 0;
         }
     </style>
 </head>
@@ -129,66 +197,105 @@
 
 <div class="page-container">
 
-<div class="header">
-    <h2 style="margin: 0 0 10px 0;">Danh sach San pham</h2>
-    <div sec:authorize="hasRole('ADMIN')">
-        <a th:href="@{/products/new}" style="padding: 8px 15px; background: #333; color: white; text-decoration: none; border-radius: 3px;">+ Them moi</a>
+<div class="products-header">
+    <h2>🛍️ Danh sách sản phẩm</h2>
+    <div class="header-actions">
+        <form th:action="@{/products/search}" method="get" class="search-bar">
+            <input name="name" type="text" placeholder="🔍 Tìm kiếm sản phẩm...">
+            <button type="submit">Tìm kiếm</button>
+            <a th:href="@{/products}" class="search-bar button">Tất cả</a>
+        </form>
+        <div sec:authorize="hasRole('ADMIN')">
+            <a th:href="@{/products/new}" class="btn-add-new">➕ Thêm sản phẩm mới</a>
+        </div>
     </div>
-    
-    <form th:action="@{/products/search}" method="get" class="search-bar">
-        <input name="name" type="text" placeholder="Tim kiem san pham...">
-        <button type="submit">Tim kiem</button>
-        <a th:href="@{/products}">Hien thi tat ca</a>
-    </form>
 </div>
 
 <div th:if="${#lists.isEmpty(products)}" class="empty-message">
-    <p>Khong co san pham nao.</p>
+    <div style="font-size: 48px;">📦</div>
+    <p>Không có sản phẩm nào</p>
+    <div sec:authorize="hasRole('ADMIN')">
+        <a th:href="@{/products/new}" class="btn btn-primary">➕ Thêm sản phẩm đầu tiên</a>
+    </div>
 </div>
 
 <div class="card-container" th:if="${!#lists.isEmpty(products)}">
-    <div class="card" th:each="p : ${products}">
-        <div class="card-header">
-            <h3 class="card-title" th:text="${p.name}">Product Name</h3>
-            <div class="card-price" th:text="${#numbers.formatDecimal(p.price, 0, 'COMMA', 0, 'POINT')} + ' VND'">Price</div>
-            <span class="card-status" 
-                  th:classappend="${p.inStock ? 'status-in-stock' : 'status-out-stock'}"
-                  th:text="${p.inStock ? 'Con hang' : 'Het hang'}">
-                Status
-            </span>
+    <div class="product-card" th:each="p : ${products}">
+        <img th:if="${p.imageUrl != null && !p.imageUrl.isEmpty()}" 
+             th:src="${p.imageUrl}" 
+             alt="Product image"
+             class="product-image">
+        <div th:unless="${p.imageUrl != null && !p.imageUrl.isEmpty()}" 
+             class="product-image" 
+             style="display: flex; align-items: center; justify-content: center; font-size: 48px; color: #999;">
+            📦
         </div>
         
-        <div class="card-comments">
-            <div class="comment-title">
-                <strong>Comments</strong> 
-                (<span th:text="${p.commentCount}">0</span>)
+        <div class="product-body">
+            <h3 class="product-title" th:text="${p.name}">Product Name</h3>
+            
+            <p class="product-description" 
+               th:text="${p.description != null && !p.description.isEmpty() ? p.description : 'Chưa có mô tả'}">
+                Product description
+            </p>
+            
+            <div class="product-meta">
+                <span class="badge" 
+                      th:classappend="${p.inStock ? 'badge-success' : 'badge-danger'}"
+                      th:text="${p.inStock ? '✅ Còn hàng' : '❌ Hết hàng'}">
+                    Status
+                </span>
+                <span class="badge badge-info" 
+                      th:if="${p.stock != null}"
+                      th:text="'📦 ' + ${p.stock} + ' sản phẩm'">
+                    Stock
+                </span>
             </div>
             
-            <div th:if="${p.comments != null && !#lists.isEmpty(p.comments)}">
-                <div class="comment-item" th:each="c : ${p.comments}" th:text="${c.text}">
-                    Comment text
-                </div>
+            <div class="product-price" 
+                 th:text="${#numbers.formatDecimal(p.price, 0, 'COMMA', 0, 'POINT')} + ' ₫'">
+                Price
             </div>
             
-            <div th:if="${p.comments == null || #lists.isEmpty(p.comments)}" class="no-comments">
-                Chua co binh luan
-            </div>
-        </div>
-        
-        <div class="card-actions">
-            <a th:href="@{/products/{id}(id=${p.productId})}">Xem chi tiet</a>
-            <span sec:authorize="hasRole('ADMIN')">
-                <a th:href="@{/products/edit/{id}(id=${p.productId})}">Sua</a>
-                <form th:action="@{/products/delete}" method="post" style="display:inline">
-                    <input type="hidden" name="id" th:value="${p.productId}">
-                    <button onclick="return confirm('Ban co chac muon xoa san pham nay?')">Xoa</button>
+            <div class="product-actions">
+                <a th:href="@{/products/{id}(id=${p.productId})}" class="btn btn-primary">
+                    👁️ Chi tiết
+                </a>
+                
+                <form th:action="@{/cart/add/{id}(id=${p.productId})}" 
+                      method="post" 
+                      style="display:inline"
+                      sec:authorize="isAuthenticated()">
+                    <input type="hidden" name="quantity" value="1">
+                    <button type="submit" class="btn btn-success" th:disabled="${!p.inStock}">
+                        🛒 Thêm vào giỏ
+                    </button>
                 </form>
-            </span>
+                
+                <span sec:authorize="hasRole('ADMIN')">
+                    <a th:href="@{/products/edit/{id}(id=${p.productId})}" class="btn btn-warning">
+                        ✏️ Sửa
+                    </a>
+                    <form th:action="@{/products/delete}" 
+                          method="post" 
+                          style="display:inline">
+                        <input type="hidden" name="id" th:value="${p.productId}">
+                        <button type="submit" 
+                                class="btn btn-danger"
+                                onclick="return confirm('Bạn có chắc muốn xóa sản phẩm này?')">
+                            🗑️ Xóa
+                        </button>
+                    </form>
+                </span>
+            </div>
         </div>
     </div>
 </div>
 
 </div><!-- /.page-container -->
+
+<!-- Include Chatbot -->
+<div th:replace="~{fragments/chatbot :: chatbot}"></div>
 
 </body>
 </html>

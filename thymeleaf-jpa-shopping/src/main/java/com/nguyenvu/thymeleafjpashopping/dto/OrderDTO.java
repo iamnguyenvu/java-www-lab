@@ -1,5 +1,8 @@
 package com.nguyenvu.thymeleafjpashopping.dto;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -18,7 +21,13 @@ public class OrderDTO {
     private Date orderDate;
     private BigDecimal totalAmount;
     private String status;
+    
+    @NotBlank(message = "Địa chỉ giao hàng không được để trống")
+    @Size(min = 10, max = 255, message = "Địa chỉ giao hàng phải từ 10-255 ký tự")
     private String shippingAddress;
+    
+    @NotBlank(message = "Số điện thoại không được để trống")
+    @Pattern(regexp = "^[0-9]{10,11}$", message = "Số điện thoại phải có 10-11 chữ số")
     private String phone;
     
     // Customer info

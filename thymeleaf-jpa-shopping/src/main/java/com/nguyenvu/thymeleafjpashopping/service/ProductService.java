@@ -39,6 +39,8 @@ public class ProductService {
     public ProductDTO getProductById(Long productId) {
         Product product = productRepository.findById(productId)
                 .orElseThrow(() -> new RuntimeException("Product not found with id: " + productId));
+        // Ensure category is loaded
+        product.getCategory().getName();
         return convertToDTO(product);
     }
 

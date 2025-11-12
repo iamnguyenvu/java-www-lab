@@ -31,3 +31,13 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Environment Variables ###
+.env
+*.env
+!.env.example
+
+### API Keys & Secrets ###
+*api-key*
+*secret*
+application-local.properties

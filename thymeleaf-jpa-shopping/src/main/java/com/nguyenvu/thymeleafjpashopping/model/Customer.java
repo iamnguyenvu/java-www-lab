@@ -54,11 +54,9 @@ public class Customer {
 
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     @Builder.Default
-    @ToString.Exclude @EqualsAndHashCode.Exclude
     private Set<Order> orders = new HashSet<>();
     
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     @Builder.Default
-    @ToString.Exclude @EqualsAndHashCode.Exclude
     private List<Comment> comments = new ArrayList<>();
 }

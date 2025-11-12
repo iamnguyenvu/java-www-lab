@@ -3,9 +3,12 @@ package com.nguyenvu.thymeleafjpashopping.controller;
 import com.nguyenvu.thymeleafjpashopping.dto.ProductDTO;
 import com.nguyenvu.thymeleafjpashopping.model.Product;
 import com.nguyenvu.thymeleafjpashopping.service.ProductService;
+import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.math.BigDecimal;
 
@@ -37,9 +40,22 @@ public class ProductController {
     }
 
     @PostMapping("/new")
-    public String createProduct(@ModelAttribute ProductDTO productDTO) {
-        productService.createProduct(productDTO);
-        return "redirect:/products";
+    public String createProduct(@Valid @ModelAttribute("product") ProductDTO productDTO,
+                               BindingResult bindingResult,
+                               Model model,
+                               RedirectAttributes redirectAttributes) {
+        if (bindingResult.hasErrors()) {
+            return "product/product-form";
+        }
+        
+        try {
+            productService.createProduct(productDTO);
+            redirectAttributes.addFlashAttribute("success", "Tạo sản phẩm thành công!");
+            return "redirect:/products";
+        } catch (Exception e) {
+            model.addAttribute("error", "Lỗi: " + e.getMessage());
+            return "product/product-form";
+        }
     }
 
     @GetMapping("/edit/{id}")
@@ -49,9 +65,25 @@ public class ProductController {
     }
 
     @PostMapping("/edit/{id}")
-    public String updateProduct(@PathVariable Long id, @ModelAttribute ProductDTO productDTO) {
-        productService.updateProduct(id, productDTO);
-        return "redirect:/products";
+    public String updateProduct(@PathVariable Long id, 
+                               @Valid @ModelAttribute("product") ProductDTO productDTO,
+                               BindingResult bindingResult,
+                               Model model,
+                               RedirectAttributes redirectAttributes) {
+        if (bindingResult.hasErrors()) {
+            productDTO.setProductId(id);
+            return "product/product-form";
+        }
+        
+        try {
+            productService.updateProduct(id, productDTO);
+            redirectAttributes.addFlashAttribute("success", "Cập nhật sản phẩm thành công!");
+            return "redirect:/products";
+        } catch (Exception e) {
+            model.addAttribute("error", "Lỗi: " + e.getMessage());
+            productDTO.setProductId(id);
+            return "product/product-form";
+        }
     }
 
     @PostMapping("/delete")

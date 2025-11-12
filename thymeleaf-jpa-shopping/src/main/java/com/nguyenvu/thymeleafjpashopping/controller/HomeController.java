@@ -2,9 +2,11 @@ package com.nguyenvu.thymeleafjpashopping.controller;
 
 import com.nguyenvu.thymeleafjpashopping.dto.CustomerDTO;
 import com.nguyenvu.thymeleafjpashopping.service.CustomerService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -33,15 +35,28 @@ public class HomeController {
     }
     
     @PostMapping("/register")
-    public String register(@ModelAttribute CustomerDTO customerDTO, 
+    public String register(@Valid @ModelAttribute CustomerDTO customerDTO, 
+                          BindingResult bindingResult,
+                          Model model,
                           RedirectAttributes redirectAttributes) {
+        // Check validation errors
+        if (bindingResult.hasErrors()) {
+            return "register";
+        }
+        
+        // Check password match
+        if (!customerDTO.getNewPassword().equals(customerDTO.getConfirmPassword())) {
+            model.addAttribute("error", "Mật khẩu xác nhận không khớp!");
+            return "register";
+        }
+        
         try {
             customerService.registerCustomer(customerDTO);
             redirectAttributes.addFlashAttribute("success", "Đăng ký thành công! Vui lòng đăng nhập.");
             return "redirect:/login";
         } catch (Exception e) {
-            redirectAttributes.addFlashAttribute("error", e.getMessage());
-            return "redirect:/register";
+            model.addAttribute("error", e.getMessage());
+            return "register";
         }
     }
     

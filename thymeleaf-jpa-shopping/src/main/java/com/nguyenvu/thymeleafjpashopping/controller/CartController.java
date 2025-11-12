@@ -6,10 +6,12 @@ import com.nguyenvu.thymeleafjpashopping.dto.ProductDTO;
 import com.nguyenvu.thymeleafjpashopping.service.CustomerService;
 import com.nguyenvu.thymeleafjpashopping.service.OrderService;
 import com.nguyenvu.thymeleafjpashopping.service.ProductService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -162,15 +164,17 @@ public class CartController {
         model.addAttribute("cartItems", cart.values());
         model.addAttribute("total", total);
         model.addAttribute("username", authentication.getName());
+        model.addAttribute("orderDTO", new OrderDTO());
         
         return "cart/checkout";
     }
 
     @PostMapping("/checkout")
-    public String processCheckout(@RequestParam String shippingAddress,
-                                 @RequestParam String phone,
+    public String processCheckout(@Valid @ModelAttribute OrderDTO orderDTO,
+                                 BindingResult bindingResult,
                                  HttpSession session,
                                  Authentication authentication,
+                                 Model model,
                                  RedirectAttributes redirectAttributes) {
         try {
             Map<Long, CartItem> cart = getCart(session);
@@ -180,15 +184,22 @@ public class CartController {
                 return "redirect:/cart";
             }
             
+            if (bindingResult.hasErrors()) {
+                BigDecimal total = cart.values().stream()
+                        .map(CartItem::getSubtotal)
+                        .reduce(BigDecimal.ZERO, BigDecimal::add);
+                model.addAttribute("cartItems", cart.values());
+                model.addAttribute("total", total);
+                model.addAttribute("username", authentication.getName());
+                return "cart/checkout";
+            }
+            
             // Get customer by username
             String username = authentication.getName();
             com.nguyenvu.thymeleafjpashopping.dto.CustomerDTO customer = 
                 customerService.getCustomerByUsername(username);
             
-            OrderDTO orderDTO = new OrderDTO();
             orderDTO.setCustomerId(customer.getCustomerId());
-            orderDTO.setShippingAddress(shippingAddress);
-            orderDTO.setPhone(phone);
             orderDTO.setStatus("PENDING");
             
             List<OrderLineDTO> orderLines = new ArrayList<>();

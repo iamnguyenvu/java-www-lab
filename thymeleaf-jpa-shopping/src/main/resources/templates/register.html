@@ -37,6 +37,15 @@
             color: #155724;
             border: 1px solid #c3e6cb;
         }
+        .field-error {
+            color: #dc3545;
+            font-size: 12px;
+            margin-top: 5px;
+            display: block;
+        }
+        .form-control.error {
+            border-color: #dc3545;
+        }
         .login-footer {
             text-align: center;
             margin-top: 20px;
@@ -67,10 +76,12 @@
             <input type="text"
                    id="name"
                    th:field="*{name}"
+                   th:classappend="${#fields.hasErrors('name')} ? 'error' : ''"
                    class="form-control"
                    placeholder="Nhập họ tên đầy đủ"
                    required
                    autofocus>
+            <span class="field-error" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
         </div>
 
         <div class="form-group">
@@ -78,9 +89,11 @@
             <input type="text"
                    id="username"
                    th:field="*{username}"
+                   th:classappend="${#fields.hasErrors('username')} ? 'error' : ''"
                    class="form-control"
                    placeholder="Nhập tên đăng nhập"
                    required>
+            <span class="field-error" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></span>
         </div>
 
         <div class="form-group">
@@ -88,8 +101,10 @@
             <input type="email"
                    id="email"
                    th:field="*{email}"
+                   th:classappend="${#fields.hasErrors('email')} ? 'error' : ''"
                    class="form-control"
                    placeholder="Nhập email">
+            <span class="field-error" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
         </div>
 
         <div class="form-group">
@@ -97,17 +112,21 @@
             <input type="tel"
                    id="phone"
                    th:field="*{phone}"
+                   th:classappend="${#fields.hasErrors('phone')} ? 'error' : ''"
                    class="form-control"
-                   placeholder="Nhập số điện thoại">
+                   placeholder="Nhập số điện thoại (10-11 số)">
+            <span class="field-error" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></span>
         </div>
 
         <div class="form-group">
             <label for="address">Địa chỉ:</label>
             <textarea id="address"
                       th:field="*{address}"
+                      th:classappend="${#fields.hasErrors('address')} ? 'error' : ''"
                       class="form-control"
                       placeholder="Nhập địa chỉ"
                       rows="2"></textarea>
+            <span class="field-error" th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></span>
         </div>
 
         <div class="form-group">
@@ -115,10 +134,12 @@
             <input type="password"
                    id="newPassword"
                    th:field="*{newPassword}"
+                   th:classappend="${#fields.hasErrors('newPassword')} ? 'error' : ''"
                    class="form-control"
-                   placeholder="Nhập mật khẩu"
+                   placeholder="Nhập mật khẩu (tối thiểu 6 ký tự)"
                    required
                    minlength="6">
+            <span class="field-error" th:if="${#fields.hasErrors('newPassword')}" th:errors="*{newPassword}"></span>
         </div>
 
         <div class="form-group">
@@ -126,10 +147,12 @@
             <input type="password"
                    id="confirmPassword"
                    th:field="*{confirmPassword}"
+                   th:classappend="${#fields.hasErrors('confirmPassword')} ? 'error' : ''"
                    class="form-control"
                    placeholder="Nhập lại mật khẩu"
                    required
                    minlength="6">
+            <span class="field-error" th:if="${#fields.hasErrors('confirmPassword')}" th:errors="*{confirmPassword}"></span>
         </div>
 
         <button type="submit" class="btn btn-primary" style="width: 100%; padding: 12px;">
@@ -140,6 +163,19 @@
     <div class="login-footer">
         Đã có tài khoản? <a th:href="@{/login}">Đăng nhập ngay</a>
     </div>
+</div>
+
+</body>
+</html>
+
+    <!--    <div style="text-align: center; margin-top: 20px; color: #666; font-size: 14px;">-->
+    <!--        <p>Tài khoản test:</p>-->
+    <!--        <p style="font-family: monospace; background: #f8f9fa; padding: 8px; border-radius: 4px; margin-top: 8px;">-->
+    <!--            <strong>ADMIN</strong> / 123456 (Full quyền)<br>-->
+    <!--            <strong>USER</strong> / 123456 (Xem only)<br>-->
+    <!--            <strong>CUSTOMER</strong> / 123456 (Xem only)-->
+    <!--        </p>-->
+    <!--    </div>-->
 </div>
 
 </body>

@@ -17,7 +17,6 @@ import java.util.Set;
 @AllArgsConstructor
 @Builder
 @ToString(onlyExplicitlyIncluded = true)
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -47,13 +46,11 @@ public class Product {
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL,
             fetch = FetchType.LAZY, orphanRemoval = true)
     @Builder.Default
-    @ToString.Exclude @EqualsAndHashCode.Exclude
     private List<Comment> comments = new ArrayList<>();
 
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL,
             fetch = FetchType.LAZY, orphanRemoval = true)
     @Builder.Default
-    @ToString.Exclude @EqualsAndHashCode.Exclude
     private Set<OrderLine> orderLines = new HashSet<>();
 
     @ManyToOne(fetch = FetchType.LAZY)

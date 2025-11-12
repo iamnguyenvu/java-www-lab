@@ -4,6 +4,17 @@
     <meta charset="UTF-8">
     <title>Thanh toán</title>
     <link rel="stylesheet" th:href="@{/css/style.css}">
+    <style>
+        .field-error {
+            color: #dc3545;
+            font-size: 12px;
+            margin-top: 5px;
+            display: block;
+        }
+        input.error, textarea.error {
+            border-color: #dc3545;
+        }
+    </style>
 </head>
 <body>
     <div th:replace="~{fragments/navbar::navbar(cartItemCount=${cartItems?.size() ?: 0})}"></div>
@@ -44,20 +55,25 @@
             
             <div class="shipping-info">
                 <h2>Thông tin giao hàng</h2>
-                <form th:action="@{/cart/checkout}" method="post">
+                <form th:action="@{/cart/checkout}" th:object="${orderDTO}" method="post">
                     <div class="form-group">
                         <label for="shippingAddress">Địa chỉ giao hàng: *</label>
-                        <textarea id="shippingAddress" name="shippingAddress" 
+                        <textarea id="shippingAddress" th:field="*{shippingAddress}"
+                                  th:classappend="${#fields.hasErrors('shippingAddress')} ? 'error' : ''"
                                   rows="3" required 
                                   placeholder="Nhập địa chỉ giao hàng đầy đủ"></textarea>
+                        <span class="field-error" th:if="${#fields.hasErrors('shippingAddress')}" 
+                              th:errors="*{shippingAddress}"></span>
                     </div>
                     
                     <div class="form-group">
                         <label for="phone">Số điện thoại: *</label>
-                        <input type="tel" id="phone" name="phone" 
+                        <input type="tel" id="phone" th:field="*{phone}"
+                               th:classappend="${#fields.hasErrors('phone')} ? 'error' : ''"
                                required 
-                               pattern="[0-9]{10,11}"
                                placeholder="Nhập số điện thoại (10-11 số)">
+                        <span class="field-error" th:if="${#fields.hasErrors('phone')}" 
+                              th:errors="*{phone}"></span>
                     </div>
                     
                     <div class="form-actions">
@@ -68,5 +84,9 @@
             </div>
         </div>
     </div>
+
+<!-- Include Chatbot -->
+<div th:replace="~{fragments/chatbot :: chatbot}"></div>
+
 </body>
 </html>
