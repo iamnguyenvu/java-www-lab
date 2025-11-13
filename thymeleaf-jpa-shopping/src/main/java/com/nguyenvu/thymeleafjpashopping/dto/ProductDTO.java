@@ -18,23 +18,28 @@ public class ProductDTO {
     
     @NotBlank(message = "Tên sản phẩm không được để trống")
     @Size(min = 2, max = 200, message = "Tên sản phẩm phải từ 2-200 ký tự")
+    @Pattern(regexp = "^[\\p{L}\\p{N}\\s.,()\\-+&'/]+$", message = "Tên sản phẩm chứa ký tự không hợp lệ")
     private String name;
     
     @Size(max = 1000, message = "Mô tả tối đa 1000 ký tự")
     private String description;
     
     @NotNull(message = "Giá không được để trống")
-    @DecimalMin(value = "0.0", inclusive = false, message = "Giá phải lớn hơn 0")
-    @Digits(integer = 10, fraction = 2, message = "Giá không hợp lệ")
+    @DecimalMin(value = "1000.0", message = "Giá phải từ 1,000 VNĐ trở lên")
+    @DecimalMax(value = "1000000000.0", message = "Giá không vượt quá 1 tỷ VNĐ")
+    @Digits(integer = 10, fraction = 2, message = "Giá không hợp lệ (tối đa 2 chữ số thập phân)")
     private BigDecimal price;
     
     private Boolean inStock;
     
     @NotNull(message = "Số lượng không được để trống")
     @Min(value = 0, message = "Số lượng không được âm")
+    @Max(value = 100000, message = "Số lượng không vượt quá 100,000")
     private Integer stock;
     
     @Size(max = 500, message = "URL hình ảnh tối đa 500 ký tự")
+    @Pattern(regexp = "^$|^(https?://|/images/).*\\.(jpg|jpeg|png|gif|webp)(\\?.*)?$", 
+             message = "URL hình ảnh phải là định dạng hợp lệ (.jpg, .png, .gif, .webp)")
     private String imageUrl;
     
     // Category info

@@ -112,9 +112,12 @@
                    th:field="*{name}"
                    th:classappend="${#fields.hasErrors('name')} ? 'error' : ''"
                    class="form-control"
-                   placeholder="Nhập họ và tên của bạn"
+                   placeholder="Ví dụ: Nguyen Van A"
+                   pattern="(?:[A-ZĐ][A-Za-zÀ-ỹ'\-]+)(?:\s+[A-ZĐ][A-Za-zÀ-ỹ'\-]+)+"
+                   title="Nhập ít nhất 2 từ và mỗi từ phải viết hoa chữ cái đầu"
                    required
                    autofocus>
+            <span class="form-hint">Mỗi từ nên viết hoa chữ cái đầu, ví dụ: Nguyen Van A</span>
             <span class="field-error" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
         </div>
 
@@ -125,42 +128,40 @@
                    th:field="*{username}"
                    th:classappend="${#fields.hasErrors('username')} ? 'error' : ''"
                    class="form-control"
-                   placeholder="Chọn tên đăng nhập"
+                   placeholder="Chỉ dùng chữ, số ở cuối (nếu cần)"
+                   pattern="^[A-Za-z]+[0-9]*$"
+                   title="Chỉ gồm chữ cái (A-Z), có thể kèm số ở cuối"
                    required>
+            <span class="form-hint">Ví dụ hợp lệ: test, TestUser, test123</span>
             <span class="field-error" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></span>
         </div>
 
         <div class="form-group">
-            <label for="email">Email</label>
+            <label for="email">Email <span style="color:var(--danger);">*</span></label>
             <input type="email"
                    id="email"
                    th:field="*{email}"
                    th:classappend="${#fields.hasErrors('email')} ? 'error' : ''"
                    class="form-control"
-                   placeholder="example@email.com">
+                   placeholder="example@email.com"
+                   pattern="[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}"
+                   title="Nhập email hợp lệ, ví dụ: user@example.com"
+                   required>
             <span class="field-error" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
         </div>
 
         <div class="form-group">
-            <label for="phone">Số điện thoại</label>
+            <label for="phone">Số điện thoại <span style="color:var(--danger);">*</span></label>
             <input type="tel"
                    id="phone"
                    th:field="*{phone}"
                    th:classappend="${#fields.hasErrors('phone')} ? 'error' : ''"
                    class="form-control"
-                   placeholder="0912345678">
+                   placeholder="0912345678 hoặc +84912345678"
+                   pattern="(0|\+84)[0-9]{9,10}"
+                   title="Số điện thoại phải bắt đầu bằng 0 hoặc +84 và có 10-11 chữ số"
+                   required>
             <span class="field-error" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></span>
-        </div>
-
-        <div class="form-group">
-            <label for="address">Địa chỉ</label>
-            <textarea id="address"
-                      th:field="*{address}"
-                      th:classappend="${#fields.hasErrors('address')} ? 'error' : ''"
-                      class="form-control"
-                      placeholder="Nhập địa chỉ giao hàng"
-                      rows="2"></textarea>
-            <span class="field-error" th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></span>
         </div>
 
         <div class="form-group">
@@ -170,9 +171,13 @@
                    th:field="*{newPassword}"
                    th:classappend="${#fields.hasErrors('newPassword')} ? 'error' : ''"
                    class="form-control"
-                   placeholder="Tối thiểu 6 ký tự"
-                   required
-                   minlength="6">
+                   placeholder="Ít nhất 8 ký tự"
+                   minlength="8"
+                   maxlength="100"
+                   pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}"
+                   title="Mật khẩu gồm chữ hoa, chữ thường, số và ký tự đặc biệt (@$!%*?&)"
+                   required>
+            <span class="form-hint">Kết hợp chữ HOA, chữ thường, số và ký tự đặc biệt.</span>
             <span class="field-error" th:if="${#fields.hasErrors('newPassword')}" th:errors="*{newPassword}"></span>
         </div>
 
@@ -185,7 +190,7 @@
                    class="form-control"
                    placeholder="Nhập lại mật khẩu"
                    required
-                   minlength="6">
+                   minlength="8">
             <span class="field-error" th:if="${#fields.hasErrors('confirmPassword')}" th:errors="*{confirmPassword}"></span>
         </div>
 

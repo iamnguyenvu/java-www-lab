@@ -1012,6 +1012,32 @@ tr:hover td {
     align-items: center;
 }
 
+.chatbot-close {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: rgba(0, 0, 0, 0.15);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.chatbot-close:hover {
+    background: rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+}
+
+.chatbot-close:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
 .chatbot-header h3 {
     margin: 0;
     font-size: 18px;

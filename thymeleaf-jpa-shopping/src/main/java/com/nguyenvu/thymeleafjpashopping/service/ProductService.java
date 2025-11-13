@@ -164,8 +164,24 @@ public class ProductService {
                 .orderLineCount(product.getOrderLines() != null ? product.getOrderLines().size() : 0)
                 .build();
         
-        // Calculate average rating
+        // Map comments to DTOs
         if (product.getComments() != null && !product.getComments().isEmpty()) {
+            List<CommentDTO> commentDTOs = product.getComments().stream()
+                    .map(comment -> CommentDTO.builder()
+                            .commentId(comment.getCommentId())
+                            .text(comment.getText())
+                            .commentDate(comment.getCommentDate())
+                            .rating(comment.getRating())
+                            .productId(product.getProductId())
+                            .productName(product.getName())
+                            .customerId(comment.getCustomer() != null ? comment.getCustomer().getCustomerId() : null)
+                            .customerName(comment.getCustomer() != null ? comment.getCustomer().getName() : "Khách hàng")
+                            .customerUsername(comment.getCustomer() != null ? comment.getCustomer().getUsername() : null)
+                            .build())
+                    .collect(Collectors.toList());
+            dto.setComments(commentDTOs);
+            
+            // Calculate average rating
             double avgRating = product.getComments().stream()
                     .mapToInt(Comment::getRating)
                     .average()
