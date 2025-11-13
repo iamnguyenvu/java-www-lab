@@ -1,7 +1,6 @@
 package com.nguyenvu.thymeleafjpashopping.controller;
 
 import com.nguyenvu.thymeleafjpashopping.dto.ProductDTO;
-import com.nguyenvu.thymeleafjpashopping.model.Product;
 import com.nguyenvu.thymeleafjpashopping.service.ProductService;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
@@ -35,7 +34,11 @@ public class ProductController {
 
     @GetMapping("/new")
     public String showProductForm(Model model) {
-        model.addAttribute("product", new Product());
+        ProductDTO product = ProductDTO.builder()
+                .inStock(true)
+                .stock(0)
+                .build();
+        model.addAttribute("product", product);
         return "product/product-form";
     }
 

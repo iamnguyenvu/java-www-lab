@@ -1,28 +1,113 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Thanh toán</title>
-    <link rel="stylesheet" th:href="@{/css/style.css}">
-</head>
-<body>
-    <div th:replace="~{fragments/navbar :: navbar}"></div>
-    
-    <div class="page-container">
+    <head>
+        <meta charset="UTF-8">
+        <title>Thanh toán</title>
+        <link rel="stylesheet" th:href="@{/css/style.css}">
+        <style>
+            .checkout-layout {
+                display: grid;
+                grid-template-columns: minmax(320px, 0.95fr) minmax(520px, 1.1fr);
+                gap: var(--space-6);
+                align-items: flex-start;
+                margin-top: var(--space-6);
+            }
+            
+            .checkout-info-card,
+            .order-summary-card {
+                width: 100%;
+            }
+            
+            .order-summary-card .table-scroll {
+                overflow-x: auto;
+            }
+            
+            .order-summary-card table {
+                width: 100%;
+                min-width: 520px;
+            }
+            
+            .order-summary-actions {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                gap: var(--space-3);
+                margin-top: var(--space-5);
+            }
+            
+            .order-summary-actions .btn {
+                flex: 1;
+                min-width: 220px;
+                text-align: center;
+            }
+            
+            @media (max-width: 992px) {
+                .checkout-layout {
+                    grid-template-columns: 1fr;
+                }
+                
+                .order-summary-card table {
+                    min-width: initial;
+                }
+                
+                .order-summary-actions {
+                    flex-direction: column;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div th:replace="~{fragments/navbar :: navbar}"></div>
+        
+        <div class="page-container">
         <div class="page-header">
             <div>
-                <h1 class="page-title">💳 Thanh toán đơn hàng</h1>
-                <p class="page-subtitle">Kiểm tra thông tin và hoàn tất đặt hàng trong một bước.</p>
+                <h1 class="page-title">Thanh toán đơn hàng</h1>
+                <!-- <p class="page-subtitle">Kiểm tra thông tin và hoàn tất đặt hàng trong một bước.</p> -->
             </div>
         </div>
-
-        <div th:if="${error}" class="alert alert-error" th:text="${error}"></div>
         
-        <div class="checkout-layout">
+        <div th:if="${error}" class="alert alert-error" th:text="${error}"></div>
+        <form th:action="@{/cart/checkout}" th:object="${orderDTO}" method="post" class="checkout-layout">
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+            
+            <section class="page-section checkout-info-card">
+                <h2 style="margin-top:0;">Thông tin giao hàng</h2>
+                <p class="page-subtitle">Chúng tôi sẽ sử dụng thông tin này để liên lạc khi giao hàng.</p>
+
+                <div class="form-group">
+                    <label for="shippingAddress">Địa chỉ giao hàng *</label>
+                    <textarea id="shippingAddress"
+                              class="form-control"
+                              th:field="*{shippingAddress}"
+                              th:classappend="${#fields.hasErrors('shippingAddress')} ? 'error' : ''"
+                              rows="3"
+                              required
+                              placeholder="Ví dụ: 123 Lý Thường Kiệt, P.7, Q.10, TP.HCM"></textarea>
+                    <span class="form-hint">Hãy ghi rõ số nhà, phường/xã và quận/huyện.</span>
+                    <span class="field-error" th:if="${#fields.hasErrors('shippingAddress')}"
+                          th:errors="*{shippingAddress}"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Số điện thoại liên hệ *</label>
+                    <input type="tel"
+                           id="phone"
+                           class="form-control"
+                           th:field="*{phone}"
+                           th:classappend="${#fields.hasErrors('phone')} ? 'error' : ''"
+                           required
+                           placeholder="0912 345 678">
+                    <span class="form-hint">Nhân viên giao hàng sẽ liên hệ qua số này khi cần.</span>
+                    <span class="field-error" th:if="${#fields.hasErrors('phone')}"
+                          th:errors="*{phone}"></span>
+                </div>
+            </section>
+
             <section class="order-summary-card">
                 <h2 class="page-title" style="font-size:22px;">Chi tiết đơn hàng</h2>
                 <p class="page-subtitle">Kiểm tra lần cuối các sản phẩm trong giỏ của bạn.</p>
-                
+
                 <div class="table-scroll" style="margin-top:var(--space-4);">
                     <table>
                         <thead>
@@ -64,48 +149,13 @@
                         <span th:text="${#numbers.formatDecimal(total, 0, 'COMMA', 0, 'POINT')} + ' ₫'"></span>
                     </li>
                 </ul>
-            </section>
-            
-            <section class="page-section">
-                <h2 style="margin-top:0;">Thông tin giao hàng</h2>
-                <p class="page-subtitle">Chúng tôi sẽ sử dụng thông tin này để liên lạc khi giao hàng.</p>
 
-                <form th:action="@{/cart/checkout}" th:object="${orderDTO}" method="post">
-                    <div class="form-group">
-                        <label for="shippingAddress">Địa chỉ giao hàng *</label>
-                        <textarea id="shippingAddress"
-                                  class="form-control"
-                                  th:field="*{shippingAddress}"
-                                  th:classappend="${#fields.hasErrors('shippingAddress')} ? 'error' : ''"
-                                  rows="3"
-                                  required
-                                  placeholder="Ví dụ: 123 Lý Thường Kiệt, P.7, Q.10, TP.HCM"></textarea>
-                        <span class="form-hint">Hãy ghi rõ số nhà, phường/xã và quận/huyện.</span>
-                        <span class="field-error" th:if="${#fields.hasErrors('shippingAddress')}" 
-                              th:errors="*{shippingAddress}"></span>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="phone">Số điện thoại liên hệ *</label>
-                        <input type="tel"
-                               id="phone"
-                               class="form-control"
-                               th:field="*{phone}"
-                               th:classappend="${#fields.hasErrors('phone')} ? 'error' : ''"
-                               required
-                               placeholder="0912 345 678">
-                        <span class="form-hint">Nhân viên giao hàng sẽ liên hệ qua số này khi cần.</span>
-                        <span class="field-error" th:if="${#fields.hasErrors('phone')}" 
-                              th:errors="*{phone}"></span>
-                    </div>
-                    
-                    <div class="form-actions" style="justify-content:space-between;">
-                        <a th:href="@{/cart}" class="btn btn-ghost">← Quay lại giỏ hàng</a>
-                        <button type="submit" class="btn btn-primary btn-lg">Xác nhận đặt hàng</button>
-                    </div>
-                </form>
+                <div class="order-summary-actions">
+                    <a th:href="@{/cart}" class="btn btn-ghost">← Quay lại giỏ hàng</a>
+                    <button type="submit" class="btn btn-primary btn-lg">Xác nhận đặt hàng</button>
+                </div>
             </section>
-        </div>
+        </form>
     </div>
 
     <!-- Include Chatbot -->
